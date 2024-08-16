@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magic wand and hat</title>
+</head>
+<style>
+    body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  
+    }
+.container{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+    width:  300px;
+   /* background: red; */
+   perspective: 800px;
+  
+}
+  
+.hat-wrapper{
+    top:  20%;
+    left: 5%;
+    position: absolute;
+    width: 90%;
+    height: 70%; 
+    border-radius: 100%;
+    z-index: 10000;
+    padding: 5px;
+    background: radial-gradient(circle, rgb(54, 26, 100) 50%, rgb(19, 0, 39) 80%, rgb(28, 0, 71) 100%); 
+   transform: rotateX(55deg);
+}
+.hat-top{
+    top:  0%;
+    left: 18%;
+    position: absolute;
+    width: 70%;
+    height: 70%; 
+    z-index: 10000;
+    border-radius: 50%;
+    clip-path: polygon(0 1%, 100% 1%, 90% 100%, 9% 99%);
+    border-radius: 0 0 30% 30% ;
+    overflow: hidden;
+    background: linear-gradient(90deg, rgb(0, 0, 0), rgb(35, 23, 80), rgb(0, 0, 0)); 
+
+}
+.hat-top::after{
+    content: "";
+    top:  75%;
+    left: 0%;
+    position: absolute;
+    width: 100%;
+    height: 30%; 
+    background: linear-gradient(90deg, rgba(132,101,59,1) 0%, rgba(147,134,27) 26%, rgba(238,234,218,1) 49%, rgba(155,127,40,1) 65%, rgba(121,113,40,1) 100%);
+ 
+   
+
+   }
+ .hat-top2{
+    top:  -20%;
+    left: 18%;
+    position: absolute;
+    width: 70%;
+    height: 40%; 
+    background: radial-gradient(circle, rgb(28, 0, 105), rgb(23, 0, 61) 30%); 
+    z-index: 10000;
+    border-radius: 100%;
+    transform: rotateX(55deg);
+    box-shadow: inset 0 0 5px rgba(255, 255, 255, 0.568);
+}
+
+.wand{
+    width: 150%;
+	height:6%;
+	bottom: 0%;
+	left: -11%;
+	position: absolute;
+  box-shadow:inset 2px 2px 2px rgb(7, 0, 0);
+    background: linear-gradient(180deg, rgb(0, 0, 0), rgb(35, 23, 80), rgb(0, 0, 0)); 
+    animation: wand .2s infinite;
+    transform:  rotateZ(159deg); 
+    z-index: 100000;
+    border-radius: 50px;
+    
+  }
+  .wand2{
+    left: 28%;
+    /* transform:  rotateZ(-320deg);  */
+    animation: wand2 .2s infinite;
+  
+  }
+  .wand::after{
+    content: "";
+    width: 30%;
+	height:100%;
+	top: 0%;
+	left: 0%;
+	position: absolute;
+    background: rgb(132,101,59);
+    background: linear-gradient(180deg, rgba(132,101,59,1) 0%, rgba(147,134,27) 26%, rgba(238,234,218,1) 49%, rgba(155,127,40,1) 65%, rgba(121,113,40,1) 100%);
+    box-shadow: 0 0 5px rgba(147,134,27), 0 0 25px rgba(147,134,27), inset 0 0 5px rgb(121, 105, 18);
+  
+  }
+  .wand1::after{
+    left: 70%;
+  }
+   /* @keyframes wand {
+    0%{
+        transform:  rotateZ(-36deg);
+    }
+    100%{
+        transform:  rotateZ(-40deg);
+    }
+  } 
+   @keyframes wand2 {
+    0%{
+        transform:  rotateZ(-320deg);
+    }
+    100%{
+        transform:  rotateZ(-325deg);
+    }
+  }  */
+
+  
+</style>
+<body>
+    <div class="container">
+
+        <div class="wand wand1"></div>
+
+        <div class="wand wand2"></div>
+
+        <div class="hat-wrapper">
+            
+        </div>
+        <div class="hat-top"></div>
+            <div class="hat-top2"></div>
+    </div>
+</body>
+</html>

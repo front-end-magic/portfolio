@@ -1,0 +1,49 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>happy bubbles index page</title>
+<!-- <link rel="stylesheet" type="text/css" href="css/style.css">
+ --><link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<style>
+	
+
+</style>
+<body id="b" >
+ <div id="container1">
+
+    <div id="index-overlay"></div>
+    </div>
+ <div id="container2">
+
+    <div id="index-overlay2"></div>
+    <div id="happy"></div>
+    <a href="pages/hard.html"><div id="start"></div></a>
+    <a href="https://play.google.com/store/apps/details?id=kemi.happybubbles.phone">  <div id="rate"></div>
+  </a>
+   <a href="pages/help.html"><div id="help"></div>
+   </a>
+   <a href="https://play.google.com/store/apps/developer?id=Kemi"> <div id="more"></div></a>
+  
+   
+    </div>
+
+  <script type="text/javascript" src="js/script.js"></script>
+
+  <script src="cordova.js"></script>
+
+</body>
+<script >
+  setInterval(function(){
+    var container1 = document.getElementById('container1');
+    var container2 = document.getElementById('container2');
+   container1.style.display = "none";
+   container2.style.display = "block";
+
+
+  }, 2000);
+</script>
+</html>

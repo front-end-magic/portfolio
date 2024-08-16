@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+
+	<title>baby magic word balloon</title>
+<link rel="stylesheet" type="text/css" href="css/words.css">
+<link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+
+<body id="b" >
+
+ <!-- <div id="container">
+ <div id="container1"></div>
+  <div id="container2"></div>-->
+         <a href="pages/word.html"> <button id="words" class="parts"></button>
+</a>
+<a href="pages/abc.html"><button class="parts" id="abc">  </button>
+</a>
+<a href="pages/num.html"><button class="parts" id="num">  </button></a>
+     <!-- <div class="header-overlay" id="overlay"> -->
+      <button id="more"></button>
+      <div id="moreapps">
+      <div id="innermore">
+       
+      </div>
+        <a href="https://play.google.com/store/apps/developer?id=Kemi">  <button id="more1"></button></a>
+ <a href="https://play.google.com/store/apps/details?id=com.magicballoons.kids">  <button id="rate"></button></a>
+</button>
+     </div>
+
+    </div>
+    
+<div>  
+ 
+
+
+<script >
+  var more = document.getElementById('more');
+  var more1 = document.getElementById('more1');
+  var rate = document.getElementById('rate');
+  var innermore = document.getElementById('innermore');
+  var words = document.getElementById('words');
+  var abc = document.getElementById('abc');
+  var num = document.getElementById('num');
+  var container = document.getElementById('container');
+  more.addEventListener("click", function(){
+    moreapps.style.display = "block";
+   });
+  innermore.addEventListener("click", function(){
+    moreapps.style.display = "none";
+  //   rate.style.display = "none";
+  // innermore.style.display = "none";
+  })
+
+// words.addEventListener("click", function(){
+//   window.location = "pages/word.html";
+//   })
+// abc.addEventListener("click", function(){
+//   window.location = "pages/abc.html";
+//   })
+// num.addEventListener("click", function(){
+//   window.location = "pages/num.html";
+//   })
+
+</script>
+<!-- <script src="index.js"></script>
+<script src="js/b.js"></script>
+ -->
+  <script src="cordova.js"></script>
+ <script src="js/admob.js"></script>
+
+</body>
+</html>

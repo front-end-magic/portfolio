@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Text Animation Effect</title>
+    <style>
+         *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: #e8e8e8;
+    }
+      
+.content{
+    position: relative;
+}
+.content h2{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    font-size: 15em; 
+}
+.content h2:nth-child(1){
+    color: transparent;
+    -webkit-text-stroke: 3px #333;
+    filter: blur(3px);
+}
+.content h2:nth-child(3){
+    color: #fff6;
+    filter: drop-shadow(0 15px 15px #fff);
+    z-index: 1;
+    text-shadow: -15px 15px 15px rgba(0, 0, 0, 0.2),
+                    15px -15px 15px rgba(255, 255, 255, 0.2);
+   }
+   .content h2:nth-child(2){
+    color: #03a9f4;
+    z-index: 2;
+    animation: animate 4s ease-in-out infinite;
+   }
+@keyframes animate {
+    0%,100%{
+        clip-path: polygon(0% 45%, 7% 42%, 13% 40%, 20% 41%, 26% 42%, 32% 46%, 37% 51%, 44% 53%, 51% 55%, 55% 60%, 64% 60%, 71% 62%, 80% 62%, 84% 59%, 90% 57%, 94% 55%, 98% 54%, 100% 51%, 100% 100%, 0% 100%);
+    }
+    50%{
+        clip-path: polygon(0% 75%, 9% 75%, 19% 75%, 26% 74%, 31% 71%, 38% 68%, 42% 64%, 50% 60%, 56% 57%, 63% 54%, 69% 52%, 75% 53%, 88% 54%, 91% 55%, 93% 58%, 96% 58%, 100% 100%, 0% 100%);
+    }
+}
+
+
+
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h2>Magic</h2>
+        <h2>Magic</h2>
+        <h2>Magic</h2>
+    </div>
+</body>
+</html>

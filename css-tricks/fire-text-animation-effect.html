@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fire Text Animation effect</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+      }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background: #0e0e0e;
+        
+      }
+      .text {
+        position: relative;
+        width: 100%;
+        text-align: center;
+        filter: url(#fire);
+
+      }
+      .text h2{
+        position: relative;
+        color: #ffeb3b;
+        font-weight: 600;
+        font-size: 16em;
+        -webkit-box-reflect: below -120px linear-gradient(transparent, #0008);
+        text-shadow: 0 0 10px #ffbc3b,
+                    0 0 40px #ffbc3b,
+                    0 0 80px #ffbc3b,
+                    0 0 160px #ffbc3b,
+                    0 0 240px #ffbc3b;
+
+      }
+      svg{
+        width: 0;
+        height: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="text">
+      <h2>FIRE</h2>
+    </div>
+    <svg>
+        <filter id="fire">
+            <feTurbulence id="turbulence" baseFrequency="0.1 0.1"
+            numOctaves="29" seed="1">
+     <animate attributeName="baseFrequency" dur="5s" values="0.1 0.1;0.2 0.2"
+            repeatCount="indefinite"> </animate> 
+        </feTurbulence>
+             <feDisplacementMap in='SourceGraphic' scale='25'></feDisplacementMap>
+
+        </filter>
+    </svg>
+  </body>
+</html>

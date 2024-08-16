@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>text typing</title>
+</head>
+<style >
+	body {
+		margin: 0;
+		padding: 0;
+		color: tan;
+		background-color: rgb(6, 138, 116);
+
+	}
+	button	{
+		color: rgb(1, 97, 76);
+		background-color: tan;
+		height: 40px;
+		width: 100px;
+		margin-left: 50px;
+	}
+	h1 {
+       animation: type 3s steps(25);
+       overflow: hidden;
+       white-space: nowrap;
+       font-family: consolas;
+       border-right: 4px solid tan;
+       width: 25ch;
+       margin-left: 50px;
+       }
+	@keyframes type {
+		0%{
+			width: 0ch;
+		}
+		100% {
+			width: 25ch;
+		}
+	}
+</style>
+<body>
+   <h1>my awesome day seven app.</h1>
+   <button onclick="window.location ='index.html'">reload text</button>
+</body>
+</html>

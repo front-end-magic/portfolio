@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 3d background animation</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    section{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        background: white;
+    }
+    .pattern{
+        position: relative;
+        transform-style: preserve-3d;
+        perspective: 1000px;
+        animation: animatebg 10s ease-in-out infinite;
+    }
+    @keyframes animatebg {
+        0%, 100%{
+        transform: scale(1.6) rotate(-15deg);
+       } 
+       50%{
+        transform: scale(1.6) rotate(15deg);
+       } 
+    }
+    .pattern .face{
+        position: relative;
+        width: 100vw;
+        height: 50vh;
+        background:  linear-gradient(45deg, rgba(90, 181, 211, 0) 80%, rgb(0, 0, 0) 81%),
+    linear-gradient(45deg, rgb(0, 0, 0) 20%, rgba(90, 181, 211, 0) 21%),
+    linear-gradient(-45deg, rgb(0, 0, 0) 25%, transparent 26%),
+    linear-gradient(
+      -45deg,
+      rgba(207, 122, 55, 0) 74%,
+      rgb(0, 0, 0) 75%
+    ),
+    linear-gradient(
+      45deg,
+      rgba(237, 201, 112, 0) 74%,
+      rgb(0, 0, 0) 75%
+    );
+    background-size: 30px 30px;
+    background-repeat:repeat;
+    animation: animate 10s linear infinite; 
+    }
+    @keyframes animate {
+        0%{
+            background-position: 0;
+        }
+        100%{
+            background-position: 100%;
+        }
+    }
+    .pattern .face.face2{
+        height: 100vh;
+        transform-origin: top;
+        transform: rotateX(70deg);
+    }
+    .pattern .face1::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(0deg, rgba(0,0,0,0.5), transparent);
+    }
+    .pattern .face2::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(180deg, rgba(0,0,0,0.5), transparent);
+    }
+</style>
+<body>
+    <section>
+        <div class="pattern">
+            <div class="face face1"></div>
+            <div class="face face2"></div>
+        </div>
+    </section>
+</body>
+</html>

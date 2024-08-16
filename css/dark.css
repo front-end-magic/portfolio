@@ -1,0 +1,52 @@
+:root{
+  --color1: #22292b;
+  --color2: #3a4244; 
+  --color3: #a6a6b4;
+  --color4: rgb(170, 161, 161);
+  --color5: #aaa9b1;
+  --color6: #ffffff91 ;
+  --color7: #c9c9df;
+ --color8: rgb(65, 65, 66);
+    --color9: #535355;
+  --color10: #60696d;
+  --colorF: #000;
+    /* --color6:
+  --color6: */
+}
+
+
+.wave{
+background: url(../images/wavew.png);
+
+}
+
+.skills div button {
+  color: var(--color3);
+}
+.card .content .name {
+   color: var(--color3);
+}
+.card-link span{
+color: white;
+}
+
+.eyes .eye {
+ background: white;
+box-shadow: 2px 2px 5px var(--color2) inset;
+}
+.mouth {
+ background: var(--color3);
+box-shadow: 2px 2px 20px var(--color7), 
+-2px -2px 10px rgb(146, 161, 161), 
+0 0 5px rgb(31, 28, 28) inset;
+}
+nav, .copy-right{
+  background-color: black;
+  color: #aaa9b1;
+}
+.nav-links li a {
+  color: var(--color7);
+  }
+  .logo{
+    color: var(--color7);
+    }

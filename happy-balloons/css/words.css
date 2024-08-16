@@ -1,0 +1,168 @@
+ 
+ *{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+ }
+  #j{
+    width: 100px;
+    height: 100px;
+    font-size: 40px;
+    border-radius: 1px;
+      position: absolute;
+   background-repeat: no-repeat;
+        background-size:100% 100%;
+        background-image:url(../images/1.png);
+        margin-right: 80px;
+        z-index: 20;
+        display: block;
+       text-shadow: 0 1px 0 #999, 0 1px 0 #999, 0 2px 0 #aaa, 0 2px 0 #bbb, 0 3px #ccc
+  }
+ 
+	body {
+		background-repeat: no-repeat;
+        background-size:100% 100%;
+        background-image:url(../images/happy.png);
+     background-color: #226;
+   height: 100vh;
+        padding: 0;
+        margin: 0;
+	}
+  #more{
+    background-repeat: no-repeat;
+        background-size:100% 100%;
+        background-image:url(../images/more0.png);
+        border-radius: 50%;
+        border: 5px ridge silver;
+        margin:2px;
+        height: 50px;
+        width: 50px;
+        z-index: 100;
+        position: absolute;
+  }
+  #innermore{
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    z-index: 70;
+  background-image: /*url("images/0.png"),*/ linear-gradient(45deg, yellow 50%, deeppink 50%), 
+    linear-gradient(-45deg, pink 50%, red 50%);
+     background-size:3px 3px;
+    background-repeat: repeat;
+   opacity: 0.5;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+    }
+   #moreapps{
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    z-index: 70;
+    /*background-color: rgba(234,0, 240, 0.3);*/
+    padding: 0;
+    margin: 0;
+    display: none;
+    top: 0;
+    left: 0;
+  }
+  #more1{  position: absolute;
+  width: 60%;
+  height: 15%;
+  margin-left: 20%;
+  /*border-radius: 50%;*/
+  border: 5px ridge silver;
+   border-radius: 20%;
+    margin-top: 20%;
+    z-index: 100;
+  animation-name: moreapps;
+  animation-fill-mode: forwards;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+    background-size: 100% 100%;
+  background-repeat: no-repeat;
+   background-image:url(../images/more0.png);
+    border-image: url(../images/border.png) 20% / 1 / 0 round;
+     background-color: navy;
+       
+}
+
+  #rate{
+    background-repeat: no-repeat;
+        background-size:100% 100%;
+        background-image:url(../images/rate1.png);
+        background-color: navy;
+            /*border-radius: 50%;*/
+            border: 5px ridge silver;
+           position: absolute;
+  width: 60%;
+  height: 15%;
+  margin-left: 20%;
+  margin-top: 50%;
+     z-index: 100;
+      border-image: url(../images/border.png) 20% / 1 / 0 round;
+  
+             }
+	#overlay {
+  position: absolute;
+     height: 100vh;
+     width: 100vw;
+     top: 0;
+     left: 0;
+        padding: 0;
+        margin: 0;
+         border-radius: 20%;
+       
+           /*background-color: rgba(234, 145, 245, 0.4);*/
+  /*opacity: 0.4;*/
+  }
+#container1 {
+  position: absolute;
+     height: 100vh;
+     width: 100vw;
+     top: 0;
+     left: 0;
+        padding: 0;
+        margin: 0;
+         z-index: 40;
+           background-color: rgba(23, 14, 24, 0.4);
+           background-image: url(../images/ji.jpg);
+           background-size: 100% 100%;
+           background-repeat: no-repeat;
+  /*opacity: 0.4;*/
+  display: none;
+  }
+  #container2 {
+  position: absolute;
+     height: 100vh;
+     width: 100vw;
+     top: 0;
+     left: 0;
+        padding: 0;
+        margin: 0;
+         z-index: 10;
+           background-color: rgba(23, 14, 24, 0.4);
+           /*background-image: url(../images/fluff.jpg);*/
+           background-size: 100% 100%;
+           background-repeat: no-repeat;
+  /*opacity: 0.4;*/
+  }
+
+#container {
+	position: absolute;
+     height: 100vh;
+        padding: 0;
+        margin: 0;
+	}
+	
+
+ 	audio {
+    display: none;
+  }
+
+
+button{
+  padding: 10px;
+  margin: 10px;
+}

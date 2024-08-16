@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page Title</title>
+    </head>
+    <style >
+        body {
+    margin:0;
+    padding:0;
+    background-color:white;
+}
+#container{
+    margin-left:30%;
+    
+    
+}
+span{
+    position:absolute;
+    height:30px;
+    width:30px;
+    border-radius:50%;
+    background-color:rgb(12, 110, 3);
+    border:none;
+    margin-top:-190px;
+    margin-left:119px;
+    animation: 1s ball-bounce infinite linear;
+    animation-delay:0.5s;
+    box-shadow:4px 4px 4px rgba(19, 5, 71, 0.533), inset 0 0 4px wheat,
+    -4px -4px 4px rgba(1, 0, 2, 0.651);
+  
+}
+span::after{
+    content: "";
+    position:absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border-radius:50%;
+   background-image: radial-gradient(rgba(255, 255, 255, 0.699),rgba(0, 0, 0, 0.404));
+ 
+}
+#span3{
+    background-color:rgb(3, 110, 101);
+    margin-top:-180px;
+    margin-left:55px;
+    animation-delay:0.1s;
+}
+#span2{
+     background-color:rgb(110, 3, 3);
+    margin-top:-160px;
+    margin-left:34px;
+    animation-delay:0.3s;
+}
+#span4{
+      background-color:rgb(110, 3, 62);
+    margin-left:74px;
+    animation-delay:0.40s;
+}
+#span5{
+   background-color:rgb(251, 255, 0);
+    margin-top:-190px;
+    margin-left:98px;
+    animation-delay:0.2s;
+}
+#span6{
+    background-color:rgb(3, 4, 110);
+   margin-left:10px;
+    animation-delay:0.6s;
+}
+
+#span7{
+    background-color:rgb(255, 76, 6);
+    margin-left:58px;
+    animation-delay:0.7s;
+}
+#span8{
+    background-color:rgb(145, 28, 255);
+    margin-left:158px;
+     animation-delay:0.8s;
+}
+#span9{
+    background-color:rgb(75, 54, 35);
+    margin-left:58px;
+    animation-delay:0.9s;
+}
+
+#span10{
+    background-color:rgb(199, 199, 199);
+    margin-left:88px;
+    animation-delay:1s;
+}
+
+
+
+
+#box{
+    margin-top:300px;
+    margin-left:35%;
+}
+#head{
+    position:absolute;
+    height:110px;
+    width:130px;
+    border:3px groove lightblue;
+    border-radius:50%;
+    background-image: linear-gradient(90deg, rgba(4, 39, 114, 0.979),
+     rgb(3, 131, 148),rgb(2, 27, 95));
+     padding: 20px;
+    ;}
+#eye1{
+    position:absolute;
+    height:40px;
+    width:40px;
+    border:2px solid lightblue;
+    box-shadow:2px 2px 2px 0;
+    background-color:white;
+    border-radius:50%;
+    margin-top:8px;
+    margin-left:18px;
+}
+#eye2{
+    position:absolute;
+    height:40px;
+    width:40px;
+    border:2px solid lightblue;
+    box-shadow:  -2px -2px;
+    background-color:white;
+    border-radius:50%;
+    margin-top:8px;
+    margin-left:70px;
+    transform: rotate(180deg);
+}
+#nose{
+    position:absolute;
+    height:20px;
+    width:10px;
+    border:2px solid rgb(0, 0, 0);
+    background-image: radial-gradient(rgb(255, 255, 255) 20%,rgb(0, 0, 0) 70%);
+    box-shadow:0 0 4px  rgb(0, 0, 0);
+    margin-top:60px;
+    margin-left:55px;
+      border-radius:   100% 100% 20% 20%;
+  
+}
+#mouth{
+    position:absolute;
+    height:30px;
+    width:50px;
+    border:5px ridge rgb(61, 1, 4);
+    border-radius:50%;
+    margin-top:70px;
+    margin-left:37px;
+    border-top:none;
+    border-left:none;
+    border-right:none;
+}
+#eye3{
+    position:absolute;
+    height:14px;
+    width:14px;
+    border:none;
+    background-color:black;
+    border-radius:50%;
+    margin-top:6px;
+    margin-left:5px;
+    animation:0.5s eye1 infinite linear;
+    animation-delay:0.2s;
+}
+#eye4{
+    position:absolute;
+    height:14px;
+    width:14px;
+    border:none;
+    background-color:black;
+    border-radius:50%;
+    margin-top:6px;
+    margin-left:5px;
+    animation:0.6s eye1 infinite linear;
+    animation-delay:1s;
+}
+
+ @keyframes eye1{
+    0%{
+        transform:translateX(0%);
+    }
+    10%{
+        transform:translateX(120%);
+    }
+    40%{
+        transform:translateY(162%);
+    }
+    80%{
+        transform:translateX(25%);
+    }
+    
+} 
+@keyframes ball-bounce{
+    0%{
+        transform:translateY(0px);
+    }
+    25%{
+        transform:translateY(600%);
+    }
+    50%{
+        transform:translateY(90%);
+    }
+    75%{
+        transform:translateX(200%);
+    }
+    100%{
+        transform:translateX(0%);
+        transform:translateY(600%);
+    }
+}
+
+
+    </style>
+    <body>
+    <div id ="container">
+      
+        <span id="span1"></span>
+        <span id="span2"></span>
+        <span id="span3"></span>
+        <span id="span4"></span>
+        <span id="span5"></span>
+        <span id="span6"></span>
+        <span id="span7"></span>
+        <span id="span8"></span>
+        <span id="span9"></span>
+        <span id="span10"></span>
+    </div>
+        <div id="box">
+                
+            <div id ="head">
+                <div id = "eye1"><div id="eye3"></div></div>
+                    <div id = "eye2"><div id="eye4"></div></div>
+                    <div id ="mouth"></div>
+                    <div id  ="nose"></div>
+            </div>
+                        
+        </div>
+     </body>
+</html>

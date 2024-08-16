@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sallah greeting with ram</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            overflow: hidden;
+            background: rgb(2, 14, 29);
+
+        }
+
+        .container {
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            inset: 0;
+            background: rgb(2, 14, 29);
+            perspective: 1000px;
+            transform-style: preserve-3d;
+        }
+
+
+        .moon-wrap {
+            height: 500px;
+            width: 500px;
+            left: 100px;
+            top: 50%;
+            transform: translateY(-50%) rotateX(22deg) rotateY(22deg);
+            position: absolute;
+            border-radius: 50%;
+            box-shadow: inset 0 0 0 5px rgb(2, 14, 29);
+            z-index: 11;
+            -webkit-box-reflect: below 0px linear-gradient(transparent, transparent, rgba(0, 0, 0, 0.445));
+            animation: animate-moon 12s infinite ease-in-out both;
+
+        }
+
+        @keyframes animate-moon {
+
+            0%,
+            100% {
+                transform: translateY(-50%) rotateY(22deg);
+            }
+
+            50% {
+                transform: translateY(-50%) rotateY(-22deg);
+            }
+        }
+
+        .moon {
+            content: "";
+            height: 100%;
+            width: 100%;
+            left: 0;
+            top: 0;
+            position: absolute;
+            background: rgb(80, 62, 19);
+            background: radial-gradient(circle, rgba(80, 62, 19, 1) 0%, rgba(224, 199, 43, 1) 30%, rgba(240, 231, 116, 1) 49%, rgba(230, 220, 94, 1) 65%, rgba(20, 3, 3, 1) 91%);
+            border-radius: 50%;
+            overflow: hidden;
+            z-index: 1;
+            box-shadow: inset 2px -2px 5px rgb(0, 0, 0);
+
+
+        }
+
+        .moon-cover {
+            position: absolute;
+            height: 70%;
+            width: 70%;
+            left: 30%;
+            top: 0%;
+            background: rgb(2, 14, 29);
+            border-radius: 50%;
+            z-index: 1111;
+            box-shadow: inset 0 0 0 5px rgb(2, 14, 29);
+        }
+
+        .moon span {
+            position: absolute;
+            height: 35px;
+            width: 35px;
+            background: rgb(58, 59, 56);
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            z-index: 2;
+            animation: animate-stars 2s infinite ease-in-out;
+
+        }
+
+        @keyframes animate-stars {
+            0% {
+                transform: scale(1);
+                filter: blur(5px) hue-rotate(0);
+            }
+
+            100% {
+                transform: scale(1.1);
+                filter: blur(0px) hue-rotate(360deg);
+            }
+        }
+
+        .moon span::before {
+            content: "";
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            transform: scale(0.8);
+            background: rgb(196, 90, 90);
+            background: linear-gradient(90deg, rgb(1, 8, 102) 0%, rgba(251, 251, 251, 1) 47%, rgb(1, 3, 94) 100%);
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            z-index: -1;
+
+        }
+
+        .throne,
+        .throne2 {
+            height: 120px;
+            width: 700px;
+            left: 50%;
+            top: 50%;
+            background: rgb(226, 195, 4);
+            background: linear-gradient(90deg, rgba(226, 195, 4, 1) 0%, rgba(242, 242, 242, 1) 47%, rgba(194, 179, 0, 1) 100%);
+            transform: translateY(730px) translateX(0);
+            box-shadow: inset 15px 15px 25px rgba(0, 0, 0, 0.514), inset 1px 1px 5px rgba(0, 0, 0, 0.514), 1px 1px 5px rgba(0, 0, 0, 0.514), 3px 3px 5px rgba(0, 0, 0, 0.514);
+            border-radius: 20% 20% 50% 50%;
+            z-index: 3;
+
+        }
+
+        .throne::before,
+        .throne2::before {
+            content: "";
+            border-radius: 50%;
+            height: 100%;
+            width: 100%;
+            left: 0;
+            top: -30%;
+            position: absolute;
+            background: rgb(255, 227, 70);
+            background: radial-gradient(circle, rgba(242, 242, 242, 1) 0%, rgba(224, 199, 43, 1) 36%, rgba(223, 208, 24, 1) 69%, rgba(153, 151, 3, 1) 100%);
+            box-shadow: inset 15px 15px 25px rgba(0, 0, 0, 0.514), inset 1px 1px 5px rgba(0, 0, 0, 0.514), 1px 1px 5px rgba(0, 0, 0, 0.514), 1px 1px 25px rgba(0, 0, 0, 0.514);
+
+        }
+
+        .throne2 {
+            transform: translateY(550px) translateX(0) scaleX(0.9) scaleY(1.1);
+            z-index: 1;
+        }
+
+        .write-up {
+            height: 100%;
+            width: 50%;
+            left: 50%;
+            top: 0;
+            position: absolute;
+            z-index: 100000;
+
+        }
+
+        .big-text {
+            font-size: 8rem;
+            color: transparent;
+            position: absolute;
+            font-weight: 900;
+            user-select: none;
+            transition: all 0.5s;
+            transition-delay: calc(var(--i) * 0.0005s);
+            left: 30%;
+            top: 30%;
+
+        }
+
+        .ram {
+            height: 80%;
+            width: 80%;
+            left: 15%;
+            top: 14%;
+            position: absolute;
+
+        }
+
+        .ram .face {
+            height: 100%;
+            width: 100%;
+            left: 0%;
+            top: 0;
+            position: absolute;
+            background: rgb(255, 250, 240);
+            border-radius: 61% 39% 58% 42% / 39% 39% 61% 61%;
+            border: 2px solid rgb(36, 32, 1);
+        }
+
+
+
+        .hair {
+            height: 10%;
+            width: 30%;
+            left: 20%;
+            top: -8%;
+            position: absolute;
+            background: radial-gradient(circle, rgba(242, 242, 242, 1) 0%, rgba(224, 199, 43, 1) 36%, rgba(223, 208, 24, 1) 69%, rgba(153, 151, 3, 1) 100%);
+            clip-path: polygon(63% 98%, 56% 86%, 47% 73%, 38% 63%, 29% 58%, 19% 55%, 13% 52%, 1% 40%, 3% 34%, 6% 30%, 15% 29%, 20% 31%, 28% 36%, 36% 38%, 43% 48%, 53% 58%, 60% 67%, 65% 75%, 68% 64%, 65% 50%, 68% 38%, 68% 30%, 63% 23%, 56% 15%, 56% 8%, 66% 7%, 72% 8%, 75% 14%, 79% 22%, 80% 31%, 82% 41%, 83% 52%, 84% 61%, 85% 69%, 88% 63%, 90% 54%, 93% 39%, 92% 23%, 92% 11%, 98% 7%, 100% 16%, 100% 23%, 100% 35%, 100% 47%, 100% 57%, 100% 68%, 100% 78%, 100% 89%, 100% 94%, 100% 99%, 100% 100%);
+            z-index: 1111;
+        }
+
+        .hair::before {
+            content: "";
+            height: 100%;
+            width: 100%;
+            left: 0%;
+            top: 0%;
+            position: absolute;
+            background: rgb(255, 244, 244);
+            clip-path: polygon(63% 98%, 56% 86%, 47% 73%, 38% 63%, 29% 58%, 19% 55%, 13% 52%, 1% 40%, 3% 34%, 6% 30%, 15% 29%, 20% 31%, 28% 36%, 36% 38%, 43% 48%, 53% 58%, 60% 67%, 65% 75%, 68% 64%, 65% 50%, 68% 38%, 68% 30%, 63% 23%, 56% 15%, 56% 8%, 66% 7%, 72% 8%, 75% 14%, 79% 22%, 80% 31%, 82% 41%, 83% 52%, 84% 61%, 85% 69%, 88% 63%, 90% 54%, 93% 39%, 92% 23%, 92% 11%, 98% 7%, 100% 16%, 100% 23%, 100% 35%, 100% 47%, 100% 57%, 100% 68%, 100% 78%, 100% 89%, 100% 94%, 100% 99%, 100% 100%);
+            z-index: 1111;
+            transform: scale(0.9);
+        }
+
+        .hair2 {
+            left: 45%;
+            transform: rotateY(180deg);
+
+        }
+
+        .horn {
+            height: 80%;
+            width: 100%;
+            left: -50%;
+            top: -20%;
+            position: absolute;
+            border: 0 solid rgb(34, 18, 0);
+            border-radius: 50%;
+            transform: rotate(35deg);
+            border-width: 80px 5px 0 100px;
+            z-index: -109;
+
+        }
+
+        .horn2 {
+            left: 50%;
+            transform: rotateY(180deg);
+
+        }
+
+        .eye-case {
+            width: 70%;
+            height: 20%;
+            position: absolute;
+            top: 28%;
+            left: 15%;
+
+        }
+
+        .eyes {
+            width: 30%;
+            height: 100%;
+            position: absolute;
+            top: 0%;
+            left: 5%;
+            background: rgb(255, 255, 255);
+            border: 0.5px ridge black;
+            border-radius: 43% 57% 40% 60% / 65% 75% 25% 35%;
+            background-position: 50% 50%;
+            border-top: 2px solid black;
+            box-shadow: 0px -5px 8px rgb(83, 92, 3);
+        }
+
+        .eye2 {
+            left: 65%;
+            border-radius: 32% 68% 66% 34% / 76% 66% 34% 24%;
+
+        }
+
+        .inner-eye {
+            background: rgb(34, 18, 0);
+            height: 70%;
+            width: 70%;
+            position: absolute;
+            top: 25%;
+            left: 30%;
+            border-radius: 50%;
+            box-shadow: 2px 2px 5px rgb(70, 68, 64) inset, -2px -2px 5px rgb(90, 78, 69) inset;
+
+        }
+
+        .eye2 .inner-eye {
+            left: 5%;
+        }
+
+        .inner-eye::before {
+            content: "";
+            background: rgb(255, 255, 255);
+            height: 30%;
+            width: 30%;
+            position: absolute;
+            top: 15%;
+            left: 45%;
+            border-radius: 50%;
+        }
+
+        .inner-eye::after {
+            content: "";
+            background: rgba(206, 211, 241, 0);
+            height: 80%;
+            width: 80%;
+            position: absolute;
+            top: 7%;
+            left: 10%;
+            border-radius: 50%;
+            border-bottom: 5px solid rgba(94, 75, 36, 0.493);
+            transform: rotate(5deg);
+        }
+
+        .ear {
+            height: 60%;
+            width: 30%;
+            position: absolute;
+            top: 2%;
+            left: -20%;
+            background: rgb(255, 244, 244);
+            border-radius: 200% 200% 80% 80%;
+            box-shadow: black inset 0px -2px 5px,
+                black 0px 0px 5px;
+            border-radius: 10% 90% 0% 100% / 0% 23% 77% 100%;
+        }
+
+        .ear:hover {
+            transform: rotate(-25deg);
+        }
+
+        .ear2:hover {
+            transform: rotate(25deg);
+        }
+
+        .ear2 {
+            left: 89%;
+            transform: rotateY(180deg);
+        }
+
+        .ear::after {
+            content: "";
+            height: 70%;
+            width: 70%;
+            position: absolute;
+            top: 15%;
+            left: 15%;
+            background: radial-gradient(circle, rgb(65, 66, 1), rgb(233, 202, 117));
+            border-radius: 200% 200% 80% 80%;
+            box-shadow: black inset 0px -2px 5px,
+                black 0px 0px 5px;
+            border-radius: 10% 90% 0% 100% / 0% 23% 77% 100%;
+
+        }
+
+        #nose {
+            width: 25%;
+            height: 7%;
+            top: 65%;
+            left: 40%;
+            position: absolute;
+            border: 1px ridge grey;
+            background-color: rgb(34, 18, 0);
+            border-radius: 40% 60% 40% 20%;
+            z-index: 3;
+        }
+
+
+
+        #mouth {
+            width: 20%;
+            height: 20%;
+            margin-top: 65%;
+            margin-left: 50%;
+            position: absolute;
+            background-color: rgba(245, 222, 179, 0);
+            border-radius: 30%;
+            border-left: 5px ridge black;
+            border-bottom: 5px ridge black;
+            z-index: 2;
+        }
+
+        #mouth2 {
+            width: 20%;
+            height: 20%;
+            margin-top: 65%;
+            margin-left: 30%;
+            position: absolute;
+            background-color: rgba(245, 222, 179, 0);
+            border-radius: 30%;
+            border-bottom: 5px ridge black;
+            z-index: 2;
+        }
+
+        .animate-text {
+            animation: animate-text 5s ease infinite forwards;
+            background: rgb(255, 227, 70);
+            background: radial-gradient(circle, rgba(242, 242, 242, 1) 0%, rgba(224, 199, 43, 1) 36%, rgba(223, 208, 24, 1) 69%, rgba(153, 151, 3, 1) 100%);
+            background-clip: text;
+            text-shadow: 0 5px 15px rgba(0, 0, 0, 0.329);
+            -webkit-text-stroke: 1px rgba(37, 0, 250, 0.534);
+
+
+        }
+
+        @keyframes animate-text {
+
+            0%,
+            100% {
+                transform: rotate(calc(var(--i) * 0.3deg)) translate(-50%, -50%);
+                filter: hue-rotate(0deg);
+            }
+
+            50% {
+                transform: rotate(calc(var(--i) * -0.3deg)) translate(-50%, -50%);
+                filter: hue-rotate(160deg);
+            }
+        }
+
+        @media screen and (max-width: 1020px) {
+            body {
+                height: 200vh;
+            }
+
+            .moon-wrap {
+                height: 350px;
+                width: 350px;
+                top: 60%;
+                left: 30px;
+            }
+
+            .throne,
+            .throne2 {
+                height: 120px;
+                width: 500px;
+                bottom: 0;
+
+            }
+
+            .big-text {
+                font-size: 4rem;
+                top: 50px;
+                left: 20px
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <div class="moon-wrap">
+                <div class="moon" id="moon">
+                </div>
+                <div class="moon-cover">
+
+                    <div class="ram">
+                        <div class="ear"></div>
+                        <div class="ear ear2"></div>
+                        <div id="nosecover">
+                            <div id="nose">
+                                <div id="noselight1"></div>
+                            </div>
+
+                            <div id="mouth"></div>
+                            <div id="mouth2"></div>
+                            <div id="mouth3"></div>
+                        </div>
+                        <div class="face">
+                            <div class="hair"></div>
+                            <div class="hair hair2"></div>
+                            <div class="eye-case">
+                                <div class="eyes">
+                                    <div class="inner-eye"></div>
+                                </div>
+                                <div class="eyes eye2">
+                                    <div class="inner-eye"></div>
+                                </div>
+
+                            </div>
+                            <div class="horn"></div>
+                            <div class="horn horn2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="throne"></div>
+            <div class="throne2"></div>
+        </div>
+        <div class="write-up">
+            <div class="text big-text" style="--i:100">Happy <p>Sallah</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        let w = 10;
+        let h = 10;
+
+        function displayStars() {
+            for (let i = 0; i < h; i++) {
+                for (let j = 0; j < w; j++) {
+                    let span = document.createElement('span');
+                    let random = Math.random() * 0.3;
+                    let randomFixed = random.toFixed(2)
+
+
+                    document.getElementById('moon').appendChild(span)
+                    span.style.left = j * 50 + "px";
+                    span.style.top = i * 50 + "px";
+                    span.style.height = randomFixed * 70 + 10 + "px";
+                    span.style.width = randomFixed * 70 + 10 + "px";
+                    span.style.animationDelay = random + "s";
+                }
+            }
+        }
+        displayStars();
+        let text = document.querySelector(".text");
+        let box = document.querySelector("#box");
+
+        for (let index = 0; index < 100; index++) {
+            let box = document.createElement('div');
+            box.classList.add("big-text");
+            box.classList.add("animate-text");
+            box.innerHTML = "Happy <p>Sallah</p>";
+            box.style = `--i:${index}`
+            box.id = "box"
+            document.querySelector(".text").appendChild(box)
+        }
+    </script>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+:root{
+    --color1: #CAF0F8;
+    --color2: #00B4D8; 
+    --color3: #03045E;
+    --color4: rgb(170, 161, 161);
+    --color5: #02001f;
+    --color6: #ffffff91 ;
+    --color7: #0b0c7a;
+   --color8: rgb(0, 38, 255);
+   --color9: #00067f;
+   --colorF: #00067f;
+    --color10: #0077B6;
+   /* --color6:
+    --color6: */
+}
+
+.wave{
+  background: url(../images/wave.png);
+
+}

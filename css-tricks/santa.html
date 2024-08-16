@@ -1,0 +1,899 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chrismas tree and santa clause</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        background-color:rgb(170, 40, 40);
+      width: 100vw;
+      height: 100vh;
+      background: rgb(13, 10, 75);
+      background-image:  linear-gradient(84deg,rgba(54, 54, 54, 0.438) 0%,rgba(120, 124, 118, 0.349) 30%,
+    rgba(86, 97, 83, 0.63) 61%, rgb(78, 133, 114) 100%); 
+ background-size: 10px 10px;
+
+    background-blend-mode: screen;
+    background-position:  0% 0%;
+    }
+    .floor{
+        position: absolute;
+        background-color:rgb(0, 0, 0);
+        height: 20vh;
+        width: 100%;
+        bottom: 0;
+    background-image:  linear-gradient(180deg,rgb(54, 54, 54) 0%,rgb(120, 124, 118) 30%,
+    rgb(86, 97, 83) 61%, rgb(78, 133, 114) 100%); 
+       background-size: 100% 100%;
+   }
+    
+.container{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 5;
+  
+}
+.tree{
+    width: 400px;
+    height: 90%;
+    top: 0;
+    left: 50px;
+     position: absolute;
+     /* display: none; */
+}
+.shadow{
+    position: absolute;
+    height: 10%;
+    width: 80%;
+    top: 90%;
+    left:10%;
+    background-color: rgba(10, 10, 44, 0.459);
+    border-radius: 50%;
+}
+.stem{
+    position: absolute;
+    height: 30%;
+    width: 40%;
+    top: 65%;
+    left:30%;
+    background-color: rgb(99, 36, 6);
+    z-index: 1;
+    background: radial-gradient(circle,  rgb(194, 164, 150) 14%, rgb(54, 11, 3) 87%, rgb(31, 12, 4) 100%);
+    box-shadow: 0 0 8px rgb(82, 29, 5), inset 20px 0px 16px rgb(46, 16, 2);
+
+}
+.tree-trunk{
+    position: absolute;
+    height: 80%;
+    width: 100%;
+    top: 0%;
+    left:0%;
+    z-index: 2;
+   
+}
+.triangles{
+    position: absolute;
+    height: 45%;
+    width: 60%;
+    top: 0%;
+    left:20%;
+    z-index: 2;
+    background-color: rgb(9, 77, 51);
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    border-radius: 30%;
+    background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(40,181,7,1) 21%,
+ rgba(2,91,9,1) 43%, rgba(81,205,43,1) 64%, rgba(34,91,7,1) 87%, rgba(121,255,0,1) 100%);
+ z-index: 20;
+ overflow: hidden;
+ background-size: 5px 5px;
+ box-shadow: 5px 5px 20px rgb(3, 27, 7), inset 6px 6px 10px rgb(2, 41, 12);
+ border: 2px solid darkgreen;
+}
+
+.triangles:nth-child(1){
+    height: 35%;
+    top: 10%;
+ }
+.triangles:nth-child(2){
+    top: 15%;
+    z-index: 18;
+    width: 80%;
+    left: 10%;
+}
+.triangles:nth-child(3){
+    top: 30%;
+z-index: 16;
+width: 100%;
+    left: 0%;
+
+}
+.triangles:nth-child(4){
+    top: 45%;
+    z-index: 14;
+    width: 120%;
+    left: -10%;
+
+}
+.triangles:nth-child(5){
+    top: 60%;
+    z-index: 12;
+    width: 140%;
+    left: -20%;
+
+}
+.balls::before{
+    content: "";
+    position: absolute;
+    height: 30%;
+    width: 30%;
+    top: -30%;
+    left:35%;
+    background:inherit;
+    box-shadow: inherit;
+    border-radius: 50%;
+
+}
+.star{
+    position: absolute;
+    height: 15%;
+    width: 15%;
+    top: 0%;
+    left:42%;
+    z-index: 52;
+    animation: balls 2s infinite ease;
+    background: radial-gradient(circle,  rgb(224, 233, 146) 14%, rgb(236, 208, 45) 37%, rgb(173, 151, 101) 70%);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    filter: drop-shadow( 5px 5px 5px #000000);
+
+ }
+
+ .balls{
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    top: 20%;
+    left:45%;
+    z-index: 32;
+    border-radius: 50%;
+    animation: balls 2s infinite ease;
+    background: radial-gradient(circle,  rgb(128, 241, 226) 14%, rgb(18, 5, 88) 87%, rgb(9, 1, 37) 100%);
+box-shadow: 0 0 8px rgb(92, 231, 201);
+
+ }
+
+
+    .balls:nth-child(2){
+
+    height: 20px;
+    width: 20px;
+    top: 28%;
+    left:60%;
+  
+}
+
+.balls:nth-child(3){
+
+height: 25px;
+width: 26px;
+top: 28%;
+left:31%;
+
+}
+
+.balls:nth-child(4){
+height: 35px;
+width: 36px;
+top: 40%;
+left:30%;
+} 
+
+.balls:nth-child(5){
+height: 35px;
+width: 36px;
+top: 40%;
+left:60%;
+} 
+.balls:nth-child(6){
+height: 30px;
+width: 30px;
+top: 50%;
+left:70%;
+} 
+.balls:nth-child(7){
+height: 30px;
+width: 30px;
+top: 52%;
+left:45%;
+} 
+.balls:nth-child(8){
+height: 30px;
+width: 30px;
+top: 50%;
+left:20%;
+} 
+.balls:nth-child(9){
+height: 35px;
+width: 35px;
+top: 63%;
+left:76%;
+} 
+.balls:nth-child(10){
+height: 32px;
+width: 32px;
+top: 63%;
+left:20%;
+} 
+.balls:nth-child(11){
+height: 29px;
+width: 29px;
+top: 63%;
+left:48%;
+} 
+.balls:nth-child(12){
+height: 35px;
+width: 35px;
+top: 76%;
+left:35%;
+} 
+.balls:nth-child(13){
+height: 25px;
+width: 25px;
+top: 78%;
+left:7%;
+} 
+.balls:nth-child(14){
+height: 35px;
+width: 35px;
+top: 76%;
+left:88%;
+} 
+.balls:nth-child(15){
+height: 35px;
+width: 35px;
+top: 76%;
+left:65%;
+} 
+@keyframes balls {
+    0%{ 
+    background: radial-gradient(circle,  rgb(240, 243, 84) 14%, rgb(53, 150, 8) 87%, rgb(32, 66, 3) 100%);
+    box-shadow: 0 0 5px rgba(172, 255, 47, 0.548);
+    }
+    15%{
+        background: radial-gradient(circle,  rgb(241, 167, 162) 14%, rgb(240, 11, 11) 87%, rgb(131, 24, 5) 100%);
+    box-shadow: 1px 1px 8px rgb(233, 184, 184),inset -1px -1px 3px rgb(250, 196, 196);
+    }
+    30%{
+        background: radial-gradient(circle,  rgb(252, 105, 220) 14%, rgb(233, 23, 198) 87%, rgb(192, 4, 76) 100%);
+box-shadow: 2px 2px 8px rgb(247, 185, 234), -2px -2px 8px rgb(233, 142, 225);
+
+    }
+    45%{
+        background: radial-gradient(circle,  rgb(151, 160, 243) 14%, rgb(42, 87, 235) 87%, rgb(19, 3, 112) 100%);
+box-shadow: 2px 2px 8px rgb(185, 201, 247), -2px -2px 8px rgb(142, 166, 233);
+
+    }
+    60%{
+        background: radial-gradient(circle,  rgb(245, 248, 39) 14%, rgb(155, 158, 1) 87%, rgb(167, 109, 3) 100%);
+box-shadow: 0 0 8px rgb(245, 229, 12);
+ 
+    }
+    75%{
+        background: radial-gradient(circle,  rgb(128, 241, 226) 14%, rgb(1, 153, 158) 87%, rgb(24, 185, 164) 100%);
+box-shadow: 0 0 8px rgb(92, 231, 201);
+
+    }
+    90%{
+        background: radial-gradient(circle,  rgb(218, 145, 233) 14%, rgb(85, 4, 151) 87%, rgb(47, 0, 65) 100%);
+box-shadow: 0 0 8px rgb(187, 80, 230);
+
+    }
+    100%{
+        background: radial-gradient(circle,  rgb(128, 241, 226) 14%, rgb(1, 153, 158) 87%, rgb(24, 185, 164) 100%);
+box-shadow: 0 0 8px rgb(92, 231, 201);
+
+    }
+}
+.balls1{
+    animation-delay: 0.3s;
+}
+.balls2{
+    animation-delay: 0.6s;
+}
+.balls1{
+    animation-delay: 0.8s;
+}
+.santa{
+    position: absolute;
+    height: 90%;
+    width: 300px;
+    top: 8%;
+    left: 430px;
+    /* background-color: darksalmon;
+    background-image: url(santa.jpg); */
+    background-size: 100% 100%;
+    z-index: 100;
+    /* display: none; */
+}
+.head{
+    position: absolute;
+    height: 53%;
+    width: 50%;
+    top: 0;
+    left: 25%;
+   z-index: 70;
+}
+.cap{
+    position: absolute;
+    height: 63%;
+    width: 90%;
+    top: 0;
+    left: 0%;
+    border-radius: 60% 30% 0 0;
+    background-color: rgb(77, 7, 7);
+    background: radial-gradient(circle,  rgb(243, 58, 98) 14%, rgb(128, 3, 3) 87%, rgb(26, 3, 3) 100%);
+box-shadow: 0 0 8px rgb(43, 4, 4), inset 0 0 8px crimson;
+
+}
+.puff{
+    position: absolute;
+    height: 20%;
+    width: 30%;
+    top: 90%;
+    left: -10%;
+    border-radius: 60%;
+    background-color: rgb(255, 255, 255);
+    background: radial-gradient(circle,  rgb(255, 255, 255) 14%, rgb(209, 202, 202) 87%, rgb(175, 175, 175) 100%);
+box-shadow: 0 0 8px rgb(121, 121, 121), inset 0 0 5px gray;
+    z-index: 80;
+}
+.hood{
+    position: absolute;
+    height: 20%;
+    width: 90%;
+    top: 25%;
+    left: 15%;
+    border-radius: 60% 30% 0 0;
+    background-color: rgb(255, 255, 255);
+    background: radial-gradient(circle,  rgb(255, 255, 255) 14%, rgb(209, 202, 202) 87%, rgb(175, 175, 175) 100%);
+box-shadow: 0 0 8px rgb(121, 121, 121), inset 0 0 5px gray;
+z-index: 80;
+
+}
+.hood::before{
+    content: "";
+    position: absolute;
+    height: 20%;
+    width: 100%;
+    top: 80%;
+    left: 0%;
+    border-radius: 60% 30% 0 0;
+    background-color: rgb(223, 217, 217);
+    background: linear-gradient-gradient(90deg,  rgb(245, 245, 245) 14%, rgb(209, 202, 202) 87%, rgb(148, 137, 137) 100%);
+}
+.beard{
+    position: absolute;
+    height: 80%;
+    width: 90%;
+    top: 26%;
+    left: 10%;
+    border-radius:20% 20% 60% 80% ;
+    background-color: rgb(255, 255, 255);
+    background: radial-gradient(circle,  rgb(255, 255, 255) 14%, rgb(209, 202, 202) 87%, rgb(175, 175, 175) 100%);
+box-shadow: 0 0 8px rgb(121, 121, 121), inset 0 0 5px gray;
+z-index: 70;
+}
+.face{
+    position: absolute;
+    height: 40%;
+    width: 70%;
+    top: 20%;
+    left: 20%;
+    border-radius: 70% 70%;
+    background-color: rgb(224, 169, 123);
+    background: radial-gradient(circle,  rgb(238, 211, 175) 14%, rgb(173, 140, 109) 87%, rgb(109, 70, 43) 100%);
+   z-index: 71;
+}
+.brows{
+    position: absolute;
+    height: 12%;
+    width: 30%;
+    top: 27%;
+    left: 8%;
+    border-radius: 100% 100% 100% 0% ;
+    background: radial-gradient(circle,  rgb(255, 255, 255) 14%, rgb(209, 202, 202) 87%, rgb(175, 175, 175) 100%);
+box-shadow: 0 0 8px rgb(121, 121, 121), inset 0 0 5px gray;
+   z-index: 71;
+   
+}
+.brows:nth-child(2){
+    left: 60%;
+    transform: rotateY(-180deg);
+}
+.eyes{
+    position: absolute;
+    height: 30%;
+    width: 20%;
+    top: 42%;
+    left: 13%;
+    border-radius: 100% 100% 40% 40%;
+    background: radial-gradient(circle,  rgb(255, 255, 255) 14%, rgb(209, 202, 202) 87%, rgb(175, 175, 175) 100%);
+    border: 1px solid black;
+    border-top: 2px solid black;
+    overflow: hidden;
+   z-index: 71;
+   
+}
+
+.eye2{
+    left: 70%;
+}
+.pupil{
+    position: absolute;
+    height: 80%;
+    width: 100%;
+    top: 32%;
+    left: 13%;
+    border-radius: 100%;
+    background: radial-gradient(circle,  rgb(71, 58, 165) 4%, rgb(15, 47, 190) 37%, rgb(3, 0, 22) 100%);
+   
+}
+.cornea{
+    position: absolute;
+    height: 60%;
+    width: 60%;
+    top: 20%;
+    left: 13%;
+    border-radius: 100%;
+    background: radial-gradient(circle,  rgb(82, 80, 94) 4%, rgb(0, 0, 0) 37%, rgb(3, 0, 22) 100%);
+}
+.cornea::before{
+    content: "";
+    position: absolute;
+    height: 30%;
+    width: 30%;
+    top: 0%;
+    left: 3%;
+    border-radius: 100%;
+    background: radial-gradient(circle,  rgb(255, 255, 255) 4%, rgb(255, 255, 255) 37%, rgb(186, 177, 240) 100%);
+}
+.cornea::after{
+    content: "";
+    position: absolute;
+    height: 20%;
+    width: 20%;
+    top: 80%;
+    left: 23%;
+    border-radius: 100%;
+    background: radial-gradient(circle,  rgb(255, 255, 255) 4%, rgb(201, 168, 168) 37%, rgb(177, 173, 202) 100%);
+}
+.nose{
+    position: absolute;
+    height: 30%;
+    width: 25%;
+    top: 50%;
+    left: 38%;
+    border-radius: 100%;
+    background-color: rgb(224, 169, 123);
+    background: radial-gradient(circle,  rgb(238, 211, 175) 14%, rgb(173, 140, 109) 87%, rgb(109, 70, 43) 100%);
+  box-shadow: 0 0 8px rgb(49, 29, 18), inset 0 0 5px rgb(49, 21, 3);
+  
+}
+.mustache{
+    position: absolute;
+    height: 30%;
+    width: 60%;
+    top: 78%;
+    left: 0%;
+    border-radius: 0% 100% 100% 100%;
+    background: radial-gradient(circle,  rgb(255, 255, 255) 14%, rgb(209, 202, 202) 87%, rgb(175, 175, 175) 100%);
+box-shadow: 0 0 8px rgb(121, 121, 121), inset 0 0 5px gray;
+   z-index: 80;
+   transform: rotate(-10deg);
+
+}
+.mustache2{
+    left: 42%;
+    transform: rotate(190deg);
+    border-radius: 100% 100% 100% 0;
+   
+}
+.mouth{
+    position: absolute;
+    height: 25%;
+    width: 30%;
+    top: 90%;
+    left: 35%;
+    border-radius: 100%;
+    background: rgb(233, 26, 26);
+    background: radial-gradient(circle,  rgb(0, 0, 0) 14%, rgb(219, 24, 24) 87%, rgb(53, 1, 8) 100%);
+    box-shadow: inset 5px 5px 5px rgb(20, 12, 12);
+    border-bottom: 2px solid rgb(20, 9, 1);
+   z-index: 71;
+}
+
+.body{
+    position: absolute;
+    height: 45%;
+    width: 70%;
+    top: 35%;
+    left: 18%;
+    border-radius: 60% 60% 40% 40%;
+    background-color: rgb(77, 7, 7);
+    background: radial-gradient(circle,  rgb(243, 58, 98) 14%, rgb(128, 3, 3) 87%, rgb(26, 3, 3) 100%);
+box-shadow: 0 0 8px rgb(43, 4, 4), inset 0 0 8px crimson;
+z-index: 50;
+}
+.white{
+    position: absolute;
+    height: 30%;
+    width: 70%;
+    top: 54%;
+    left: 18%;
+    border-radius: 60% 60% 40% 40%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 0 8px rgb(0, 0, 0), inset 0 0 8px rgb(0, 0, 0);
+  z-index: 45;
+}
+.belt{
+    position: absolute;
+    height: 10%;
+    width: 104%;
+    top: 65%;
+    left: -2%;
+    border-radius: 10%;
+    background-color: rgb(77, 7, 7);
+  box-shadow: 0 0 8px rgb(43, 4, 4), inset 0 0 8px crimson;
+z-index: 100;
+}
+.hook{
+    position: absolute;
+    height: 110%;
+    width: 20%;
+    top: -5%;
+    left: 40%;
+    border-radius: 20%;
+    background-color: rgba(77, 7, 7, 0);
+  box-shadow: 0 0 8px rgb(43, 4, 4), inset 0 0 8px crimson;
+  border: 5px solid goldenrod;
+
+}
+.stripe{
+    position: absolute;
+    height: 100%;
+    width: 20%;
+    top: 0%;
+    left: 40%;
+    border-radius: 20%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: inset 0 0 8px rgb(0, 0, 0);
+
+}
+.leg{
+    position: absolute;
+    height: 15%;
+    width: 20%;
+    top: 80%;
+    left: 30%;
+    border-radius: 20%;
+      background-color: rgb(77, 7, 7);
+    background: radial-gradient(circle,  rgb(243, 58, 98) 14%, rgb(128, 3, 3) 87%, rgb(26, 3, 3) 100%);
+box-shadow: 0 0 8px rgb(43, 4, 4), inset 0 0 8px crimson;
+
+}
+.leg2{
+    left: 60%;
+    
+}
+
+.sucks{
+    position: absolute;
+    height: 40%;
+    width: 104%;
+    top: 60%;
+    left: -2%;
+    border-radius: 20%;
+    background: radial-gradient(circle,  rgb(255, 255, 255) 14%, rgb(209, 202, 202) 87%, rgb(175, 175, 175) 100%);
+box-shadow: 0 0 8px rgb(121, 121, 121), inset 0 0 5px gray;
+}
+.shoe{
+    
+    position: absolute;
+    height: 50%;
+    width: 150%;
+    top: 92%;
+    left: -46%;
+    border-radius: 50%;
+    background: radial-gradient(circle,  rgb(48, 46, 46) 14%, rgb(26, 23, 23) 87%, rgb(27, 25, 25) 100%);
+box-shadow: 0 0 8px rgb(0, 0, 0), inset 0 0 5px gray;
+transform: rotate(-15deg);
+}
+.leg2 .shoe{
+    left: -4%;
+    transform: rotate(15deg);
+}
+.hands{
+       
+    position: absolute;
+    height: 12%;
+    width: 45%;
+    top: 37%;
+    left: -5%;
+    border-radius: 20%;
+    background-color: rgb(77, 7, 7);
+    background: radial-gradient(circle,  rgb(243, 58, 98) 14%, rgb(128, 3, 3) 87%, rgb(26, 3, 3) 100%);
+box-shadow: 0 0 8px rgb(43, 4, 4), inset 0 0 8px crimson;
+}
+.hand1{
+    transform: rotate(-50deg);
+    animation: hand1 2s infinite ease;
+    border-top-right-radius: 100%;
+    top:44%;
+    width: 40%;
+}
+@keyframes hand1 {
+    0%{
+        transform: rotate(-50deg); 
+    }
+    60%{
+        transform: rotate(-40deg); 
+    }
+}
+@keyframes hand2 {
+    0%{
+        transform: rotate(150deg); 
+    }
+    60%{
+        transform: rotate(140deg); 
+    }
+}
+.hand2{
+    left: 72%;
+    transform: rotate(150deg);
+    animation: hand2 2s infinite ease;
+   
+}
+.sleeve{
+    position: absolute;
+    height: 104%;
+    width: 19%;
+    top: -2%;
+    left: 0%;
+    border-radius: 20%;
+    background: radial-gradient(circle,  rgb(255, 255, 255) 14%, rgb(209, 202, 202) 87%, rgb(175, 175, 175) 100%);
+box-shadow: 0 0 8px rgb(121, 121, 121), inset 0 0 5px gray;
+}
+.glove{
+    position: absolute;
+    height: 150%;
+    width: 50%;
+    top: -25%;
+    left: -45%;
+    border-radius: 60% 60% 40% 40%;
+    background-color: rgb(77, 7, 7);
+    background: radial-gradient(circle,  rgb(243, 58, 98) 14%, rgb(128, 3, 3) 87%, rgb(26, 3, 3) 100%);
+box-shadow: 0 0 8px rgb(43, 4, 4), inset 0 0 8px csantarimson;
+}
+.glove::after{
+    content: "";
+    position: absolute;
+    height: 50%;
+    width: 40%;
+    top: 75%;
+    left: 55%;
+    border-radius: 100% 100%;
+    background-color: rgb(77, 7, 7);
+    background: radial-gradient(circle,  rgb(163, 28, 58) 14%, rgb(128, 3, 3) 87%, rgb(26, 3, 3) 100%);
+box-shadow: 0 0 8px rgb(43, 4, 4), inset 0 0 8px crimson;
+z-index: -1;
+transform: rotate(15deg);
+}
+.hand1 .glove::after{
+    display: none;
+}
+.message{
+    position: absolute;
+    left: 850px;
+    color: rgb(199, 245, 185);
+    -webkit-text-stroke: 2px rgb(187, 241, 182);
+    font-size: 30px;
+    font-weight: bolder;
+    letter-spacing: 5px;
+
+}
+.ribbon{
+    position: relative;
+      background-color: rgb(77, 7, 7);
+    background: radial-gradient(circle,  rgb(163, 28, 58) 14%, rgb(128, 3, 3) 87%, rgb(26, 3, 3) 100%);
+box-shadow: 0 0 8px rgb(43, 4, 4), inset 0 0 8px crimson;
+margin-top: 80px;
+transform: rotate(-10deg);
+z-index: 2;
+width: fit-content;
+height: fit-content;
+}
+ .ribbon span{
+    background-color: rgb(77, 7, 7);
+    background: radial-gradient(circle,  rgb(163, 28, 58) 14%, rgb(128, 3, 3) 87%, rgb(26, 3, 3) 100%);
+box-shadow: 0 0 8px rgb(43, 4, 4), inset 0 0 8px crimson;
+padding: 20px;
+width: 100%;
+ }
+ .happy{
+     margin-top: 130px;
+ }
+.merry::before{
+    content: "";
+    position: absolute;
+    top: -250%;
+    left:  0;
+    width: 60%;
+    height: 40%;
+      background-color: rgb(77, 7, 7);
+    background: radial-gradient(circle,  rgb(51, 25, 31) 14%, rgb(128, 3, 3) 87%, rgb(194, 21, 21) 100%);
+box-shadow: 0 0 8px rgb(43, 4, 4), inset 0 0 8px crimson;
+padding: 15px;
+margin-top: 30px;
+transform: rotate(-30deg);
+z-index: -1;
+}
+ .merry::after{
+    content: "&";
+    position: absolute;
+    top: 100%;
+    right:  0;
+    width: 100%;
+    height: 40%;
+      background-color: rgb(77, 7, 7);
+    background: radial-gradient(circle,  rgb(51, 25, 31) 14%, rgb(128, 3, 3) 87%, rgb(194, 21, 21) 100%);
+box-shadow: 0 0 8px rgb(43, 4, 4), inset 0 0 8px crimson;
+padding: 15px;
+margin-top: 30px;
+transform: rotate(-30deg);
+z-index: -1;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+ .happy::after{
+    content: "from";
+    position: absolute;
+    top: 100%;
+    right:  0;
+    width: 100%;
+    height: 40%;
+      background-color: rgb(77, 7, 7);
+    background: radial-gradient(circle,  rgb(51, 25, 31) 14%, rgb(128, 3, 3) 87%, rgb(194, 21, 21) 100%);
+box-shadow: 0 0 8px rgb(43, 4, 4), inset 0 0 8px crimson;
+padding: 15px;
+margin-top: 30px;
+transform: rotate(-30deg);
+z-index: -1;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.kemi{
+    margin-top: 130px;
+}
+</style>
+<body>
+    <div class="floor"></div>
+    <div class="container">
+        <div class="message">
+            <div class="merry ribbon"> <span>merryChristmas</span></div>
+            
+            <div class="happy ribbon"> <span> happyNewYear </span> </div> 
+            <div class="kemi ribbon"> <span> KemiOwoyele </span> </div> 
+        </div>
+        <div class="santa">
+            <div class="head">
+                <div class="cap">
+                    <div class="puff"></div>
+                    <div class="hood"></div>
+                </div>
+                <div class="face">
+                    <div class="brows"></div>
+                    <div class="brows"></div>
+                    <div class="eyes eye1">
+                        <div class="pupil">
+                            <div class="cornea"></div>
+                        </div>
+                    </div>
+                    <div class="eyes eye2">
+                        <div class="pupil">
+                            <div class="cornea"></div>
+                        </div>
+                    </div>
+                    <div class="nose"></div>
+                    <div class="mustache"></div>
+                    <div class="mustache mustache2"></div>
+                    <div class="mouth"></div>
+                </div>
+                <div class="beard"></div>
+            </div>
+
+            <div class="body">
+                <div class="belt">
+                    <div class="hook"></div>
+                </div>
+                <div class="stripe"></div>
+            </div>
+            <div class="white"></div>
+            
+                <div class="shoe"></div>
+           <div class="leg">
+                <div class="sucks"></div>
+             </div>
+            <div class="leg leg2">
+                <div class="sucks"></div>
+           
+                <div class="shoe"></div>
+            </div>
+            <div class="hand1 hands">
+                <div class="glove"></div>
+                <div class="sleeve"></div>
+          
+            </div>
+            <div class="hand2 hands">
+                <div class="glove"></div>
+                <div class="sleeve"></div>
+            </div>
+        </div>
+
+
+            
+        <div class="tree">
+            <div class="star"></div>
+            <div class="balls balls1"></div>
+            <div class="balls balls1"></div>
+            <div class="balls balls3"></div>
+            <div class="balls"></div>
+            <div class="balls balls2"></div>
+            <div class="balls balls3"></div>
+            <div class="balls balls1"></div>
+            <div class="balls"></div>
+            <div class="balls balls1"></div>
+            <div class="balls balls2"></div>
+            <div class="balls balls3"></div>
+            <div class="balls"></div>
+            <div class="balls balls1"></div>
+            <div class="balls balls2"></div>
+            <div class="balls balls3"></div>
+            <div class="tree-trunk">
+                <div class="triangles">
+                    
+                </div>
+                <div class="triangles">
+                    
+                </div>
+                <div class="triangles">
+                    
+                </div>
+                <div class="triangles">
+                    
+                </div> 
+                <div class="triangles">
+                    
+                </div>
+        
+            </div>
+            <div class="stem"></div>
+            <div class="shadow"></div>
+        </div>
+    
+
+    </div>
+</body>
+</html>

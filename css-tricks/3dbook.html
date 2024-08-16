@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3d book mock up</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+
+    body {
+        background: linear-gradient(to right, #16272e, #768388), url(images/glass2.jpg);
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        background-blend-mode: multiply;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .book {
+        position: relative;
+        top: 0;
+        width: 400px;
+        height: 600px;
+        background: white;
+        transform: rotate(-37.5deg) skew(10deg) translate(20px, -20px);
+        box-shadow: -50px 50px 100px black;
+    }
+
+
+    .book::before {
+        content: "";
+        width: 30px;
+        height: 100%;
+        background: #580707;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: skewY(-45deg) translate(-30px, -15px);
+        box-shadow: inset -10px 0 20px rgba(58, 0, 0, 0.222);
+        background: url(images/1.png);
+        background-size: cover;
+
+    }
+
+    .book::after {
+        content: "";
+        width: 100%;
+        height: 30px;
+        background: #ccc;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transform: skewX(-45deg) translate(15px, 30px);
+        box-shadow: inset -10px 0 20px rgb(58, 0, 0);
+    }
+
+    .book h2 {
+        position: absolute;
+        bottom: 100px;
+        left: 20px;
+        font-size: 5em;
+        line-height: 1em;
+        color: white;
+    }
+
+    .book h2 span {
+        background: url(images/glass1.jpg);
+        background-attachment: fixed;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .book .writer {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        color: #262626;
+        font-size: 0.6em;
+        padding-top: 5px;
+        font-weight: 500;
+        border-top-left-radius: 1px solid #252626;
+    }
+
+    .book .writter i {
+        font-weight: 700;
+    }
+
+    .book .cover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 70%;
+        background: url(images/1.png);
+        background-size: cover;
+    }
+</style>
+
+<body>
+    <div class="book">
+        <div class="cover"></div>
+
+    </div>
+</body>
+
+</html>

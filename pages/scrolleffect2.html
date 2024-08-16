@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>scroll effect with circle reveal</title>
+</head>
+<style>
+ *{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: 'poppins',sans-serif;
+ }
+ section{
+     position: fixed;
+     top:0;
+     left: 0;
+     width:100%;
+     height: 100vh;
+     background: url(../images/001.jpg);
+     background-attachment: fixed;
+     background-size: 100% 100%;
+     clip-path: circle(0 at center);
+ }
+ .container{
+     position: relative;
+     margin-top: 200vh;
+     background: #fff;
+     padding: 100px;
+ }
+ .container h2{
+     font-size: 2.5em;
+ }
+ .title{
+     position:relative;
+     top:250px;
+     z-index: 1;
+     font-size: 3em;
+     text-align: center;
+     width: 100%;
+ }
+</style>
+<body>
+    <h2 class="title">Scroll to see Magic Again...</h2>
+    <section></section>
+    <div class="container">
+        <h2>Also watch part 1 and 2 in Video Description</h2>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore deleniti accusantium esse officiis dolorum magni dolore aliquam eligendi nulla deserunt dicta iusto, necessitatibus voluptate illo obcaecati nam laborum unde natus.
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus aliquid quidem praesentium. Et qui dignissimos voluptate, rem modi doloribus eos repellendus voluptates. Molestias laudantium quisquam error nostrum natus perferendis <delectus class="br">
+            <br>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam similique dolor quis qui impedit aut. Esse recusandae ullam molestiae labore possimus temporibus, aut ducimus delectus fugit corporis doloremque quos similique?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas est quod nisi modi molestiae quos incidunt! Officiis cumque iusto non accusantium ad asperiores obcaecati quaerat ex. Repudiandae voluptas culpa tempore.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod corrupti quas culpa sequi nostrum qui recusandae. Quae quasi, non incidunt velit, magnam totam odit, voluptatum inventore facilis labore officia ex.
+        <br>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae illo necessitatibus et quasi facere laborum tenetur quibusdam maiores ut voluptatum assumenda, nemo deleniti quaerat ex. Rerum aspernatur neque in debitis.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores pariatur facere ipsa vero nobis corporis minima voluptas, molestiae reiciendis tenetur debitis. Modi, magni assumenda quas enim praesentium deserunt ut sint!
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae tempore dolor rerum a deserunt quas labore accusantium voluptatibus fugiat eum dolorum suscipit voluptates praesentium tenetur aliquam facere, aliquid quam officiis?
+        </p>
+    </div>
+<Script>
+var section = document.querySelector('section');
+window.addEventListener('scroll', function(){
+  
+    var value = window.scrollY;
+    section.style.clipPath =" circle("+ value + "px at center)"
+})
+</Script>
+</body>
+</html>

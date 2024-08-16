@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>exit page</title>
+    <link rel="stylesheet" type="text/css" href="../css/exit.css">
+
+</head>
+<style >
+  #exitGame{
+    display: block;
+  }
+</style>
+<body>
+
+        <div id="exitGame">
+                    <div id="exitOverlay"></div>
+                     <div id="exit1">
+                    <div id="exit2">
+                     <div id="exit3">
+   
+                      <div id="question"></div>
+                    <div id="yes" onclick="appexit();"></div>
+                    <div id="no" onclick="window.location = 'hard.html' "></div>
+                  </div>
+          </div>
+        </div>
+                    
+        </div>  
+     <script >
+       
+function appexit() {
+navigator.app.exitApp (); }
+
+document.addEventListener("backbutton", backKeyDown, true); 
+
+function backKeyDown() { 
+appexit();
+}
+     </script>
+       <script src="../cordova.js"></script>
+
+     </body>
+</html>

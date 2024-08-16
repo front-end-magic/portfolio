@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3d CSS with Amit Sheen</title>
+</head>
+<style>
+body{
+    background-color: rgb(133, 141, 113);
+    perspective: 900px;
+}
+    .test{
+        width: 100px;
+        height: 100px;
+        background-color: rgb(1, 1, 46);
+        margin: 50px 100px;
+        display: inline-block;
+        font-size: 90px;
+        text-align: center;
+        color: aquamarine;
+    }
+    .x{
+        animation: x 2s ease infinite;
+    }
+    .y{
+        animation: y 2s ease infinite;
+        box-shadow: 30px 30px 30px red;
+    }
+    .z{
+        animation: z 2s ease infinite;
+        transform: rotateZ(0deg) perspective(800px);
+
+         }
+    @keyframes x {
+        100%{
+            transform: rotateX(360deg);
+        }
+    }
+    @keyframes y {
+        100%{
+            transform: rotateY(360deg);
+        }
+    }
+    @keyframes z {
+        100%{
+            transform: rotateZ(360deg) perspective(800px);
+
+        }
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="x test">X</div>
+        <div class="y test">Y</div>
+        <div class="z test">Z</div>
+    </div>
+</body>
+</html>

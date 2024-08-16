@@ -1,0 +1,190 @@
+*{
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	 background-size: 100% 100%;
+    background-repeat: no-repeat;
+   font-weight: bolder;
+}
+
+
+
+body{
+	margin: 0;
+	font-family:'Segoe UI',Tahoma, Geneva, Verdana, sans-serif;
+	font-size: 15px;
+	line-height:1.5;
+	color: #333;
+	overflow-x: hidden; 
+	 
+	 /*background-image: url('../images/start.gif');*/
+ background-size: 100vw 100vh;
+   
+	}
+
+
+
+
+#score{
+	position: absolute;
+	height: 7%;
+	width: 100%;
+	left: 0;
+		font-size:10px;
+	 font-weight: bold;
+   color: blue;
+    text-align: center;
+    padding: 3px;
+    z-index: 20;
+    background-color: deeppink;
+   /*background-image:  linear-gradient( rgba(255,55,200), pink, rgba(255,55,200));*/
+   background-image: url(../image2/blue1.png);
+   box-shadow: 5px 5px 25px 3px green; 
+   z-index: 50;
+ }
+/*#scoretop{
+	height: 50%;
+	width: 100%;
+ background-color: green;
+   	position: absolute;
+	top: 0;
+	left: 0;
+   z-index:30;
+   background-size: 10% 10%;
+	background-repeat: repeat;
+    background-image: url('../image2/24.gif');
+ }*/
+#scoretop1, #scoretop2{
+	 height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	
+}
+#scoretop1{
+  background-image: url('../image2/65.png');
+     z-index:40;
+     	position: absolute;
+
+
+}
+#scoretop2{
+	  z-index:21;
+ background-image:  linear-gradient( rgba(150,220,0,1), rgba(0,255,0,1),rgba(150,220,0,1)); 
+  	 /*background-image: url('../image2/jhjh.png');*/
+  
+}
+#scoredown{
+	width: 100%;
+	height: 100%;
+	 	position: absolute;
+	top:0;
+	left:0 ;
+   z-index:40;
+     	text-align: center;
+	 	color: yellow;
+	  padding-bottom: 2px;
+
+}
+#point{
+height: 100%;
+	width: 35%;
+	left: 0;
+	position: absolute;
+	display: inline;
+	/*border: 5px solid blue;*/
+}
+#points{
+height: 50%;
+	width: 100%;
+	 	left: 0;
+	 		  /*background-image: url('../image2/asas.png');*/
+   font-weight: bolder;
+   font-size: 15px;
+	 }
+	 #point1{
+	 	height: 50%;
+	width: 100%;
+	 	margin-left: 5px;
+	 	background-color: rgba(20,20,20,0.2);
+	 	border:1px ridge pink;
+	 	border-radius: 30%;
+        padding:2px;
+       
+	 }
+	/* #coins{
+     height: 100%;
+	width: 20%;
+	left: 31%;
+	position: absolute;
+	display: inline;
+	
+	 }
+	 #coin1{
+height: 50%;
+	width: 100%;
+	 	left: 0;
+	 	text-align: center;
+	 	 background-image: url('../image2/gem.gif');
+  border:1px solid rgba(234,243,34,0.4);
+  border-radius: 50%;
+  background-color: rgba(234,243,34,0.4);
+  box-shadow: 0 0 10px rgba(234,243,245,1),
+            0 0 30px rgba(234,243,245,1),
+            0 0 60px rgba(234,243,245,1),
+            0 0 100px rgba(234,243,245,1);
+
+	 }
+	 #coin2{
+	 	height: 50%;
+	    width: 100%;
+	 	margin-left: 5px;
+	 	background-color: rgba(20,20,20,0.2);
+	 	border:1px ridge pink;
+	 	border-radius: 30%;
+        padding:2px;
+    }*/
+	 #pause{
+	 	  height: 90%;
+	width: 20%;
+	left: 40%;
+	position: absolute;
+	display: inline;
+	  background-image: url('../image2/button.png');
+  padding: 2px;
+  top: 5%;
+  color: yellow;
+  font-weight: bold;
+  font-size: 20px;
+   }
+
+	
+
+#life{
+	height: 100%;
+	width: 35%;
+	left: 65%;
+	position: absolute;
+	display: inline;
+	}
+#life1{
+    height: 100%;
+    width: 40%;
+    position: absolute;
+    background-image: url('../images/dancers/4.png');
+ 
+}
+#life2{
+		height: 90%;
+	    width: 50%;
+	 	left: 45%;
+	 	top: 5%;
+	 	background-color: rgba(20,20,20,0.2);
+	 	border:1px ridge pink;
+	 	border-radius: 30%;
+        padding:2px;
+        font-size:20px;
+         color: gold;
+       position: absolute;
+  
+}

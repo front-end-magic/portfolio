@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>spin Wheel</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            outline: none;
+        }
+        body{
+            font-family: Open Sans;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            /* background: #f44336; */
+            background-color: #0f5a50;
+            background: url(../images/space.gif),
+                        linear-gradient(90deg, #c20fda 13%, rgb(238, 148, 230) 59%, #d509e7 100%) ;
+            background-size: cover;
+            background-blend-mode: screen;
+        }
+        .mainbox{
+            position: relative;
+            width: 560px;
+            height: 560px;
+        }
+        .arrow{
+            position: absolute;
+            width: 32px;
+            height: 32px;
+            font-weight: 900;
+            font-size: 40px;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index:20;
+        }
+         .boxb{
+            padding: 30px;
+            height: 100%;
+            width: 100%;
+            position: relative;
+            border-radius: 50%;
+            box-shadow: 2px 2px 20px black,
+                        -2px -2px 20px black;
+            background-color: #4caf50;
+           background: linear-gradient(45deg, #4caf50 13%, rgb(206, 248, 189) 59%, #4caf50 100%), url(../images/space.gif);
+            background-size: cover;
+            background-blend-mode: screen;
+       
+        } 
+         .box{
+            width: 500px;
+            height: 500px;
+            position: relative;
+            border-radius: 50%;
+            border: 10px solid #fff;
+            /* overflow: hidden; */
+            transition: all ease 1s;
+            box-shadow: 2px 2px 20px black,
+                        -2px -2px 20px black;
+       
+        } 
+        span{
+            width: 50%;
+            height: 50%;
+            display: inline-block; 
+            position: absolute;
+            clip-path: polygon(0 0, 50% 100%, 100% 0);
+        }
+        .span1{
+              background-color: #ffeb2b;
+            background: linear-gradient(45deg, rgb(255, 136, 0) 13%, rgb(231, 228, 221) 59%, rgba(255, 123, 0, 0.9) 100%);
+            background-size: 5px 5px;
+            top: 0px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .span2{
+            background-color: #df0bdf;
+            background: linear-gradient(45deg, rgb(250, 5, 168) 13%, rgb(248, 183, 221) 59%, rgb(255, 8, 181) 100%);
+            background-size: 5px 5px;
+            top: 10%;
+            left: 45%;
+            transform:  rotate(53deg);
+        
+        }
+         .span3{
+           background-color: #4caf50;
+           background: linear-gradient(45deg, #4caf50 13%, rgb(206, 248, 189) 59%, #4caf50 100%);
+            background-size: 5px 5px;
+            top: 32%;
+            left: 49%;
+            transform:  rotate(106deg);
+       
+        }
+        .span4{
+            background-color: #3f51b5;
+            background: linear-gradient(45deg, rgb(0, 183, 255) 13%, rgb(231, 228, 221) 59%, rgba(0, 119, 255, 0.9) 100%);
+            background-size: 5px 5px;
+            top: 48%; 
+            left: 34%;
+            transform:  rotate(159deg);
+       
+        }
+        .span5{
+            background-color: #3f51b5;
+            background: linear-gradient(45deg, rgb(255, 0, 0) 13%, rgb(243, 237, 243) 59%, rgba(255, 0, 0, 0.9) 100%);
+            background-size: 5px 5px;
+            top: 46%; 
+            left: 12%;
+            transform:  rotate(212deg);
+       
+        }
+        .span5::after{
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: -5px;
+            border-radius: 50%;
+            height: 20px;
+            width: 20px;
+            background-color: red;
+            border: 5px solid blue;
+        }
+        .span6{
+            background-color: #3f51b5;
+            background: linear-gradient(45deg, rgb(8, 109, 87) 13%, rgb(118, 230, 215) 59%, rgba(6, 155, 135, 0.9) 100%);
+            background-size: 5px 5px;
+            top: 28%; 
+            left: 0%;
+            transform:  rotate(263deg);
+       
+        }
+        .span7{
+            background-color: #3f51b5;
+            background: linear-gradient(45deg, rgb(4, 10, 41) 13%, rgb(118, 135, 230) 59%, rgba(1, 10, 41, 0.9) 100%);
+            background-size: 5px 5px;
+            top: 9%; 
+            left: 6%;
+            transform:  rotate(310deg);
+       
+        }
+       
+        span b{
+            width: 65px;
+            height: 65px;
+            line-height: 65px;
+            border-radius: 50%;
+            font-size: 26px;
+            text-align: center;
+            background-color: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: inset 0 0 5px #717171;
+        }
+        .spin{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            border: 4px solid #fff;
+            color: #fff;
+            box-shadow: 0 5px 20px #000;
+            font-weight: bold;
+            font-size: 22px;
+            cursor: pointer;
+            text-shadow:1px 1px #c20fda, -1px -1px #c20fda;
+            background-color: #0f5a50;
+            background: conic-gradient( #094d4d 13%, rgb(148, 238, 227) 59%, #0d534a 100%),
+                        url(../images/space.gif),
+                        linear-gradient(90deg, #c20fda 13%, rgb(238, 148, 230) 59%, #d509e7 100%) ;
+            background-size: cover;
+            background-blend-mode: screen;
+       
+          }
+          .spin:active{
+              width: 70px;
+              height: 70px;
+              font-size: 20px;
+          }
+               
+          .arrow.animate{
+              animation: animateArrow 0.7s ease infinite;
+          }
+          .spin-display1{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            border-radius: 50%;
+            border: 10px solid #fff;
+            /* overflow: hidden; */
+            transition: all ease 1s;
+            box-shadow: 2px 2px 20px black,
+                        -2px -2px 20px black;
+            background-color: white;
+       
+        }
+        .spin-display2{
+            width: 0%;
+            height: 0%;
+            position: absolute;
+            top: 100vh;
+            left: 100vw;
+        }
+        .spin-board{
+            transition: 2s ease;
+            z-index: 100;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size:100px;
+            background-color: #4caf50;
+           background: linear-gradient(45deg, #4caf50 13%, rgb(206, 248, 189) 59%, #4caf50 100%), url(../images/space.gif);
+            background-blend-mode: screen;
+        }
+          @keyframes animateArrow{
+            50%{
+                  right: -50px;
+              }
+              100%{
+                  right: -30px;
+              }
+          }
+    </style>
+</head>
+<body>
+    <div class="mainbox">
+       <div class="spin-board"></div>
+        <div class="arrow"> <= </div>
+        <div class="boxb">
+    
+      <div class="box" id="box">
+          
+        <div class="box1">
+            <span class="span1"><b>50</b></span>
+           <span class="span2"><b>150</b></span>
+              <span class="span3"><b>250</b></span>
+            <span class="span4"><b>350</b></span>
+            <span class="span5 "><b>10</b></span>
+             <span class="span6"><b>110</b></span>
+            <span class="span7"><b>210</b></span>
+               <!-- <span class="span4"><b>310</b></span> -->
+        </div>
+      
+      </div>
+      <button class="spin" onclick="myfunction()">SPIN</button>
+    </div>
+    <script>
+         let span5 = document.querySelector(".span5");
+         let arrow = document.querySelector(".arrow");
+         let spinDisplay = document.querySelector(".spin-board");
+        function myfunction(){
+
+           var minValue = 1024;
+           var maxValue = 20999; 
+           var deg = Math.floor(Math.random() * (minValue - maxValue)) + maxValue;
+           var mod = deg % 360;
+           var box = document.getElementById('box');
+           box.style.transform = `rotate(${deg}deg)`;
+           arrowR = arrow.getBoundingClientRect();
+           console.log(`arrow top =${arrowR.top}`)
+           span5R = span5.getBoundingClientRect();
+        //    arrow.classList.remove('animate');
+           setTimeout(function(){
+            //    arrow.classList.add('animate');
+            console.log(`span5 top =${span5R.top} and span5 bottom = ${span5R.bottom}`)
+      
+             spinDisplay.classList.remove('spin-display2');
+          
+            spinDisplay.classList.add('spin-display1');
+            // console.log(mod);
+         
+            if(span5R.top < arrowR.top + arrowR.width &&
+   span5R.top + span5R.width > arrowR.top &&
+   span5R.bottom < arrowR.bottom + arrowR.height &&
+   span5R.bottom + span5R.height > arrowR.bottom){
+              
+                spinDisplay.textContent = "10"
+            }
+            else{
+                spinDisplay.textContent = "try again"
+           
+            }
+           }, 1300);
+           setTimeout(function(){
+            spinDisplay.classList.remove('spin-display1');
+            spinDisplay.classList.add('spin-display2');
+          
+            
+           }, 5000)
+        //    setTimeout(function(){
+        //     document.getElementById('box').style.transform = `rotate(0deg)`;
+        
+            
+        //    }, 6000)
+                  }
+    </script>
+</body>
+</html>

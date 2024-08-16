@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS fire flame</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            max-width: 100vw;
+            max-height: 100vh;
+            overflow: hidden;
+            background-color: aqua;
+            background: linear-gradient(rgb(100, 76, 80), rgb(48, 61, 63), rgb(39, 65, 39), rgb(0, 48, 48));
+        }
+
+        .fire {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            transform: translate(-50%, -50%) rotate(-35deg);
+            top: 50%;
+            left: 50%;
+            background: rgb(255, 0, 0);
+            border-radius: 100% 0% 51% 49% / 55% 26% 74% 45%;
+            filter: url(#wavy);
+            animation: animate-fire 0.01s infinite ease-in-out;
+            box-shadow: 1px 1px 5px rgb(255, 1, 1),
+                2px 2px 5px rgb(255, 0, 0);
+
+        }
+
+        @keyframes animate-fire {
+            0% {
+                transform: translate(-50%, -50%) rotate(-35deg) skewX(5deg);
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: translate(-50%, -50%) rotate(-35deg) skewX(-5deg);
+                opacity: 0.9;
+            }
+        }
+
+        .fire::after {
+            content: "";
+            position: absolute;
+            width: 50%;
+            height: 50%;
+            top: 40%;
+            left: 15%;
+            transform: scaleX(1.7) rotate(-28deg) skew(-15deg);
+            background: rgb(238, 255, 0);
+            border-radius: 100% 0% 51% 49% / 55% 26% 74% 45%;
+            filter: url(#wavy);
+            box-shadow: 1px 1px 2.5px rgb(255, 208, 0),
+                2px 2px 5px yellow;
+
+        }
+
+        .fire::before {
+            content: "";
+            position: absolute;
+            width: 30%;
+            height: 10%;
+            top: 80%;
+            left: 10%;
+            transform: scaleX(1) rotate(150deg) skew(-15deg);
+            background: rgba(0, 0, 0, 0.637);
+            border-radius: 50%;
+            filter: url(#wavy);
+            z-index: 11111;
+            box-shadow: 1px 1px 2px blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="fire"></div>
+        <svg>
+            <filter id="wavy">
+                <feTurbulence x='0' y='0' baseFrequency="0.009" numOctaves='10' seed='10'>
+                    <animate attributeName="baseFrequency" dur="3s" values="0.2;0.5;0.2" repeatCount="indefinite">
+                    </animate>
+                </feTurbulence>
+                <feDisplacementMap in='SourceGraphic' scale='10'></feDisplacementMap>
+            </filter>
+        </svg>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS Train for kids</title>
+</head>
+<style>
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    width:100vw;
+    overflow: hidden;
+    background-color: aqua;
+    background-image: url(images/1.jpg);
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+}
+.train-container{
+width: 90%;
+height: 70%;
+top: 20%;
+position: absolute;
+left: 5%;
+animation: train 20s infinite forwards;
+}
+@keyframes train{
+    0%{
+        left: 100%;
+    }
+    100%{
+        left: -90%;
+    }
+}
+.coach{
+  height: 70%;
+  width: 18%;
+  position: absolute;
+  top: 30%;
+}
+.coach1{
+    left: 38%;
+    transform: rotate(-5deg);
+    animation: pole 1s infinite forwards;
+}
+.coach2{
+    left: 60%;
+    transform: rotate(-1deg);
+    animation: coach2 1s infinite forwards;
+}
+@keyframes coach2{
+    100%{
+        transform: rotate(1deg);
+    }
+}
+.coach3{
+    left: 80%;
+    transform: rotate(4deg);
+    animation: coach2 1s infinite forwards;
+
+}
+
+@keyframes coach3{
+    100%{
+        transform: rotate(-1deg);
+    }
+}
+.first-layer{
+    height: 50%;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+   border-radius: 15px;
+   box-shadow: 0 0 10px rgb(0, 0, 0), inset 0 0 10px rgb(0, 0, 0);
+  
+}
+.coach1 .first-layer{
+  /* background-color: rgb(5, 17, 70); */
+  background: rgb(7,14,80);
+background: linear-gradient(0deg, rgba(7,14,80,1) 0%, rgba(39,14,107,1) 25%, rgba(115,122,246,1) 41%,
+ rgba(217,214,236,1) 60%, rgba(66,107,217,1) 75%, rgba(9,20,107,1) 89%, rgba(4,5,52,1) 100%);
+ }
+ .coach2 .first-layer{
+    background: rgb(17,80,7);
+background: linear-gradient(0deg, rgba(17,80,7,1) 0%, rgba(22,107,14,1) 25%, rgba(118,246,115,1) 41%,
+ rgba(214,236,214,1) 60%, rgba(66,217,73,1) 75%, rgba(9,107,20,1) 89%, rgba(4,52,5,1) 100%);
+}
+.coach3 .first-layer{
+    background: rgb(80,23,7);
+background: linear-gradient(0deg, rgba(80,23,7,1) 0%, rgba(107,36,14,1) 25%, rgba(246,163,115,1) 41%, 
+rgba(236,220,214,1) 60%, rgba(217,111,66,1) 75%, rgba(107,30,9,1) 89%, rgba(52,15,4,1) 100%);   
+ }
+.second-layer{
+    height: 80%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+   border-radius: 15px;
+   font-size: 150px;
+   text-align: center;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   box-shadow: 0 0 5px rgb(0, 0, 0), inset 0 0 5px rgb(0, 0, 0);
+   
+  
+}
+.coach1 .second-layer{
+    background: rgb(203,97,16);
+background: linear-gradient(0deg, rgba(203,97,16,1) 0%, rgba(246,174,115,1) 34%, rgba(217,119,66,1) 68%, rgba(186,81,11,1) 100%); 
+  border: 1px solid rgb(107, 34, 6);
+   border-bottom: 3px solid rgb(107, 34, 6);
+   color: rgb(251, 255, 0);
+   -webkit-text-stroke: 2px rgb(164, 167, 5);
+ }
+.coach2 .second-layer{
+    color: rgb(247, 61, 14);
+    background: rgb(103,107,14);
+background: linear-gradient(0deg, rgba(103,107,14,1) 0%, rgba(234,246,115,1) 34%, rgba(217,210,66,1) 68%, rgba(105,107,9,1) 100%);
+   -webkit-text-stroke: 2px rgb(107, 34, 6);
+   border: 1px solid rgb(164, 167, 5);
+   border-bottom: 3px solid rgb(164, 167, 5);
+
+  }
+.coach3 .second-layer{
+    border: 1px solid rgb(5, 22, 78);
+   border-bottom: 3px solid rgb(6, 5, 77);
+   color: rgb(5, 199, 47);
+   -webkit-text-stroke: 2px rgb(9, 48, 5);
+   background: rgb(14,107,100);
+background: linear-gradient(0deg, rgba(14,107,100,1) 25%, rgba(115,243,246,1) 41%, rgba(66,217,208,1) 75%, rgba(9,105,107,1) 89%);
+  }
+.tyres{
+    height: 25%;
+    width: 30%;
+    position: absolute;
+   top: 85%;
+   border-radius: 50%;
+   background: black;
+   background: radial-gradient( rgb(14, 247, 216) 10%,rgb(0, 0, 0) 30%, rgb(65, 65, 63) 51%, rgb(0, 0, 0) 100%);
+   z-index: 10;
+   box-shadow: 2px 2px 5px rgb(2, 34, 2), inset -2px -2px 5px rgb(2, 24, 2);
+   animation: tyres 0.2s infinite forwards;
+
+}
+@keyframes tyres{
+    100%{
+        transform: rotate(360deg)
+    }
+}
+.tyre1{
+    left: 5%
+}
+.tyre2{
+    left: 60%
+}
+.tyre4{
+    left: 5%;
+    width: 20%;
+    height: 17%;
+    top: 90%;
+}
+.tyre5{
+    left: 38%;
+       width: 20%;
+       height: 17%;
+       top: 90%;
+}
+.tyre6{
+    left: 70%;
+    width: 20%;
+    height: 17%;
+    top: 90%;
+}
+.coach1 .tyres{
+    background: radial-gradient( rgb(251, 255, 0) 10%,rgb(0, 0, 0) 30%, rgb(65, 65, 63) 51%, rgb(0, 0, 0) 100%);
+
+}
+.coach2 .tyres{
+    background: radial-gradient( rgb(247, 61, 14) 10%,rgb(0, 0, 0) 30%, rgb(65, 65, 63) 51%, rgb(0, 0, 0) 100%);
+
+}
+.coach3 .tyres{
+    background: radial-gradient( rgb(5, 199, 47)10%,rgb(0, 0, 0) 30%, rgb(65, 65, 63) 51%, rgb(0, 0, 0) 100%);
+
+}
+.train-cabin{
+    height: 100%;
+    width: 35%;
+    position: absolute;
+   top: 0%;
+ 
+}
+.cabin-bottom{
+    height: 30%;
+    width: 100%;
+    position: absolute;
+   top: 70%;
+   background: rgb(203,97,16);
+background: linear-gradient(0deg, rgba(203,97,16,1) 0%, rgba(246,174,115,1) 34%, rgba(217,119,66,1) 68%, rgba(186,81,11,1) 100%); 
+   border-bottom-left-radius: 30%;
+   border-bottom-right-radius: 20%;
+   box-shadow: 2px 2px 5px rgb(88, 43, 6), inset 0 0 5px rgb(88, 43, 6);
+  
+}
+
+.cabin-top1{
+    height: 6%;
+    width: 44%;
+    left: 58%;
+    position: absolute;
+   top: 26%;
+   background: rgb(203,97,16);
+background: linear-gradient(0deg, rgba(203,97,16,1) 0%, rgba(246,174,115,1) 34%, rgba(217,119,66,1) 68%, rgba(186,81,11,1) 100%); 
+  border: 1px solid  rgb(223, 86, 23);
+  box-shadow: 2px 2px 5px rgb(88, 43, 6), inset 0 0 5px rgb(88, 43, 6);
+  border-radius: 30%;
+   z-index: 4;
+ }
+.cabin-top2{
+    height: 60%;
+    width: 40%;
+    left: 60%;
+    position: absolute;
+   top: 30%;
+   background: rgb(23,203,16);
+background: linear-gradient(0deg, rgba(23,203,16,1) 0%, rgba(133,246,115,1) 34%, rgba(74,217,66,1) 68%, rgba(38,186,11,1) 100%);  
+   border: 1px solid rgb(10, 77, 10);
+   box-shadow: 2px 2px 5px rgb(11, 63, 11), inset 0 0 5px rgb(11, 63, 11);
+   border-radius: 4%;
+   z-index: 3;
+ }
+ .cabin-top3{
+    height: 40%;
+    width: 62%;
+    left: 0%;
+    position: absolute;
+   top: 50%;
+   background: rgb(196,203,16);
+background: linear-gradient(0deg, rgba(196,203,16,1) 0%, rgba(241,246,115,1) 34%, rgba(217,215,66,1) 68%, rgba(186,175,11,1) 100%); 
+   border: 1px solid rgb(10, 77, 10);
+   box-shadow: 2px 2px 5px rgb(11, 63, 11), inset 0 0 5px rgb(11, 63, 11);
+   border-radius: 4%;
+   z-index: 2;
+   border-top-left-radius: 20%;
+   border-bottom-left-radius: 30%;
+ }
+ .cabin-top4{
+    height: 40%;
+    width: 20%;
+    left: 20%;
+    position: absolute;
+   top: 12%;
+   background: rgb(196,203,16);
+background: linear-gradient(90deg, rgba(196,203,16,1) 0%, rgba(241,246,115,1) 34%, rgba(217,215,66,1) 68%, rgba(186,175,11,1) 100%); 
+   border: 1px solid rgb(109, 90, 5);
+   box-shadow: inset 5px 5px 5px rgb(128, 108, 19),inset -5px -5px 5px rgb(128, 108, 19);
+ }
+ .cabin-top5{
+    height: 6%;
+    width: 20%;
+    left: 20%;
+    position: absolute;
+   top: 9%;
+   background: rgb(196,203,16);
+background: linear-gradient(90deg, rgba(196,203,16,1) 0%, rgba(241,246,115,1) 34%, rgba(217,215,66,1) 68%, rgba(186,175,11,1) 100%); 
+   border: 7px solid rgb(128, 108, 19);
+   box-shadow: inset 5px 5px 5px rgb(70, 15, 2);
+   border-radius: 50%;
+   z-index: 4;
+ }
+.window1{
+    height: 50%;
+    width: 80%;
+    left: 10%;
+    position: absolute;
+   top: 10%;
+   background: rgb(203,97,16);
+background: linear-gradient(0deg, rgba(203,97,16,1) 0%, rgba(246,174,115,1) 34%, rgba(217,119,66,1) 68%, rgba(186,81,11,1) 100%);
+  border: 1px solid  rgb(223, 86, 23);
+  box-shadow: 2px 2px 5px rgb(88, 43, 6), inset 0 0 5px rgb(88, 43, 6);
+  border-radius: 10%;
+   z-index: 4;
+}
+.window2{
+    height: 80%;
+    width: 80%;
+    left: 10%;
+    position: absolute;
+   top: 10%;
+   background-color: rgb(247, 242, 240);
+  border: 1px solid  rgb(223, 86, 23);
+  box-shadow: inset 0 0 5px rgb(88, 43, 6);
+  border-radius: 10%;
+   z-index: 4;
+ 
+}
+.window3{
+    height: 110%;
+    width: 90%;
+    left: 10%;
+    position: absolute;
+   top: -5%;
+   background-image: url(images/9.png);
+  background-size: 100% 100%;
+transform: skew(-20deg) 
+}
+.pole{
+    width: 70%;
+    height: 10%;
+    background: rgb(196,203,16);
+background: linear-gradient(0deg, rgba(196,203,16,1) 0%, rgba(241,246,115,1) 34%, rgba(217,215,66,1) 68%, rgba(186,175,11,1) 100%); 
+    position: absolute;
+    box-shadow: 0 0 5px rgb(105, 87, 7), inset 5px 5px 5px rgb(92, 84, 9), 0 0 5px rgb(78, 65, 6), inset -2px -2px 5px rgb(94, 88, 5);
+    top: 60%;
+    left: 20%;
+    transform: rotate(5deg);
+    animation: pole 1s infinite forwards;
+}
+@keyframes pole{
+    100%{
+        transform: rotate(0deg);
+    }
+}
+.balloon-container{
+    width: 50%;
+    height: 25%;
+    position: absolute;
+    /* background: #777; */
+    top: -25%;
+    left: 14%;
+    z-index: 10;
+    transform: rotate(-8deg);
+    animation: balloon 1s infinite;
+}
+@keyframes balloon{
+    100%{
+        top: -12%;
+        left: 10%;
+        width:30%;
+        height: 15%;
+        transform: rotate(-20deg);
+        opacity: 0.5;
+          }
+}
+.balloon{
+    background: rgb(167,228,225);
+background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgb(206, 197, 198) 60%, rgb(174, 177, 177) 87%, rgb(199, 186, 186) 100%);
+    position: absolute;
+    z-index: 10;
+    border-radius:  200px 200px 200px  0px;
+     box-shadow: 2px 2px 10px #777,-2px -2px 10px #bbb,inset 2px 2px 10px #777,inset -2px -2px 10px #bbb;
+     transform: rotate(20deg);
+     animation: balloon 5s infinite;
+  
+}
+.balloon::after{
+    content: "";
+    width: 10%;
+    height: 10%;
+    top: 95%;
+    left: -4%;
+    position: absolute;
+    background: inherit;
+box-shadow: 0 0 2px #777,inset  0 0 1px #bbb;
+    border-radius: 50%;
+    border:1px solid rgba(54, 51, 51, 0.534);
+   
+}
+.balloon::before{
+    content: "";
+    width: 15%;
+    height: 15%;
+    top: 99%;
+    left: -15%;
+    position: absolute;
+    background: inherit;
+box-shadow: 0 0 2px #777,inset  0 0 1px #bbb;
+border-radius: 0px 6px 0px 200px;
+border-left: 2px ridge #777;
+border-bottom: 2px ridge #777;
+   
+}
+.balloon1{
+    width: 10%;
+    height: 60%;
+    top: 0%;
+    left: 0%;
+    background: rgb(228,167,173);
+background: radial-gradient(circle, rgb(235, 168, 174) 10%, rgb(235, 121, 131) 25%, rgba(251,33,33,1) 77%, rgba(255,1,15,1) 100%);
+
+}
+.balloon2{
+    width: 20%;
+    height: 120%;
+    top: -15%;
+    left: 55%;
+    z-index: 30;
+    transform: rotate(30deg);
+    background: rgb(255,255,255);
+background: radial-gradient(circle, rgba(255,255,255,0.8631827731092436) 0%, rgba(89,236,68,1) 35%, rgba(33,251,87,1) 87%, rgba(32,255,1,1) 100%);
+
+}
+.balloon3{
+    width: 25%;
+    height: 150%;
+    top: -40%;
+    left: 70%;
+ 
+}
+.balloon4{
+    width: 15%;
+    height: 90%;
+    top: -10%;
+    left: 25%;
+    background: rgb(250,245,245);
+background: radial-gradient(circle, rgba(250,245,245,0.8631827731092436) 0%, rgba(107,91,121,1) 27%, rgba(69,40,85,1) 63%, rgba(12,3,18,1) 100%);  
+}
+
+.balloon5{
+    width: 15%;
+    height: 90%;
+    top: -20%;
+    left: 40%;
+    background: rgb(255,255,255);
+background: radial-gradient(circle, rgba(255,255,255,0.8631827731092436) 0%, rgba(236,68,204,1) 35%, rgba(251,33,217,1) 87%, rgba(255,1,249,1) 100%);
+   transform: rotate(30deg);
+}
+
+.balloon6{
+    width: 20%;
+    height: 120%;
+    top: 40%;
+    left: 30%;
+    background: rgb(255,255,255);
+background: radial-gradient(circle, rgba(255,255,255,0.8631827731092436) 0%, rgba(156,153,255,1) 27%, rgba(47,58,255,1) 63%, rgba(24,3,142,1) 100%);
+transform: rotate(35deg);
+}
+
+.balloon7{
+    width: 25%;
+    height: 150%;
+    top: 50%;
+    left: 70%;
+    transform: rotate(40deg);
+    background: rgb(255,255,255);
+background: radial-gradient(circle, rgba(255,255,255,0.8631827731092436) 0%, rgba(255,187,153,1) 27%, rgba(255,116,47,1) 63%, rgba(210,63,5,1) 100%);
+ 
+}
+
+.balloon8{
+    width: 20%;
+    height: 120%;
+    top: 40%;
+    left: 50%;
+    background: rgb(255,255,255);
+background: radial-gradient(circle, rgba(255,255,255,0.8631827731092436) 0%, rgba(232,153,255,1) 27%, rgba(197,47,255,1) 63%, rgba(153,5,210,1) 100%);
+ 
+}
+
+.balloon9{
+    width: 13%;
+    height: 78%;
+    top: -0%;
+    left: 10%;
+    background: rgb(255,255,255);
+background: radial-gradient(circle, rgba(255,255,255,0.8631827731092436) 0%, rgba(255,247,153,1) 27%, rgba(255,246,47,1) 63%, rgba(249,255,0,1) 100%);
+ 
+}
+.balloon10{
+    width: 15%;
+    height: 90%;
+    top: 60%;
+    left: 15%;
+    transform: rotate(40deg);
+    background: rgb(116, 199, 95);
+background: radial-gradient(circle, rgb(168, 247, 152) 0%, rgba(157,212,130,1) 27%, rgba(53,116,48,1) 63%, rgba(31,106,10,1) 100%);
+ }
+ .balloon11{
+    width: 7%;
+    height: 42%;
+    top: 70%;
+    left: -6%;
+    background: rgb(223,211,211);
+background: radial-gradient(circle, rgba(223,211,211,0.8631827731092436) 0%, rgba(147,113,85,1) 27%, rgba(92,68,47,1) 63%, rgba(83,46,17,1) 100%);   
+ }
+.balloon12{
+    width: 10%;
+    height: 60%;
+    top: 70%;
+    left: 2%;
+    transform: rotate(40deg);
+    background: rgb(255,255,255);
+background: radial-gradient(circle, rgba(255,255,255,0.8631827731092436) 0%, rgba(68,236,234,1) 35%, rgba(33,251,234,1) 87%, rgba(1,255,244,1) 100%);
+
+
+}
+</style>
+<body>
+    <div class="container">
+        <div class="train-container">
+            <div class="pole"></div>
+            <div class="train-cabin">
+                    <div class="cabin-top1"></div>
+                    <div class="cabin-top2">
+                        <div class="window1">
+                            <div class="window2">
+                                    <div class="window3"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cabin-top3"></div>
+                    <div class="cabin-top4"></div>
+                    <div class="cabin-top5"></div>
+              
+                    <div class="cabin-bottom"></div>
+                    <div class="tyres tyre4"></div>
+                    <div class="tyres tyre5"></div>
+                    <div class="tyres tyre6"></div>
+          
+
+            </div>
+            <div class="coach coach1">
+                <div class="first-layer"></div>
+                <div class="second-layer">Aa</div>
+                <div class="tyres tyre1"></div>
+                <div class="tyres tyre2"></div>
+            </div>
+
+            <div class="coach coach2">
+                <div class="first-layer"></div>
+                <div class="second-layer">Bb</div>
+                <div class="tyres tyre1"></div>
+                <div class="tyres tyre2"></div>
+            </div>
+
+            <div class="coach coach3">
+                <div class="first-layer"></div>
+                <div class="second-layer">Cc</div>
+                <div class="tyres tyre1"></div>
+                <div class="tyres tyre2"></div>
+            </div>
+            <div class="balloon-container">
+                    <div class="balloon balloon1"></div>
+                    <div class="balloon balloon2"></div>
+                    <div class="balloon balloon3"></div>
+                    <div class="balloon balloon4"></div>
+                    <div class="balloon balloon5"></div>
+                    <div class="balloon balloon6"></div>
+                    <div class="balloon balloon7"></div>
+                    <div class="balloon balloon8"></div>
+                    <div class="balloon balloon9"></div>
+                    <div class="balloon balloon10"></div>
+                    <div class="balloon balloon11"></div>
+                    <div class="balloon balloon12"></div>
+                </div>
+                </div>
+             
+                </div>
+</body>
+</html>

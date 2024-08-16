@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>magic image animationt</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #333;
+        }
+
+        .box {
+            width: 300px;
+            height: 400px;
+            /* background: white; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            perspective: 800px;
+            overflow: hidden;
+
+        }
+
+        .box span {
+            position: absolute;
+            z-index: 111;
+            left: 0;
+            width: 300px;
+            height: 20px;
+            background: url(images/8.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            animation: animate 8s linear infinite;
+            animation-fill-mode: backwards;
+            transform-origin: center;
+
+        }
+
+        @keyframes animate {
+
+            0% {
+                transform: translateY(-2000px);
+                opacity: 0;
+
+
+            }
+
+            30% {
+                transform: translateY(0);
+                opacity: 1;
+
+            }
+
+            99% {
+                transform: translateY(0);
+                opacity: 1;
+
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 0;
+
+            }
+
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <section class="container">
+        <div class="box">
+
+        </div>
+    </section>
+
+    <script>
+        let noOfSpans = 40;
+        function creatSpans() {
+            let box = document.querySelector('.box');
+            for (let index = 0; index < noOfSpans; index++) {
+                let span = document.createElement('span');
+                box.appendChild(span);
+                span.style.top = index * 10 + "px";
+                span.style.backgroundPositionY = -index * 10 + "px ";
+                span.style.animationDelay = -index * 0.05 + "s"
+
+            }
+        }
+
+
+        creatSpans();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+	*{
+		padding:0;
+		margin: 0;
+		box-sizing: border-box;
+	}
+	body {
+		background-repeat: repeat;
+        background-size:100% 100%;
+        background-image:url(../images/happy.png);
+     background-color: powderblue;
+   height: 100vh;
+        padding: 0;
+        margin: 0;
+	}
+
+  .parts{
+		height: 20vh;
+		width: 70vw;
+		border: 10px solid transparent;
+		background-color:transparent;
+		text-align: center;
+		position: absolute;
+		border-image: url(../images/border.png) 20% / 1 / 0 round;
+	
+	}
+  #words{
+		top: 10vh;
+		left: 12vw;
+        background-repeat: no-repeat;
+        background-size:100% 100%;
+        background-image:url(../images/words.png);
+    
+	}
+
+  #abc{
+		top: 38vh;
+		left: 12vw;
+		  background-repeat: no-repeat;
+        background-size:100% 100%;
+        background-image:url(../images/abc.png);
+    
+
+	}
+
+  #num{
+		top: 64vh;
+		left: 12vw;
+		  background-repeat: no-repeat;
+        background-size:100% 100%;
+        background-image:url(../images/nums.png);
+    
+
+	}
+
+	a{
+		height: 100%;
+		width: 100%;
+	}

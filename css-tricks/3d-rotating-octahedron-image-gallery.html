@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3d rotating octahedron imageg allery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #252525;
+        }
+
+        .box {
+            position: relative;
+            width: 200px;
+            height: 300px;
+            transform-style: preserve-3d;
+            transform: perspective(1000px);
+
+        }
+
+        .box span {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            transform: rotateY(calc(var(--i) * 45deg)) translateZ(240px);
+            /* -webkit-box-reflect: below 0px linear-gradient(transparent, transparent, #0002); */
+        }
+
+        .box span img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .box span::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            box-shadow: inset 0 0 15px rgb(0, 0, 0);
+            z-index: 2;
+        }
+
+        #bottom {
+            height: 162%;
+            width: 240%;
+            transform: rotateY(0deg) translateX(-29%) translateY(12%) rotateX(90deg);
+            clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+
+        }
+
+        #top {
+            height: 162%;
+            width: 240%;
+            transform: rotateY(0deg) translateX(-29%) translateY(-50%) rotateX(90deg);
+            clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <span style="--i:1"><img src="images/1.jpg" alt=""></span>
+        <span style="--i:2"><img src="images/2.jpg" alt=""></span>
+        <span style="--i:3"><img src="images/3.jpg" alt=""></span>
+        <span style="--i:4"><img src="images/4.jpg" alt=""></span>
+        <span style="--i:5"><img src="images/5.jpg" alt=""></span>
+        <span style="--i:6"><img src="images/6.jpg" alt=""></span>
+        <span style="--i:7"><img src="images/7.jpg" alt=""></span>
+        <span style="--i:8"><img src="images/8.jpg" alt=""></span>
+        <span id="top"><img src="images/magic1.jpg" alt=""></span>
+        <span id="bottom"><img src="images/1.png" alt=""></span>
+    </div>
+
+
+
+    <script>
+        let box = document.querySelector('.box');
+        window.onmousemove = function (e) {
+            let x = e.clientX;
+            let y = e.clientY;
+            box.style.transform = "perspective(1000px) rotateY(" + x + "deg) rotateX(" + y + "deg)"
+        }
+    </script>
+</body>
+
+</html>

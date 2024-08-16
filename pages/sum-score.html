@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+	<title>sum_table</title>
+
+</head>
+<body>
+<style>
+	#frm{
+		padding: 20px;
+		border: 2px solid;
+		color: navy;
+		background-color: pink;
+	}
+   
+
+	#cart{
+		margin-top:  30px;
+		padding: 20px;
+		border: 2px solid navy;
+		background-color: violet;
+	}
+	th, td, tr {
+		border: 1px solid navy;
+		color: navy;
+	}
+	button{
+		background: red;
+	}
+	#add{
+		background-color: purple;
+		color: pink;
+	}
+</style>
+<!--form-->
+<div id="frm">
+<label>name</label>
+<input type="text" id="student"><br><br>
+<label>math score</label>
+<input type="number" id="math"><br><br>
+<label>english score</label>
+<input type="number" id="sub3"><br><br>
+<label>subject3 score</label>
+<input type="number" id="sub4"><br><br>
+<label>subject4 score</label>
+<input type="number" id="sub5"><br><br>
+<label>subject5 score</label>
+<input type="number" id="sub6"><br><br>
+<label>subject6 score</label>
+<input type="number" id="sub7"><br><br>
+<label>subject7 score</label>
+<input type="number" id="sub8"><br><br>
+<label>subject8 score</label>
+<input type="number" id="english"><br><br>
+<button onclick="additem()  " id="add">Add item</button>
+</div>
+<div id="cart"></div>
+
+</div>
+
+<script>
+// create empty array for each subject.
+	istudent = []
+	imath = []
+	ienglish = []
+     isub3 = []
+     isub4 = []
+     isub5 = []
+     isub6 = []
+     isub7 = []
+     isub8 = []
+//push data inputed in  the forms to populate the corresponding arrays
+	function additem(){
+		istudent.push(document.getElementById('student').value)
+		imath.push(parseInt(document.getElementById('math').value))
+		ienglish.push(parseInt(document.getElementById('english').value))
+        isub3.push(parseInt(document.getElementById('sub3').value))
+        isub4.push(parseInt(document.getElementById('sub4').value))
+        isub5.push(parseInt(document.getElementById('sub5').value))
+        isub6.push(parseInt(document.getElementById('sub6').value))
+        isub7.push(parseInt(document.getElementById('sub7').value))
+        isub8.push(parseInt(document.getElementById('sub8').value))
+
+		displayCart();
+
+	}
+	function displayCart(){
+
+//dynamically creat table using javascript
+    cartdata = '<table><tr><th>name of student</th><th>math</th><th>english</th><th>subject3</th><th>subject4</th><th>subject5</th><th>subject6</th><th>subject7</th><th>subject8</th><th>Total</th></tr>';
+
+    total = 0;
+
+    for(i=0; i<= istudent.length - 1; i++){
+    	total += imath[i] + ienglish[i] + isub3[i] + isub4[i] + isub5[i] + isub6[i] + isub7[i] + isub8[i]
+    	cartdata +="<tr><td>" + istudent[i] + "</td><td>" + imath[i] + "</td><td>" + ienglish[i] +
+    	"</td><td>" +  isub3[i] + "</td><td>" + isub4[i] +
+    	"</td><td>" +  isub5[i] + "</td><td>" + isub6[i] +
+    	"</td><td>" +  isub7[i] + "</td><td>" + isub8[i] +
+    	"</td><td>" +(parseInt (imath[i] + ienglish[i] +isub3[i] + isub4[i] +isub5[i] + isub6[i] +isub7[i] + isub8[i] ))+ "</td><td><button onclick='delElement(" + i + ")'>Delete</button></td></tr>"
+    }
+    cartdata += '<tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>'+ 
+    total + '</td></tr></table> '
+   
+     document.getElementById('cart').innerHTML = cartdata
+	}
+// to delete any unwanted row or rows containing mistakes
+	function delElement(a){
+		istudent.splice(a, 1);
+		imath.splice(a, 1);
+		ienglish.splice(a, 1);
+		displayCart()
+	}
+	
+    	// you can add more columns if you can carefully read and edit the codes.
+    	//before editing, save this file and use another copied file so you can fall back here if you destroyed the codes
+    	//good luck with your project
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

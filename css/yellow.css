@@ -1,0 +1,21 @@
+:root{
+    --color1: #f5e9a7;
+    --color2: #d8d400; 
+    --color3: #D78800;
+    --color4: rgb(173, 118, 0);
+    --color5: #f5d02a;
+    --color6: #ffffff91 ;
+    --color7: #bdaa00;
+   --color8: rgb(251, 255, 0);
+      --color9: #7c6003;
+    --color10: #c2c501;
+    --colorF: #D78800;
+    /* --color6:
+  --color6: */
+}
+
+
+.wave{
+background: url(../images/wavey.png);
+
+}

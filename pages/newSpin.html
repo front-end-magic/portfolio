@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>spin Wheel</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            outline: none;
+        }
+        body{
+            font-family: Open Sans;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            /* background: #f44336; */
+            background-color: #0f5a50;
+            background: url(../images/space.gif),
+                        linear-gradient(90deg, #c20fda 13%, rgb(238, 148, 230) 59%, #d509e7 100%) ;
+            background-size: cover;
+            background-blend-mode: screen;
+        }
+        .mainbox{
+            position: relative;
+            width: 500px;
+            height: 500px;
+        }
+        .arrow{
+            position: absolute;
+            font-weight: 900;
+            font-size: 100px;
+            top: 0%;
+            left: 50%;
+            z-index:20;
+            transform:  translateX(-50%) rotate(270deg);
+        }
+        .box{
+            width: 100%;
+            height: 100%;
+            position: relative;
+            border-radius: 50%;
+            border: 10px solid #fff;
+            overflow: hidden;
+            transition: all ease 1s;
+            box-shadow: 2px 2px 20px black,
+                        -2px -2px 20px black;
+       
+        }
+        span{
+            width: 50%;
+            height: 50%;
+            display: inline-block; 
+            position: absolute;
+            background-size: 5px 5px;
+        
+        }
+        .span1{
+            clip-path: polygon(0 92%, 100% 50%, 0 8%);
+            background-color: #ffeb2b;
+            background: linear-gradient(45deg, rgb(255, 72, 0) 13%, rgb(231, 228, 221) 59%, rgba(255, 94, 0, 0.9) 100%);
+            top: 120px;
+            left: 0;
+            /* background-size: 5px 5px; */
+        
+        }
+        .span2{
+            clip-path: polygon(100% 92%, 0 50%, 100% 8%);
+             background-color: #3f51b5;
+            background: linear-gradient(45deg, rgb(3, 10, 116) 13%, rgb(189, 183, 240) 59%, rgba(0, 4, 255, 0.9) 100%);
+         
+            top: 120px;
+            right: 0;
+        }
+        .span3{
+            clip-path: polygon(50% 0%, 8% 100%, 92% 100%);
+           background-color: #4caf50;
+           background: linear-gradient(45deg, #103611 13%, rgb(131, 212, 99) 59%, #06c70c 100%);
+            bottom: 0;
+            left: 120px;
+        }
+        .span4{
+            clip-path: polygon(50% 100%, 92% 0, 8% 0);
+            top: 0; 
+            left: 120px;
+            background-color: #df0bdf;
+            background: linear-gradient(45deg, rgb(250, 5, 119) 13%, rgb(252, 152, 222) 59%, rgb(255, 8, 181) 100%);
+          
+        }
+        .box2 .span1{
+             background-color: #ffeb2b;
+            background: linear-gradient(90deg, rgb(255, 230, 0) 13%, rgb(250, 246, 197) 59%, rgba(255, 230, 0, 0.9) 100%);
+          }
+        .box2 .span2{
+          
+            background-color: #3f51b5;
+            background: linear-gradient(90deg, rgb(3, 134, 128) 13%, rgb(160, 232, 235) 59%, rgb(13, 140, 224) 100%);
+      }
+        .box2 .span3{
+           background-color: #4caf50;
+           background: linear-gradient(90deg, #00ff88 13%, rgb(232, 248, 226) 59%, #00fa08 100%);
+          }
+        .box2 .span4{
+            background: linear-gradient(45deg, rgb(255, 0, 0) 13%, rgb(248, 143, 152) 59%, rgb(241, 3, 3) 100%);
+        
+              }
+        .box2{
+            width: 100%;
+            height: 100%;
+            transform: rotate(135deg);
+        }
+        span b{
+            width: 65px;
+            height: 65px;
+            line-height: 65px;
+            border-radius: 50%;
+            font-size: 26px;
+            text-align: center;
+            background-color: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: inset 0 0 5px #717171;
+        }
+        .spin{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            border: 4px solid #fff;
+            color: #fff;
+            box-shadow: 0 5px 20px #000;
+            font-weight: bold;
+            font-size: 22px;
+            cursor: pointer;
+            text-shadow:1px 1px #c20fda, -1px -1px #c20fda;
+            background-color: #0f5a50;
+            background: conic-gradient( #094d4d 13%, rgb(148, 238, 227) 59%, #0d534a 100%),
+                        url(../images/space.gif),
+                        linear-gradient(90deg, #c20fda 13%, rgb(238, 148, 230) 59%, #d509e7 100%) ;
+            background-size: cover;
+            background-blend-mode: screen;
+       
+          }
+          .spin:active{
+              width: 70px;
+              height: 70px;
+              font-size: 20px;
+          }
+         
+          .arrow.animate{
+              animation: animateArrow 0.7s ease infinite;
+          }
+          .spin-display1{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            border-radius: 50%;
+            border: 10px solid #fff;
+            /* overflow: hidden; */
+            transition: all ease 1s;
+            box-shadow: 2px 2px 20px black,
+                        -2px -2px 20px black;
+            background-color: rgba(65, 239, 245, 0.801);
+       
+        }
+        .spin-display2{
+            width: 0%;
+            height: 0%;
+            position: absolute;
+            top: 100vh;
+            left: 100vw;
+        }
+        .spin-board{
+            transition: 2s ease;
+            z-index: 100;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size:100px;
+        }
+          @keyframes animateArrow{
+            0%{
+                  transform: scaleY(200%) translateX(-50%) rotate(270deg);
+              }
+              100%{
+                transform: scaleY(100%) translateX(-50%) rotate(270deg);
+                      }
+          }
+    </style>
+</head>
+<body>
+    <div class="arrow"> <= </div>
+     
+    <div class="mainbox">
+      
+       <div class="spin-board"></div>
+      <div class="box" id="box">
+     
+        <div class="box1">
+            <span class="span1">
+                <b>50</b>
+            </span>
+            <span class="span2">
+                <b>150</b>
+            </span>
+            <span class="span3">
+                <b>250</b>
+            </span>
+            <span class="span4">
+                <b>350</b>
+            </span>
+        </div>
+        <div class="box2">
+            <span class="span1 spanA">
+                <b>10</b>
+            </span>
+            <span class="span2">
+                <b>110</b>
+            </span>
+            <span class="span3">
+                <b>210</b>
+            </span>
+            <span class="span4">
+                <b>310</b>
+            </span>
+        </div>
+      </div>
+      <button class="spin" onclick="myfunction()">SPIN</button>
+    </div>
+    <script>
+          var arrow = document.querySelector('.arrow');
+          let arrowTop = arrow.getBoundingClientRect().top;
+          let arrowBottom = arrow.getBoundingClientRect().height;
+         let arrowLeft = arrow.getBoundingClientRect().left;
+         let spanA = document.querySelector(".spanA");
+         let spinDisplay = document.querySelector(".spin-board");
+
+        function myfunction(){
+
+           var minValue = 1024;
+           var maxValue = 20999; 
+           var deg = Math.floor(Math.random() * (minValue - maxValue)) + maxValue;
+            document.getElementById('box').style.transform = `rotate(${deg}deg)`;
+           setTimeout(function(){
+               arrow.classList.add('animate');
+               var box2 = document.querySelector('.boxb');
+            spinDisplay.classList.remove('spin-display2');
+          
+            spinDisplay.classList.add('spin-display1');
+            
+                if( deg%360 < 23){
+                spinDisplay.textContent = "350";
+                spinDisplay.style.background = " rgb(250, 5, 119)";
+            } else if( deg%360 < 68){
+                spinDisplay.textContent = "210";
+                spinDisplay.style.background = " #00fa08 ";
+          
+            } else if ( deg%360 < 113){
+                console.log("hurray!!!!    " + deg%360)
+                spinDisplay.textContent = "50";
+                spinDisplay.style.backgroundColor = " rgb(255, 72, 0) ";
+          
+            } else if( deg%360 < 158){
+                spinDisplay.textContent = "110";
+                spinDisplay.style.backgroundColor = " rgb(13, 140, 224) ";
+          
+            } else if( deg%360 < 203){
+                spinDisplay.textContent = "250";
+                spinDisplay.style.backgroundColor = " #06c70c ";
+          
+            } else if( deg%360 < 248){
+                spinDisplay.textContent = "310";
+                spinDisplay.style.backgroundColor = " rgb(255, 0, 0) ";
+          
+            } else if( deg%360 < 293){
+                spinDisplay.textContent = "150";
+                 spinDisplay.style.backgroundColor = " rgb(3, 10, 116)  ";
+          
+            }else if( deg%360 < 338){
+                spinDisplay.textContent = "10";
+                 spinDisplay.style.backgroundColor = " rgb(255, 230, 0)  ";
+          
+            }else{
+                spinDisplay.textContent = "350";
+                 spinDisplay.style.backgroundColor = " rgb(255, 0, 0) ";
+          
+           
+            }
+           }, 1300);
+           setTimeout(function(){
+            spinDisplay.classList.remove('spin-display1');
+            spinDisplay.classList.add('spin-display2');
+            arrow.classList.remove('animate');
+         
+            
+           }, 5000)
+                  }
+    </script>
+</body>
+</html>
+
+

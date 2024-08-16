@@ -1,0 +1,169 @@
+*{
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+#morelivespage{
+	display: none;
+	z-index: 100;
+	position: absolute;
+	height: 100vh;
+	width: 100vw;
+	top: 0;
+	left: 0;
+	
+}
+#morelives-inner{
+	position: absolute;
+	height: 100vh;
+	width: 100vw;
+	top: 0;
+	left: 0;
+	background-color: rgba(123, 234, 243, 0.2);
+   opacity: 1;
+   background-image: url(../image2/222.gif);
+   	background-size: 15% 15%;
+	background-repeat: repeat;
+
+}
+#morelives1{
+	position: absolute;
+	height: 60vh;
+	width: 70vw;
+	top: 25vh;
+	left: 15vw;
+	background-color: #5676ff;
+    box-shadow: 2px 2px 2px 2px grey;
+    border: 5px solid silver;
+    border-radius: 50%;
+    background-size: 5% 5%;
+	background-repeat: repeat;
+	background-image: url(../image2/toys.jpg);
+	   /*border-image: url(../images/crystal.png) 30% / 1 / 0 round;*/
+border-bottom-left-radius: 20%;
+    border-bottom-right-radius: 20%;
+
+}
+#morelives2{
+	position: absolute;
+	height: 90%;
+	width: 90%;
+	margin-top: 5%;
+	margin-left: 5%;
+	background-color: deeppink;
+    /*box-shadow: 2px 2px 3px 5px #847;*/
+    /*border: 2px solid #0f0;*/
+    border-radius: 50%;
+   	background-image: url(../images/job.gif);
+   	border-bottom-left-radius: 20%;
+    border-bottom-right-radius: 20%;
+    /*background-size: 25% 25%;*/
+	/*background-repeat: repeat;*/
+	/*border-image: url(../images/crystal.png) 30% / 1 / 0 round;*/
+}
+
+#morelives3{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(223,55,132,0.5);
+   border: 2px solid silver;
+    border-radius: 50%;
+   	/*background-image: url(../images/b.gif);*/
+    background-size: 25% 25%;
+	background-repeat: repeat;
+	border-bottom-left-radius: 20%;
+    border-bottom-right-radius: 20%;
+
+}
+
+#twenty{
+	height: 25%;
+	width: 30%;
+	margin-top: 15%;
+	margin-left: 20%;
+   	background-image: url(../image2/22.png);	
+  border-radius: 20px;
+padding: 2%;
+display: inline;
+float: left;
+}
+
+
+#twenty1{
+	height: 25%;
+	width: 30%;
+	margin-top: 15%;
+	margin-left: 5%;
+   	background-image: url(../image2/gem.gif);	
+padding: 2%;
+display: inline;
+float: left;
+}
+
+
+#free1{
+	height: 30%;
+	width: 80%;
+	top: 40%;
+	position: absolute;
+	margin-left: 10%;
+   	background-image: url(../image2/free1.png);	
+padding: 2%;
+display: block;
+
+}
+
+
+#claim{
+		height: 26%;
+	width: 36%;
+	top: 72%;
+	margin-left: 32%;
+  	background-image: url(../image2/claim1.png);	
+  border:1px solid transparent;
+  border-radius: 50%;
+padding: 2%;
+background-color: #20ffff;
+box-shadow: 2px 2px 1px 1px grey;
+position: absolute;
+animation: claim 6s infinite linear;
+box-shadow: 0 0 10px rgba(234,243,245,0.6),
+            0 0 20px rgba(234,243,245,0.6),
+            0 0 30px rgba(234,243,245,0.6),
+            0 0 40px rgba(234,243,245,0.6);
+}
+#claim:hover{
+	background-color: #ff9032;
+     
+}
+@keyframes claim {
+  from {
+    transform: rotate(-45deg);
+  
+  }
+  
+ 
+  50%{
+  	  transform: rotate(45deg);
+   
+  }
+  to{
+  	    transform: rotate(-45deg);
+
+  }
+}
+#pausefree{
+	height: 15%;
+	width: 30%;
+	margin-top: 5%;
+	margin-left: 30%;
+   	background-image: url(../image2/free.png);	
+  border:5px solid silver;
+  border-radius: 50%;
+background-color: #20ff34;
+box-shadow: 2px 2px 1px 1px grey;
+
+}

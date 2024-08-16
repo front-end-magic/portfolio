@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Black Cat</title>
+    </head>
+    <style>
+      
+body {
+  background-color:#107870;
+  background: linear-gradient(90deg, #197810, #b9e79f , #197810 );
+}
+#cat{
+    width : 480px;
+    margin : 20px auto;
+}
+#head{
+    width :400px;
+    height :370px;    
+    background-color : #02022e;
+    border-radius : 50%;
+    margin : auto;
+    box-shadow: 0 5px 10px rgba(95, 94, 94, 0.507), 0 5px 10px rgba(119, 118, 118, 0.493) inset;
+
+}
+#ears{
+    height : 65px;
+    position : relative;
+    left : 35px;
+    animation : ear_move 1s alternate-reverse infinite;
+    
+}
+@keyframes ear_move{
+    from{
+        top : 0;
+    }
+    to{
+        top : 25px;
+    }
+}
+.ear{
+    width : 0px;
+    height : 0px;
+    border-left : 90px solid transparent;
+    border-right : 90px solid transparent;
+    border-bottom : 160px solid #02022e;
+    float : left;
+    margin-right : 60px;
+    transform: rotate(35deg);
+  
+}
+.ear:first-child{
+    transform: rotate(-35deg);
+}
+.innerear1{
+     border-left : 90px solid transparent;
+    border-right : 90px solid transparent;
+    border-bottom : 160px solid #ffffff;
+    transform : scale(0.3);
+    position : relative;
+    margin-left : -89px;
+    margin-top : -10px;
+}
+.innerear2{
+     border-left : 90px solid transparent;
+    border-right : 90px solid transparent;
+    border-bottom : 160px solid #ffffff;
+    transform : scale(0.3);
+    position : relative;
+    margin-left : -90px;
+    margin-top : -10px;
+}
+#eyes{
+    clear : both;
+    width : 350px;
+    position : relative;
+    top : 25px;
+    left : 53px;
+}
+.eye{
+    width : 120px;
+    height : 120px;
+    border-radius : 50%;
+    background-color: #ffffff;
+    float : left;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.993), rgb(255, 255, 255));
+            border-radius: 50%;
+            box-shadow:  2px 2px 10px black, -3px -3px 10px black;
+      
+}
+ 
+.eye:first-child{
+    margin-right : 50px;
+}
+.pupil{
+    width : 70px;
+    height : 70px;
+    position : relative;
+    border-radius : 50%;
+    background-color : #02020c;
+    top :40px;
+    animation : eye_move 1s alternate-reverse infinite;
+    box-shadow: 0 5px 10px rgb(0, 0, 0), 0 5px 10px rgba(119, 118, 118, 0.493) inset;
+
+}
+@keyframes eye_move{
+    from{
+        left : 40px;
+    }
+    to{
+        left : 0px;
+    }
+}
+
+.inner_pupil{
+    width : 15px;
+    height : 15px;
+    position : relative;
+    border-radius : 70%;
+    background-color : #ffffff;
+    top :40px;
+    left : 15px;
+}
+#nose{
+    width : 45px;
+    height : 30px;
+    position :relative;
+    border-radius : 50%;
+    background-color : #ffffff;
+    top : 160px;
+    left : 170px;
+}
+#mus_l{
+    position : relative;
+    top :100px;
+    left : -60px;
+    transform : rotate(-10deg);
+}
+#mus_r{
+    position : relative;
+    top :162px;
+    left : 215px;
+    transform : rotate(10deg);
+}
+.mus{
+    width : 220px;
+    height : 5px;
+    position :relative;
+    border : solid 3px #000000;
+    border-color:#fff transparent transparent transparent;
+    border-radius: 60%/30px 30px 0 0;
+}
+
+
+
+      
+    </style>
+    <body>
+        <div id="cat">
+            <div id="ears">
+                <div class="ear">
+                    <div class="innerear1"></div>
+                </div>
+                <div class="ear">
+                    <div class="innerear2"></div>
+                </div>
+            </div>
+            <div id="head">
+                
+                <div id="eyes">
+                    <div class="eye">
+                        <div class="eye-layer"></div>
+                        <div class="pupil">
+                            <div class="inner_pupil"></div>
+                        </div>
+                     </div>
+                      <div class="eye">
+                        <div class="pupil">
+                            <div class="inner_pupil"></div>
+                        </div>
+                     </div>
+               </div>
+               <div id="nose"></div>
+               <div id="mus_r">
+                   <div class="mus"></div>
+                   <div class="mus"></div>
+                   <div class="mus"></div>
+               </div>
+               <div id="mus_l">
+                   <div class="mus"></div>
+                   <div class="mus"></div>
+                   <div class="mus"></div>
+               </div>
+            </div>
+        </div>
+    </body>
+</html>

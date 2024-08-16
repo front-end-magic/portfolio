@@ -1,0 +1,60 @@
+
+.container{
+   
+    grid-template-rows: repeat(7, minmax(10vh, auto));
+    grid-template-columns: 1fr;
+   
+}
+nav{
+   height: 10vh;
+    grid-row: 1/2;
+    width: 100%;
+    position: sticky;
+}
+
+.main-header {
+    min-height: 90vh;
+    width: 100vw;
+    overflow: hidden;
+      display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row: 2/3;
+  
+}
+.about{
+   width: 100%;
+  grid-row: 3/4;
+
+}
+.card-section{
+  display: grid;
+   align-items: center;
+  justify-content: center;
+   position: relative;
+   grid-row: 4/5;
+}
+.articles {
+     height: fit-content;
+    width: 100%;
+   display: grid;
+    grid-row: 5/6;
+    margin-bottom: 100px;
+}
+.gallery {
+     height: fit-content;
+    width: 100%;
+   display: grid;
+    grid-row: 6/7;
+    margin-bottom: 100px;
+}
+   
+footer{
+    height: fit-content;
+    width: 100%;
+   display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: repeat(2, minmax(20px, auto));
+    min-height: 100px;
+    z-index: 2;
+    grid-row: 7/8;
+}

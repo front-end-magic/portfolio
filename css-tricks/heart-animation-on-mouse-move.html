@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>hearts animation on mouse move</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        min-height: 100vh;
+        background: linear-gradient(
+          90deg,
+          rgb(0, 0, 17),
+          rgb(1, 26, 107),
+          rgb(0, 0, 17)
+        );
+        overflow: hidden;
+      }
+      span {
+        position: absolute;
+        pointer-events: none;
+        width: 100px;
+        height: 100px;
+
+        background-color: red;
+        background: radial-gradient(circle, white, red, maroon);
+        background-size: 10px 10px;
+        background-repeat: repeat;
+        transform: rotate(45deg);
+        box-shadow: inset 0 0 5px black;
+        /* filter: drop-shadow(2px 2px 2px rgb(0, 0, 0))
+          drop-shadow(-2px -2px 2px rgb(0, 0, 0))
+          drop-shadow(3.5px 3.5px 3.5px rgb(255, 255, 255))
+          drop-shadow(-3.5px -3.5px 3.5px rgb(247, 247, 247))
+          drop-shadow(5px 5px 5px rgb(0, 0, 0))
+          drop-shadow(-5px -5px 5px rgb(0, 0, 0)); */
+        z-index: 99;
+        animation: moveShape 1s linear infinite;
+      }
+
+      @keyframes moveShape {
+        0% {
+          transform: translate(0) rotate(0deg);
+          opacity: 1;
+        }
+        100% {
+          transform: translate(300px) rotate(360deg);
+          opacity: 0;
+        }
+      }
+
+      span:before,
+      span:after {
+        content: "";
+        display: block;
+        height: 100%;
+        width: 100%;
+        background-color: red;
+        background: radial-gradient(circle, white, red, maroon);
+        background-size: 10px 10px;
+        background-repeat: repeat;
+        border-radius: 50%;
+        position: relative;
+      }
+
+      span:before {
+        top: -50%;
+        box-shadow: inset 2px 2px rgba(247, 225, 225, 0.76);
+      }
+
+      span:after {
+        top: -100%;
+        left: -50%;
+        box-shadow: inset 2px 2px rgba(247, 225, 225, 0.76);
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      document.addEventListener("mousemove", function (e) {
+        let body = document.querySelector("body");
+        let heart = document.createElement("span");
+        let x = e.offsetX;
+        let y = e.offsetY;
+        let color = Math.floor(Math.random()* 360)
+        let perspective = Math.floor(Math.random()* 1200)
+        let size = Math.random() * 80;
+
+
+        heart.style.left = x + "px";
+        heart.style.top = y + "px";
+        heart.style.perspective = perspective + "px";
+        heart.style.filter = `hue-rotate(${color}deg)`;
+        heart.style.rotate = `${color}deg`;
+        heart.style.width = 20 + size + "px";
+        heart.style.height = 20 + size + "px";
+               
+        body.appendChild(heart);
+
+        setTimeout(function () {
+          heart.remove();
+        }, 1000);
+      });
+    </script>
+  </body>
+</html>

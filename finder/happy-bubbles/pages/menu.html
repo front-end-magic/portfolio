@@ -1,0 +1,87 @@
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>menu page</title>
+  <link rel="stylesheet" type="text/css" href="../css/menu.css">
+  <link rel="stylesheet" type="text/css" href="../css/scorepage.css">
+  <style >
+    #menupage{
+      display: block;
+    }
+  </style>
+<body>
+
+ <div class="menupage" id="menupage">
+      <div id="menu1">
+       <div id="menu2">
+        <div id="menu3">
+   
+          <div id="menu-over"></div>
+            <div id="resume" onclick="window.location='hard.html'"> 
+            </div>
+            <div id="restart" onclick="restart();"> 
+            </div>
+            <div id="score1"> 
+            </div>
+            <div id="help" onclick="help();"> 
+            </div>
+            <div id="exit" onclick="exit();"> 
+            </div>
+             <!-- <div id="pausefree">  -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+     </div>
+
+<div id="scorepage">
+<div id="scorepageOverlay"></div>
+  <div id="bestscore">
+     <div id="bestscore1"> </div>
+ <div id="bestscore2" > </div>
+
+  </div>
+<div id="lastscore">
+    <div id="lastscore1"> </div>
+ <div id="lastscore2"> </div>
+
+</div>
+
+</div>
+	
+
+
+</div>
+
+<script >
+var storage = window.localStorage;
+
+   var lastscore2 = document.getElementById('lastscore2');         
+     var bestscore2 = document.getElementById('bestscore2'); 
+  var scorepage = document.getElementById('scorepage'); 
+  var score1 = document.getElementById('score1'); 
+ var menupage = document.getElementById('menupage'); 
+
+     var high = parseInt(storage.getItem("highScore"));
+     var last = parseInt(storage.getItem("last"));
+     lastscore2.textContent = last;        
+     bestscore2.textContent = high; 
+score1.addEventListener("click", function (argument) {
+ scorepage.style.display = "block";
+ menupage.style.display = "none";
+})
+</script>
+<script src="../js/variables.js"></script>
+
+<script src="../js/actions.js"></script>
+<script src="../js/bubbles.js"></script>
+
+</body>
+</html>

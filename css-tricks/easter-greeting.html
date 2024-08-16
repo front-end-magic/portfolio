@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easter greeting card</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+            background: #87c5ff;
+        }
+
+        
+        .container {
+            position: absolute;
+            height: 90vh;
+            width: 100vw;
+            left: 0%;
+            top: 10vh;
+            overflow: hidden;
+        }
+        .sky{
+            position: absolute;
+            height: 50vh;
+            width: 100vw;
+            left: 0%;
+            top: 0vh;
+            z-index: -1;
+            background: rgb(158, 243, 239);
+          
+        }
+        .sun{
+            position: absolute;
+            height: 50vh;
+            width: 50vw;
+            left: 25%;
+            top: 2%;
+            background: rgb(252, 252, 94);
+            border-radius: 50%;
+            filter: url(#fire) blur(3px);
+            border-radius: 50%;
+   box-shadow: 5px 5px 8px rgb(239, 219, 88),
+   0px 0px 15px rgb(235, 221, 152),
+   2px 2px 50px rgb(255, 252, 49),
+   0px 0px 100px rgb(254, 242, 170),
+   0px 0px 150px rgb(248, 248, 180),
+   0px 0px 200px rgb(255, 255, 255),
+   0px 0px 250px white,
+   inset 10px 10px  50px rgb(255, 255, 255)
+   ;
+
+        }
+        .cross-wrapper{
+            z-index: 10;
+            position: absolute;
+            top: 15%;
+            width: 27%;
+            height: 15%;
+            left: 35%;
+
+        }
+        .cross{
+            position: absolute;
+            height: 90%;
+            width: 10px;
+            left: 5%;
+            top: 0;
+            background: linear-gradient(90deg, #928763 10%, transparent 10%, transparent 60%, #6e5f38 60%, #a3814e 80%, transparent 80%, transparent 100%)
+            , linear-gradient(180deg, rgb(219, 205, 166),rgb(165, 118, 17),rgb(31, 26, 16)) 
+            ;
+                   }
+                   .cross2{
+                    left: 45%;
+                    transform: scaleY(2) scaleX(1.2);
+                   }
+                   .cross3{
+                    left: 85%;
+                   }
+                   
+            .cross::before{
+                content: "";
+                position: absolute;
+            height: 7%;
+            width: 500%;
+            left: -200%;
+            top: 10%;
+            background: linear-gradient(180deg, #928763 10%, transparent 10%, transparent 60%, #6e5f38 60%, #a3814e 80%, transparent 80%, transparent 100%)
+            , linear-gradient(180deg, rgb(219, 205, 166),rgb(165, 118, 17),rgb(31, 26, 16)) 
+            ;
+          z-index: 11111;
+            transform: rotateY(45deg);
+            background-size: 100% 100%;
+            }
+        .hill {
+            position: absolute;
+            top: 35%;
+            left: -5%;
+            height: 65%;
+            width: 110%;
+            background: green;
+            background: linear-gradient(45deg, #00f376 10%, transparent 10%, transparent 50%, #00f376 50%, #00f376 60%, transparent 60%, transparent 100%)
+            , linear-gradient(180deg, rgb(3, 241, 3),rgb(2, 107, 2),rgb(1, 51, 1)) 
+            ;
+            background-size: 5px 10px, 1% 1%;
+            z-index: 10;
+            background-blend-mode: soft-light;
+            box-shadow: 0 0 0 10px #000, 0 0 0 14px #00f376;
+            clip-path: polygon(1% 32%, 4% 30%, 6% 28%, 9% 25%, 13% 22%, 17% 18%, 20% 16%, 24% 14%, 27% 11%, 29% 6%, 32% 4%, 35% 2%, 40% 3%, 43% 4%, 47% 6%, 50% 8%, 54% 11%, 57% 13%, 61% 14%, 63% 14%, 67% 13%, 72% 14%, 77% 18%, 81% 20%, 87% 21%, 92% 21%, 96% 21%, 99% 22%, 99% 22%, 99% 100%, 1% 98%);
+            filter: url(#fire) blur(1px);
+            z-index: 5;
+
+        }
+        .hill2{
+            height: 85%;
+            top: 20%;
+            z-index: 1111;
+            clip-path: polygon(0% 72%, 3% 69%, 6% 66%, 10% 62%, 12% 58%, 15% 53%, 18% 48%, 21% 43%, 24% 38%, 28% 32%, 30% 27%, 32% 20%, 34% 14%, 36% 10%, 40% 7%, 43% 6%, 47% 3%, 52% 3%, 55% 4%, 59% 8%, 63% 12%, 68% 19%, 71% 24%, 74% 30%, 76% 34%, 78% 40%, 81% 46%, 85% 52%, 89% 56%, 93% 60%, 96% 63%, 100% 66%, 99% 100%, 2% 98%, 1% 100%, 1% 100%);
+            background-size: 5px 15px, 100% 100%;
+
+  }
+  .hill3{
+    background-size: 1% 1%, 100% 100%;
+    clip-path: polygon(1% 55%, 3% 52%, 6% 46%, 9% 44%, 12% 43%, 15% 41%, 19% 41%, 24% 40%, 29% 39%, 34% 38%, 39% 35%, 42% 33%, 46% 29%, 50% 23%, 55% 22%, 60% 22%, 66% 23%, 71% 24%, 75% 22%, 81% 18%, 86% 16%, 92% 16%, 94% 20%, 97% 24%, 100% 28%, 100% 99%, 1% 100%);
+
+
+  }
+  .hill4{
+    width: 60%;
+    left: -15%;
+    /* background: red; */
+    top: 20%;
+    z-index: 1;
+    clip-path: polygon(0% 72%, 3% 69%, 6% 66%, 10% 62%, 12% 58%, 15% 53%, 18% 48%, 21% 43%, 24% 38%, 28% 32%, 30% 27%, 32% 20%, 34% 14%, 36% 10%, 40% 7%, 43% 6%, 47% 3%, 52% 3%, 55% 4%, 59% 8%, 63% 12%, 68% 19%, 71% 24%, 74% 30%, 76% 34%, 78% 40%, 81% 46%, 85% 52%, 89% 56%, 93% 60%, 96% 63%, 100% 66%, 99% 100%, 2% 98%, 1% 100%, 1% 100%);
+    background: green;
+            background: linear-gradient(45deg, #00f376 10%, transparent 10%, transparent 50%, #00f376 50%, #00f376 60%, transparent 60%, transparent 100%)
+            , linear-gradient(90deg, rgb(3, 241, 3),rgb(2, 107, 2),rgb(1, 51, 1)) ;
+           
+    background-size: 5px 15px, 100% 1%;
+
+  }
+  .hill5{
+    width: 50%;
+    left: 60%;
+    top: 20%;
+    z-index: 1;
+  }
+
+  .tomb{
+    position: absolute;
+    width: 50%;
+    height: 60%;
+    left: 25%;
+    top: 45%;
+    background: red;
+   border-radius: 40% 40% 0 0;
+   clip-path: polygon(1% 68%, 1% 64%, 3% 60%, 5% 56%, 7% 51%, 8% 46%, 8% 44%, 9% 40%, 10% 35%, 11% 31%, 12% 25%, 14% 20%, 15% 17%, 16% 13%, 17% 9%, 19% 6%, 23% 4%, 27% 2%, 33% 2%, 37% 2%, 42% 4%, 47% 3%, 50% 2%, 55% 3%, 59% 3%, 63% 3%, 69% 4%, 72% 5%, 77% 7%, 81% 9%, 85% 12%, 88% 16%, 90% 19%, 93% 26%, 94% 30%, 95% 36%, 98% 42%, 99% 56%, 99% 61%, 98% 71%, 97% 78%, 97% 83%, 96% 89%, 94% 94%, 93% 99%, 86% 100%, 86% 100%, 80% 100%, 74% 100%, 60% 100%, 46% 99%, 27% 100%, 17% 100%, 8% 85%, 5% 77%, 3% 71%);
+   background: rgb(128, 83, 0);
+            background: linear-gradient(45deg, #5e3b0d 10%, transparent 10%, transparent 50%, #aa955c 50%, #3f3513 60%, transparent 60%, transparent 100%)
+            , linear-gradient(90deg, rgb(161, 122, 12),rgb(107, 83, 2),rgb(61, 61, 19)) ;
+           
+    background-size: 5px 15px, 100% 100%;
+  background-blend-mode: screen;  
+  z-index: 111111; 
+  
+  background:
+linear-gradient(163deg, transparent 0px, transparent 1px, #222 1px, #222 14px, transparent 14px),
+    linear-gradient(161deg, transparent 0px, #181818 1px, #222 2px, #222 15px, transparent 15px),
+    linear-gradient(343deg, transparent 0px, transparent 1px, #222 1px, #222 14px, transparent 14px),
+    linear-gradient(343deg, transparent 0px, transparent 1px, #222 1px, #222 14px, transparent 14px);
+  background-color: #c4a67a;
+  background-position: 2px 1px, 23px 16px,48px 15px, 21px 30px;
+  background-size: 48px 30px;
+background-blend-mode: overlay;
+filter: url(#fire2) ;
+adow: 5px 5px 8px rgb(31, 29, 29),
+   0px 0px 15px rgb(20, 18, 18),
+   insbox-shet 10px 10px 40px rgb(56, 29, 16)
+   ;
+  }
+  .inner-tomb{
+    position: absolute;
+    width: 50%;
+    height: 80%;
+    left: 25%;
+    top: 20%;
+    background: rgb(255, 255, 255);
+   border-radius: 50%;
+   box-shadow: 5px 5px 8px white,
+   0px 0px 15px white,
+   2px 2px 20px white,
+   0px 0px 20px white,
+   0px 0px 30px white,
+   0px 0px 30px white,
+   0px 0px 50px white
+   ;
+
+  }
+
+.stone{
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    left: 0%;
+    top: 53%;
+    background: rgb(61, 56, 56);
+   border-radius: 50%;
+  
+    clip-path: polygon(1% 68%, 1% 64%, 3% 60%, 5% 56%, 7% 51%, 8% 46%, 8% 44%, 9% 40%, 10% 35%, 11% 31%, 12% 25%, 14% 20%, 15% 17%, 16% 13%, 17% 9%, 19% 6%, 23% 4%, 27% 2%, 33% 2%, 37% 2%, 42% 4%, 47% 3%, 50% 2%, 55% 3%, 59% 3%, 63% 3%, 69% 4%, 72% 5%, 77% 7%, 81% 9%, 85% 12%, 88% 16%, 90% 19%, 93% 26%, 94% 30%, 95% 36%, 98% 42%, 99% 56%, 99% 61%, 98% 71%, 97% 78%, 97% 83%, 96% 89%, 94% 94%, 93% 99%, 86% 100%, 86% 100%, 80% 100%, 74% 100%, 60% 100%, 46% 99%, 27% 100%, 17% 100%, 8% 85%, 5% 77%, 3% 71%); 
+    z-index: 1111111;
+    
+  background:
+linear-gradient(163deg, transparent 0px, transparent 1px, #222 1px, #222 14px, transparent 14px),
+    linear-gradient(161deg, transparent 0px, #181818 1px, #222 2px, #222 15px, transparent 15px),
+    linear-gradient(343deg, transparent 0px, transparent 1px, #222 1px, #222 14px, transparent 14px),
+    linear-gradient(343deg, transparent 0px, transparent 1px, #222 1px, #222 14px, transparent 14px),
+    linear-gradient(180deg, rgb(48, 33, 24), rgb(196, 144, 78), rgb(46, 37, 19))
+    ;
+  background-color: #c4a67a;
+  background-position: 2px 1px, 23px 16px,48px 15px, 21px 30px, 100% 100%;
+  background-size: 48px 30px;
+background-blend-mode: overlay;
+/* filter: url(#fire2); */
+box-shadow: 5px 5px 8px rgb(31, 29, 29),
+   0px 0px 15px rgb(20, 18, 18),
+   inset 10px 10px 40px rgb(56, 29, 16)
+   ;
+ }
+  .stone::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: -10%;
+    top: -5%;
+    border-radius: 50%;
+ 
+    background:
+linear-gradient(163deg, transparent 0px, transparent 1px, #222 1px, #222 14px, transparent 14px),
+    linear-gradient(161deg, transparent 0px, #181818 1px, #222 2px, #222 15px, transparent 15px),
+    linear-gradient(343deg, transparent 0px, transparent 1px, #222 1px, #222 14px, transparent 14px),
+    linear-gradient(343deg, transparent 0px, transparent 1px, #222 1px, #222 14px, transparent 14px);
+  background-color: #c4a67a;
+  background-position: 2px 1px, 23px 16px,48px 15px, 21px 30px;
+  background-size: 48px 30px;
+background-blend-mode: overlay;
+filter: url(#fire2) ;
+box-shadow: 5px 5px 8px rgb(31, 29, 29),
+   0px 0px 15px rgb(20, 18, 18),
+   inset 10px 10px 40px rgb(56, 29, 16)
+   ;
+   z-index: 2;
+
+  }
+  .stone::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0%;
+    top: 0%;
+    border-radius: 50%;
+ 
+    background:  linear-gradient(180deg, rgb(48, 33, 24), rgb(196, 144, 78), rgb(46, 37, 19))
+    ;
+
+  background-size: 100% 100%;
+background-blend-mode: overlay;
+filter: url(#fire2) ;
+box-shadow: -5px -5px 8px rgb(31, 29, 29),
+   0px 0px 15px rgb(20, 18, 18),
+   -5px -5px 8px rgb(31, 29, 29),
+   inset 10px 10px 40px rgb(56, 29, 16)
+   ;
+    z-index: 1;
+    opacity: 0.7;
+  }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="hill"></div>
+        <div class="hill hill2">
+           
+        </div>
+        <div class="hill hill3"></div>
+        <div class="hill hill4"></div>
+        <div class="hill hill5"></div>
+
+
+        <div class="tomb">
+            <div class="inner-tomb"></div>
+        </div>
+        <div class="stone"></div>
+        <div class="cross-wrapper">
+            <div class="cross cross1"></div>
+            <div class="cross cross2"></div>
+            <div class="cross cross3"></div>
+       
+        </div>
+        
+       </div>
+       <div class="sky">
+        <div class="sun"></div>
+        <div class="cloud"></div>
+        <div class="cloud"></div>
+        <div class="cloud"></div>
+    </div>
+    <svg>
+        <filter id="fire">
+            <feTurbulence id="turbulence" baseFrequency="0.1 0.1"
+            numOctaves="49" seed="100">
+            <animate attributeName="baseFrequency" dur="5s" values="0.1 0.1;0.2 0.2"
+            repeatCount="indefinite"> </animate> 
+    
+        </feTurbulence>
+             <feDisplacementMap in='SourceGraphic' scale='50'></feDisplacementMap>
+
+        </filter>
+    </svg>
+    <svg>
+        <filter id="fire2">
+            <feTurbulence id="turbulence" baseFrequency="0.1 0.1"
+            numOctaves="49" seed="30">
+    
+        </feTurbulence>
+             <feDisplacementMap in='SourceGraphic' scale='10'></feDisplacementMap>
+
+        </filter>
+    </svg>
+</body>
+
+</html>

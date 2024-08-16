@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+
+	<title>baby magic word balloon</title>
+<link rel="stylesheet" type="text/css" href="../css/words.css">
+</head>
+<style type="text/css">
+  #more1{  position: absolute;
+  width: 60%;
+  height: 15%;
+  margin-left: 20%;
+  /*border-radius: 50%;*/
+  border: 5px ridge silver;
+   border-radius: 20%;
+    margin-top: 20%;
+    z-index: 100;
+  animation-name: moreapps;
+  animation-fill-mode: forwards;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+    background-size: 100% 100%;
+  background-repeat: no-repeat;
+   background-image:url(../images/nums.png);
+    border-image: url(../images/border.png) 20% / 1 / 0 round;
+     background-color: transparent;
+       
+}
+ #rate{
+    background-repeat: no-repeat;
+        background-size:100% 100%;
+        background-image:url(../images/words.png);
+         background-color: transparent;
+        /*border-radius: 50%;*/
+            border: 5px ridge silver;
+           position: absolute;
+  width: 60%;
+  height: 15%;
+  margin-left: 20%;
+  margin-top: 50%;
+     z-index: 100;
+      border-image: url(../images/border.png) 20% / 1 / 0 round;
+  
+             }
+</style>
+<body id="b" >
+
+ <div id="container">
+ <div id="container1"></div>
+ <div id="container2"></div>
+     <div class="header-overlay" id="overlay">
+      <button id="more"></button>
+      <div id="moreapps">
+      <div id="innermore">
+       
+      </div>
+        <a href="num.html">  <button id="more1"></button></a>
+ <a href="word.html">  <button id="rate"></button></a>
+</button>
+     </div>
+
+    </div>
+    
+<div>  
+   <!-- <audio autoplay="true" loop="true" id="bubble"><source src="audio/camera.mp3" type="audio/mp3"></audio>  -->
+  <audio controls  id="play1" autoplay="true" loop="true"><source src="audio/cheeky.mp3" type="audio/mp3"></audio>
+  <audio controls id="pop"><source src="audio/squash.mp3" type="audio/mp3"></audio>
+
+
+<script >
+  var more = document.getElementById('more');
+  var more1 = document.getElementById('more1');
+  var rate = document.getElementById('rate');
+  var innermore = document.getElementById('innermore');
+  var container = document.getElementById('container');
+  more.addEventListener("click", function(){
+    moreapps.style.display = "block";
+   });
+  innermore.addEventListener("click", function(){
+    moreapps.style.display = "none";
+  //   rate.style.display = "none";
+  // innermore.style.display = "none";
+  })
+
+
+</script>
+<script src="../js/abc.js"></script>
+<script src="../js/babc.js"></script>
+<script src="../js/speech.js"></script>
+<script src="../js/admob.js"></script>
+
+  <script src="../cordova.js"></script>
+
+</body>
+</html>

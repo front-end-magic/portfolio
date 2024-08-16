@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+	<title>sum_table</title>
+
+</head>
+<body>
+<style>
+	#frm{
+		padding: 20px;
+		border: 2px solid;
+	}
+   
+
+	#cart{
+		margin-top:  30px;
+		padding: 20px;
+		border: 2px solid;
+		background-color: lightgreen;
+	}
+	th, td, tr {
+		border: 1px solid;
+	}
+</style>
+<!--form-->
+<div id="frm">
+<label>product name</label>
+<input type="text" id="pname"><br><br>
+<label>Quantity</label>
+<input type="number" id="pqty"><br><br>
+<label>Unit price</label>
+<input type="number" id="price"><br><br>
+<button onclick="additem()  ">Add item</button>
+</div>
+<div id="cart"></div>
+<br><br>
+<label>amount paid</label>
+<input type="number" name="paid" id="paid"><br><br>
+<label>balance</label>
+<input type="output" name="balance" id="balance"><br><br>
+<button onclick="bal()">sum</button>
+<script>
+	inames = []
+	iqtyp = []
+	iprice = []
+	total1 = []
+
+	function additem(){
+		inames.push(document.getElementById('pname').value)
+		iqtyp.push(parseInt(document.getElementById('pqty').value))
+		iprice.push(parseInt(document.getElementById('price').value))
+
+		displayCart();
+
+	}
+	function displayCart(){
+
+
+    cartdata = '<table><tr><th>Product Name</th><th>Quantity</th><th>Price</th><th>Total</th></tr>';
+
+    total = 0;
+
+    for(i=0; i<= inames.length - 1; i++){
+    	 total += iqtyp[i] * iprice[i]
+    	 total1.push(total);
+    	cartdata +="<tr><td>" + inames[i] + "</td><td>" + iqtyp[i] + "</td><td>" + iprice[i] +
+    	"</td><td>" + iqtyp[i] * iprice[i] + "</td><td><button onclick='delElement(" + i + ")'>Delete</button></td></tr>"
+    }
+     cartdata += '<tr><td></td><td></td><td></td><td>'+ 
+    total + '</td></tr></table> '
+   
+     document.getElementById('cart').innerHTML = cartdata
+
+     return total1;
+     
+	}
+
+	function delElement(a){
+		inames.splice(a, 1);
+		iqtyp.splice(a, 1);
+		iprice.splice(a, 1);
+		displayCart()
+	}
+
+	
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

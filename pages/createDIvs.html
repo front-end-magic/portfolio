@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+
+	<title>baby magic word balloon</title>
+</head>
+<style >
+  #ball{
+     width: 70px;
+    height: 70px;
+    font-size: 40px;
+      position: absolute;
+   background-repeat: no-repeat;
+        background-size:100% 100%;
+        background-image:url(../images/1.png);
+        margin-right: 80px;
+        z-index: 20;
+        display: block;
+       text-shadow: 0 1px 0 #999, 0 1px 0 #999, 0 2px 0 #aaa, 0 2px 0 #bbb, 0 3px #ccc;
+        background-size: 100% 100%;
+      /*background-image: radial-gradient(rgba(55,55,100,0.3) 30%, rgba(100,55,155,0.6) 60%, rgba(100,55,200,1) 90%) ;*/
+      border: 3px solid rgba(90, 40, 130, 0,2);
+      border-radius: 50%;
+      transform: translate3d(50px, 50px, 0);
+         box-sizing: border-box;
+       transition: transform .2s ease-in;
+  }
+   #ball:after {
+      position: absolute;
+      content: "";
+      top: 20%;
+      right: 25%;
+      width: 33%;
+      height: 33%;
+      border: 3px solid;
+      border-color:rgba(205,155,255,0.8) transparent transparent transparent;
+      border-radius: 50%;
+      transform: rotate(45deg);
+      }
+  body{
+    background-color: violet;
+    cursor:pointer;
+  }
+  #container{
+     position: absolute;
+     height: 100vh;
+     width: 100vw;
+     top: 0;
+     left: 0;
+        padding: 0;
+        margin: 0;
+        border: 3px solid rgba(0,55,55,1);
+      box-sizing: border-box;
+  }
+ #boxes{
+     width: 70px;
+    height: 70px;
+    font-size: 40px;
+      position: absolute;
+   background-repeat: no-repeat;
+        background-size:100% 100%;
+        background-image:url(../images/1.png);
+        margin-right: 80px;
+        z-index: 20;
+        display: block;
+       text-shadow: 0 1px 0 #999, 0 1px 0 #999, 0 2px 0 #aaa, 0 2px 0 #bbb, 0 3px #ccc;
+        background-size: 100% 100%;
+      background-image: radial-gradient(rgba(55,55,100,0.3) 30%, rgba(100,55,155,0.6) 60%, rgba(100,55,200,1) 90%) ;
+      border: 3px solid rgba(90, 40, 130, 0,2);
+      border-radius: 50%;
+      transform: translate3d(50px, 50px, 0);
+         box-sizing: border-box;
+       transition: transform .2s ease-in;
+
+  }
+   #boxes:after {
+      position: absolute;
+      content: "";
+      top: 20%;
+      right: 25%;
+      width: 33%;
+      height: 33%;
+      border: 3px solid;
+      border-color:rgba(205,155,255,0.8) transparent transparent transparent;
+      border-radius: 50%;
+      transform: rotate(45deg);
+      }
+      #remove{
+      z-index: 50;
+      position: absolute;
+      padding: 30px;
+      font-size: 30px;
+      background-color: hsla(200deg,60%,60%,0.6);
+      }
+</style>
+<body id="b" >
+ <div id="container">
+ <div id="ball"></div>
+<button id="remove">remove</button>
+
+    </div>
+    
+<div> 
+
+<script >
+  var theThing = document.querySelector('#ball');
+  var container = document.querySelector('#container');
+  var remove = document.querySelector('#remove');
+container.addEventListener('mousedown', getClickPosition, false);
+function getClickPosition(e){
+console.log(e);
+  
+    var colorRandom  = Math.ceil(Math.random()*360)
+   // var translate3dValue = "translate3d(" + xPosition + "px," + yPosition + "px, 0)";
+   // theThing.style.transform = translate3dValue;
+   var box = document.createElement("div");
+    box.id = "boxes";
+     var xPosition = e.clientX - 70;
+   var yPosition = e.clientY - 70;
+       box.style.top = yPosition + "px";
+ box.style.left = xPosition + "px";
+   box.style.backgroundImage = "radial-gradient(hsl("+ colorRandom + ",50%, 50%, 1) 20%,hsl("+ colorRandom + ",50%, 50%, 0.7) 50%,hsl("+ colorRandom + ",50%, 50%, 0.4) 80%)";
+     // background-image: radial-gradient(rgba(55,55,100,0.3) 30%, rgba(100,55,155,0.6) 60%, rgba(100,55,200,1) 90%) ;
+     
+  console.log(box);
+  container.appendChild(box);
+  remove.addEventListener("click", function(){
+// box.style.display = "none";
+  container.removeChild(box);
+//   setInterval(function(){
+//     for (var i = 0; i < boxes.length; i++) {
+//    container.removeChild(boxes);
+//    (boxes[i]);
+//   }
+// },5)
+// console.log(box.length);
+})
+
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Colorful Rain Effect</title>
+    <style>
+        *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    body{
+        background: #000;
+        overflow: hidden;
+        height: 100vh;
+        perspective: 800px;
+        
+    }
+    i{
+        position: absolute;
+        height: 50px;
+        top: 100px;
+        background: linear-gradient(transparent, #fff);
+       animation: animate 2s infinite ease;
+        perspective: 800px;
+        border-radius: 100% 0% 51% 49% / 55% 26% 74% 45% ;
+        transform:  rotate(-40deg); 
+        box-shadow: inset 0 0 1px black, inset 0 0 2px white;
+    }
+    @keyframes animate {
+        0%{
+            transform: translateY(-200px) rotate(-40deg);
+        }
+        100%{
+            transform: translateY(calc(100vh + 200px)) rotate(-40deg);
+        }
+    }
+    i::after{
+        content: "";
+        position: absolute;
+        height: 50%;
+        width: 50%;
+        top: 20%;
+        left: 20%;
+        border-radius: 50%;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.671);
+        transform: rotate(80deg) ;
+        filter: drop-shadow(5px 5px  rgb(255, 255, 255))
+;
+
+    }
+    </style>
+</head>
+<body>
+    <script>
+        function rain(){
+            let amount = 500;
+            let body = document.querySelector('body');
+            let i = 0;
+            while(i < amount){
+                let drop = document.createElement('i');
+                let size = Math.random() * 20;
+                let posX = Math.floor(Math.random()* window.innerWidth);
+                let delay = Math.random() * -20;
+                let color = Math.floor(Math.random()* 360)
+                let perspective = Math.floor(Math.random()* 1200)
+                
+                
+                
+                drop.style.width = 0.2 + size + "px";
+                drop.style.height = 0.2 + size + "px";
+                drop.style.left = posX + "px"
+                drop.style.animationDelay = delay + "s";
+                drop.style.perspective = perspective + "px";
+                drop.style.background = `linear-gradient(transparent, hsl(${color}deg, 50%, 50%))`;
+
+
+                body.appendChild(drop);
+                i++;
+            }
+        }
+        rain();
+    </script>
+</body>
+</html>

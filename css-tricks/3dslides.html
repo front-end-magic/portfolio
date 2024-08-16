@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3d carousel slides</title>
+</head>
+<style>
+    *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        background: linear-gradient(to right, #16272e, #768388), url(images/glass2.jpg);
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        background-blend-mode: multiply;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .slider{
+        position: relative;
+        width: 200px;
+        height: 200px;
+        transform-style: preserve-3d;
+        animation: rotate 30s linear infinite;
+        
+    }
+    .slider span:hover {
+        transform: translateY(-50px)  rotateY(calc(var(--i)*45deg)) translateZ(350px);
+        animation-play-state: paused;
+      }
+    .slider:hover {
+        transform: translateY(-50px)  rotateY(calc(var(--i)*45deg)) translateZ(350px);
+        animation-play-state: paused;
+      }
+    @keyframes rotate {
+        0%{
+            transform: perspective(1000px) rotateY(0deg);
+        }
+        100%{
+            transform: perspective(1000px) rotateY(360deg);
+        }
+    }
+    .slider span{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transform-origin: center;
+        transform-style: preserve-3d;
+        transform: rotateY(calc(var(--i)*45deg)) translateZ(350px);
+        background: linear-gradient(to right, #39b2e6, #bee1f0);
+        border-radius: 5px;
+       border: 5px ridge peachpuff;
+       filter: drop-shadow(-7px 6px 9px #000);
+       -webkit-box-reflect: below 0px linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.1));
+
+    }
+    .slider span img{
+        position: absolute;
+        top: 10%;
+        left: 10%;
+        width: 80%;
+        height: 80%;
+        border-radius: 20px;
+        object-fit: fill;  
+        transition: 2s;
+
+    }
+   
+</style>
+<body>
+    <div class="slider">
+        <span style="--i:1;" > <img src="images/1.jpg" > </span>
+        <span style="--i:2;" > <img src="images/1.png" > </span>
+        <span style="--i:3;" > <img src="images/2.jpg" > </span>
+        <span style="--i:4;" > <img src="images/3.jpg" > </span>
+        <span style="--i:5;" > <img src="images/4.jpg" > </span>
+        <span style="--i:6;" > <img src="images/5.jpg" > </span>
+        <span style="--i:7;" > <img src="images/6.jpg" > </span>
+        <span style="--i:8;" > <img src="images/7.jpg" > </span>
+    </div>
+</body>
+</html>

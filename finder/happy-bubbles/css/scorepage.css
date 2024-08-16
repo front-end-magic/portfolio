@@ -1,0 +1,104 @@
+#scorepage{
+	display: none;
+	position: absolute;
+	 background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-image: url(../image2/pop.png);
+	height: 100vh;
+	width: 100vw;
+	top: 0;
+	
+}
+#scorepageOverlay{
+	/*display: none;*/
+	position: absolute;
+	 background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-image: url(../images/job.gif);
+	height: 100vh;
+	width: 100vw;
+	top: 0;
+	opacity: 0.6;
+}
+
+#bestscore{
+	position: absolute;
+	height: 40%;
+	width: 90%;
+	margin-top: 6%;
+	margin-left: 5%;
+   	/*background-image: url(../image2/best1.png);	*/
+  border:5px solid silver;
+  border-radius: 20px;
+padding: 2%;
+background-color: #20ff34;
+box-shadow: 2px 2px 1px 1px grey;
+z-index: 50;
+}
+
+#lastscore{
+	position: absolute;
+	height: 40%;
+	width: 90%;
+	top: 50%;
+	margin-left: 5%;
+   	/*background-image: url(../image2/last.png);	*/
+  border:5px solid silver;
+  border-radius: 20px;
+padding: 2%;
+background-color: #20ff34;
+box-shadow: 2px 2px 1px 1px grey;
+z-index: 50;
+}
+
+#bestscore1{
+	height: 40%;
+	width: 90%;
+	margin-top: 5%;
+	margin-left: 5%;
+   	background-image: url(../image2/best1.png);	
+padding: 2%;
+box-shadow: 2px 2px 1px 1px grey;
+z-index: 50;
+}
+#bestscore2{
+	height: 40%;
+	width: 90%;
+	margin-top: 5%;
+	margin-left: 5%;
+   	/*background-image: url(../image2/best1.png);	*/
+padding: 2%;
+box-shadow: 2px 2px 1px 1px grey;
+z-index: 50;
+font-size: 35px;
+color: #222256;
+text-align: center;
+}
+
+#lastscore1{
+	height: 40%;
+	width: 90%;
+	margin-top: 5%;
+	margin-left: 5%;
+   	background-image: url(../image2/last.png);	
+padding: 2%;
+box-shadow: 2px 2px 1px 1px grey;
+z-index: 50;
+}
+#lastscore2{
+	height: 40%;
+	width: 90%;
+	margin-top: 5%;
+	margin-left: 5%;
+   	/*background-image: url(../image2/last.png);	*/
+padding: 2%;
+box-shadow: 2px 2px 1px 1px grey;
+z-index: 50;
+font-size: 35px;
+color: #222256;
+text-align: center;
+}
+
+
+
+

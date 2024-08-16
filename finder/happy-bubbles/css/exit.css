@@ -1,0 +1,133 @@
+*{
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+#exitGame{
+	display: none;
+	position: absolute;
+	 background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-image: url(../image2/pop.png);
+	height: 100vh;
+	width: 100vw;
+	top: 0;
+	
+}
+#exitOverlay{
+	/*display: none;*/
+	position: absolute;
+	 background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-image: url(../images/job.gif);
+	height: 100vh;
+	width: 100vw;
+	top: 0;
+	opacity: 0.6;
+}
+
+#question{
+	position: absolute;
+	height: 25%;
+	width: 80%;
+	left: 10%;
+	top: 25%;
+	 background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-image: url(../image2/exit2.png);
+	z-index: 20;
+}
+#yes{
+	position: absolute;
+	height: 20%;
+	width: 30%;
+	left: 10%;
+	top: 70%;
+	 background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-image: url(../image2/yes.png);
+	z-index: 20;
+	border-right: 5px solid rgba(122, 222, 122, 0.8);
+	border-left: 5px solid rgba(122, 222, 122, 0.8);
+	border-top: 5px solid rgba(144, 244, 144, 0.8);
+	border-bottom: 5px solid rgba(144, 244, 144, 0.8);
+	background-color: rgba(222, 34, 133, 0.8);
+	border-radius: 15%;
+	padding: 5%;
+}
+#no{
+	position: absolute;
+	height: 20%;
+	width: 30%;
+	left: 65%;
+	top: 70%;
+	 background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-image: url(../image2/no.png);
+	z-index: 20;
+	border-right: 5px solid rgba(122, 222, 122, 0.8);
+	border-left: 5px solid rgba(122, 222, 122, 0.8);
+	border-top: 5px solid rgba(144, 244, 144, 0.8);
+	border-bottom: 5px solid rgba(144, 244, 144, 0.8);
+	background-color: rgba(222, 34, 133, 0.8);
+	border-radius: 15%;
+	padding: 5%;
+
+}
+
+
+#exit1{
+		/*display: none;*/
+	position: absolute;
+	height: 60vh;
+	width: 85vw;
+	top: 20vh;
+	left: 7.5vw;
+	background-color: #5676ff;
+    box-shadow: 2px 2px 2px 2px #524;
+    border: 5px solid #20ff34;
+    border-radius: 50%;
+    background-size: 5% 5%;
+	background-repeat: repeat;
+	background-image: url(../image2/bub.png);
+	   /*border-image: url(../images/crystal.png) 30% / 1 / 0 round;*/
+border-bottom-left-radius: 20%;
+    border-bottom-right-radius: 20%;
+
+}
+#exit2{
+	position: absolute;
+	height: 90%;
+	width: 90%;
+	margin-top: 5%;
+	margin-left: 5%;
+	background-color: deeppink;
+    /*box-shadow: 2px 2px 3px 5px #847;*/
+    /*border: 2px solid #0f0;*/
+    border-radius: 50%;
+   	background-image: url(../image2/bub.png);
+   	border-bottom-left-radius: 20%;
+    border-bottom-right-radius: 20%;
+   
+    /*background-size: 25% 25%;*/
+	/*background-repeat: repeat;*/
+	/*border-image: url(../images/crystal.png) 30% / 1 / 0 round;*/
+}
+
+#exit3{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(223,55,132,0.5);
+   border: 2px solid #0f0;
+    border-radius: 50%;
+   	background-image: url(../image2/222.gif);
+    background-size: 25% 25%;
+	background-repeat: repeat;
+	border-bottom-left-radius: 20%;
+    border-bottom-right-radius: 20%;
+
+}

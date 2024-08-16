@@ -1,0 +1,286 @@
+*{
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+#gameover{
+	display: none;
+	position: absolute;
+	height: 100vh;
+	width: 100vw;
+	top: 0;
+	left: 0;
+    color: blue;
+    text-align: center;
+   background-color: #f5a;
+	background-image: url(../image2/jhjh.png);
+	z-index: 100;
+	opacity: 1;
+	font-size: 15px;
+	font-weight: bold;
+	color: #0f0;
+	text-align: left;
+}
+#gamecontainer{
+	/*display: none;*/
+	position: absolute;
+	height: 100vh;
+	width: 100vw;
+	top: 0;
+	left: 0;
+    color: blue;
+    text-align: center;
+    /*border: 5px ridge silver;*/
+   background-color: transparent;
+	opacity: 0.3;
+	background-image: url(../image2/pop.png);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	}
+
+#gametext{
+	position: absolute;
+	height: 7vh;
+	width: 80vw;
+	top: 3%;
+	left: 10%;
+    background-image: url(../image2/game.png);
+	
+}
+#overlay1{
+	position: absolute;
+	height: 60vh;
+	width: 40vw;
+	top: 10vh;
+	left: 30vw;
+	background-color: deeppink;
+    box-shadow: 2px 2px 2px 2px #524;
+    border: 5px solid #0f0;
+    border-radius: 50%;
+   	background-image: url(../image2/blue1.png),url(../image2/bub.png);
+	   background-size: 5% 2%;
+	   background-repeat: repeat;
+   background-blend-mode: screen;
+	   /* border-image: url(../images/face.gif) 30% / 1 / 0 round; */
+border-bottom-left-radius: 20%;
+    border-bottom-right-radius: 20%;
+
+}
+#overlay2{
+	position: absolute;
+	height: 90%;
+	width: 90%;
+	margin-top: 5%;
+	margin-left: 5%;
+	background-color: deeppink;
+    /*box-shadow: 2px 2px 3px 5px #847;*/
+    border: 2px solid #0f0;
+    border-radius: 50%;
+   	background-image: url(../images/job.gif);
+   	border-bottom-left-radius: 20%;
+    border-bottom-right-radius: 20%;
+    /*background-size: 25% 25%;*/
+	/*background-repeat: repeat;*/
+	/*border-image: url(../images/crystal.png) 30% / 1 / 0 round;*/
+}
+
+#overlay3{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(123,155,32,0.2);
+   border: 2px solid #0f0;
+    border-radius: 50%;
+   	/*background-image: url(../images/b.gif);*/
+    background-size: 25% 25%;
+	background-repeat: repeat;
+	border-bottom-left-radius: 20%;
+    border-bottom-right-radius: 20%;
+	padding: 10px 50px;
+
+}
+#over{
+	/*position: absolute;*/
+	height: 20%;
+	width: 50%;
+	margin-top: 10%;
+	margin-left: 25%;
+	background-image: url(../images/b.gif);
+   padding: 10%;
+}
+#current{
+	height: 15%;
+	width: 80%;
+	margin-top: 3%;
+	margin-left: 10%;
+  /* background-color: deeppink;
+    border: 5px ridge violet;
+      border-image: url(../images/crystal.png) 30% / 1 / 0 round;
+  */   	background-image: url(../image2/blue1.png);	
+  border:2px solid silver;
+  border-radius: 20px;
+padding: 2%;
+}
+#current1{
+	height: 100%;
+	width: 30%;
+	margin-left: 2%;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-image: url(../image2/score.png);	
+	display: inline;
+	float: left;
+	/*border:5px solid blue;*/
+   display:inline;
+}
+#current2{
+	height: 100%;
+	width: 60%;
+	margin-left: 5%;
+	display: inline;
+	float: left;
+	/*border:5px solid blue;*/
+    margin-top: 0;
+}
+ #best{
+	height: 15%;
+	width: 80%;
+	margin-top: 3%;
+	margin-left: 10%;
+  /* background-color: deeppink;
+    border: 5px ridge violet;
+      border-image: url(../images/crystal.png) 30% / 1 / 0 round;
+	*/	padding: 2%;
+     	background-image: url(../image2/blue1.png);	
+  border:2px solid silver;
+  border-radius: 20px;
+
+}
+#best1{
+	height: 100%;
+	width: 30%;
+	margin-left: 2%;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-image: url(../image2/best.png);	
+	display: inline-block;
+	float: left;
+	/*border:5px solid blue;*/
+   display:inline;
+}
+#best2{
+	height: 100%;
+	width: 60%;
+	margin-left: 5%;
+	background-size: 100% 100%;
+	float: left;
+	/*border:5px solid blue;*/
+   display:inline;
+}
+#replay{
+	height: 15%;
+	width: 30%;
+	margin-top: 15%;
+	margin-left: 10%;
+   background-color: deeppink;
+    border: 5px ridge silver;
+    text-align: center;
+    /*border-image: url(../images/crystal.png) 30% / 1 / 0 round;*/
+ 	background-image: url(../image2/blue1.png);	
+ 	border-radius: 50%;
+ display: inline;
+   float: left;
+   
+}
+#menu{
+	height: 15%;
+	width: 40%;
+	margin-top: 15%;
+	margin-left: 10%;
+  border: 5px ridge silver;
+  text-align: center;
+    /*border-image: url(../images/crystal.png) 30% / 1 / 0 round;*/
+ 	background-image: url(../image2/blue1.png);	
+ 	border-radius: 50%;
+   display: inline;
+   float: left;
+    
+}
+a #menu{
+	  text-decoration: none;
+       color: #0f0;
+}
+#more1{
+	position: absolute;
+	top: 80%;
+	height: 15%;
+	width: 80%;
+	left: 10%;
+	display: block;
+	background-color: rgba(123,32, 132, 0.4);
+	z-index: 101;
+	border: 5px solid grey;
+	border-right-color: silver;
+    border-left-color: silver;
+    background-image: url(../image2/pinky.jpg);
+
+}
+
+#more1> div{
+	height: 100%;
+	width: 30%;
+	border:5px solid grey;
+	/*border-radius: 20%;*/
+	display: inline;
+	float: left;
+	   border-image: url(../images/face.gif) 30% / 1 / 0 round;
+ 
+}
+
+#app1{
+	margin-right: 5%;
+	background-image: url(../images/app1.png);
+  
+}
+#app2{
+	margin-right: 5%;
+	background-image: url(../images/app2.png);
+
+}
+#app3{
+	background-image: url(../images/app3.png);
+  
+}
+  
+ #more1 > div >a{
+ 	height: 100%;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+ }
+#more1 > #app-cover{
+	position: absolute;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	left: 0;
+	background-color: transparent;
+		   border:none;
+	background-image: url(../image2/download.png);
+
+}
+#more1 > #app-cover1{
+	position: absolute;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	left: 0;
+	background-color: transparent;
+		   border:none;
+	background-image: url(../images/icon.png);
+     display: none;
+}

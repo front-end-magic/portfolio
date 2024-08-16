@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3d sphere with shadow</title>
+    <style>
+body{
+    background: linear-gradient(rgb(111, 111, 247), white 30%, rgb(0, 124, 196)), linear-gradient(rgb(111, 247, 125), white 30%, rgb(26, 196, 0));
+    background-size: 1vw 1vh, 100vw 100vh;
+    background-repeat: repeat;
+    background-blend-mode: multiply;
+}
+.ball{
+    background: radial-gradient(circle at 50px 60px, #fd21c2dc,
+    rgb(150, 2, 118), rgb(44, 0, 36), rgb(3, 0, 2));
+    height: 200px;
+    width: 200px;
+    border: 0px;
+    border-radius: 50%;
+    position: absolute;
+    left: 70px;
+    top: 60px;
+    /* filter: drop-shadow(3px 3px 200px rgb(3, 211, 160)); */
+    box-shadow: 151px 100px 37px 10px rgb(0, 0, 0, 0.53);
+        
+}
+    </style>
+</head>
+<body>
+    <div class="ball"></div>
+</body>
+</html>

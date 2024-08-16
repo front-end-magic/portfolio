@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Pixel Animation Effect</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #111;
+        }
+
+        .box {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background-size: cover;
+        }
+
+        .box span {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background-color: aqua;
+            background: url(images/magic1.jpg);
+            background-repeat: no-repeat;
+            animation: animate 3s linear backwards;
+
+        }
+
+        @keyframes animate {
+
+            0% {
+                scale: 1;
+                rotate: 0deg;
+                translate: 0 -1000px;
+                transform-origin: center;
+                opacity: 0;
+
+            }
+
+            10% {
+                scale: 1;
+                rotate: 0deg;
+                translate: 0 -800px;
+                transform-origin: center;
+                opacity: 1;
+
+            }
+
+
+
+            70% {
+                scale: 0.5;
+                rotate: 720deg;
+                translate: 0px -100px;
+                transform-origin: center;
+                opacity: 1;
+
+            }
+
+            90% {
+                scale: 1.5;
+                rotate: 0deg;
+                translate: 0 0;
+                transform-origin: center;
+                opacity: 1;
+
+            }
+
+            100% {
+                scale: 1;
+                rotate: 0deg;
+                translate: 0 0;
+                transform-origin: center;
+                opacity: 1;
+
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div id="pixel"></div>
+    </div>
+
+    <script>
+        let w = 60;
+        let h = 60;
+
+        function pixel() {
+            for (let i = 0; i < h; i++) {
+                for (let j = 0; j < w; j++) {
+                    let span = document.createElement('span');
+                    let random = Math.random() * 3;
+                    let randomFixed = random.toFixed(2)
+
+
+                    document.getElementById('pixel').appendChild(span)
+                    span.style.left = j * 5 + "px";
+                    span.style.top = i * 5 + "px";
+                    span.style.backgroundPosition = -j * 5 + "px " + -i * 5 + "px, center";
+                    span.style.animationDelay = randomFixed + "s";
+                }
+            }
+        }
+        pixel();
+    </script>
+</body>
+
+</html>

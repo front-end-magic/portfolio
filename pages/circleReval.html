@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reveal circle on mouse move</title>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+    background:#000;
+    }
+    section{
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        background: url(../images/4.jpg);
+        background-size: 100% 100%;
+        clip-path: circle(200px at var(--x) var(--y));
+        box-shadow:inset 2px 2px 10px white;
+        z-index: 5;
+    } 
+    .overlay{
+        position: absolute;
+        width:100vw;
+        height: 100vh;
+       background-size: 100% 100%;
+        top: 0%;
+        left: 0%;
+        /* background-color: rgba(255, 0, 0, 0.568); */
+        mix-blend-mode: hue;
+        z-index: 10;
+          } 
+           #find{
+        position: absolute;
+        width:150px;
+        height: 150px;
+        background: url(../images/bob.png);
+        background-size: 100% 100%;
+        top: 10%;
+        left: 10%;
+        z-index: 20;
+          }
+</style>
+
+</head>
+<body>
+    div.overlay1
+    <section>
+        <div class="overlay"></div>
+        <div id="find"></div>
+    </section>
+<script>
+let find = document.getElementById('find');
+let overlay = document.querySelector('.overlay');
+let pos = document.documentElement; 
+let top1 = window.innerHeight - 150;
+let left1 = window.innerWidth -150;
+let blend = ['multiply', 'screen', 'overlay', 'darken', 'lighten', 'color-dodge','color-burn','hard-light',
+             'soft-light','exclusion','hue', 'saturation','color','initial','inherit','unset','luminosity'];
+
+pos.addEventListener('mousemove', e => {
+    pos.style.setProperty('--x', e.clientX + 'px');
+    pos.style.setProperty('--y', e.clientY + "px")
+})
+
+let setfinder = ()=>{
+    let randhue =  Math.round(Math.random()*360);
+    let randTop = Math.round(Math.random()*top1);
+    let randLeft = Math.round(Math.random()*left1);
+    let randBlend = Math.round(Math.random()*blend.length);
+    find.style.left = `${randLeft}px`;
+    find.style.top = `${randTop}px`;
+    find.style. mixBlendMode = blend[randBlend];
+    overlay.style.backgroundColor = "hsl("+ randhue + ",100%, 30%, 0.7)";
+ }
+setfinder();
+find.addEventListener("click", ()=> {
+find.style.backgroundImage = "url(../images/9.png)";
+find.style. mixBlendMode = "normal";
+setTimeout(()=>{
+        find.style.backgroundImage = "url(../images/bob.png)";
+        setfinder();
+    },1000)
+})
+</script>
+</body>
+</html>

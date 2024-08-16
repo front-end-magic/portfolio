@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star animation on mouse move effect</title>
+</head>
+<style>
+    :root {
+  --custom-color: #45d3cc;
+}
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        min-height: 100vh;
+        background: #111;
+        overflow: hidden;
+    }
+    span{
+        position: absolute;
+        pointer-events: none;
+        filter: drop-shadow(0 0 15px var(--custom-color));
+        width: 10px;
+        height: 10px;
+        background: transparent;
+
+     }
+    span::before{
+        content: "";
+        background: var(--custom-color);
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        border-radius: 50%;
+        clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+        animation: moveShape 1s linear forwards;
+
+    }
+@keyframes moveShape {
+    0%{
+        transform: translate(0) rotate(0deg);
+        opacity: 0;
+    }
+    20%, 80%{
+        opacity: 1;
+    }
+    100%{
+        transform: translate(300px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+
+
+
+</style>
+<body>
+    
+
+
+    <script>
+        document.addEventListener('mousemove', function(e){
+            let body = document.querySelector('body');
+            let star = document.createElement('span');
+
+            let size = Math.random() *40;
+            let transformValue = Math.random() *360;
+            let randcolor = Math.random() * 100;
+
+            star.style.left = e.offsetX + 'px';
+            star.style.top = e.offsetY + 'px';
+            star.style.width = 10 + size + 'px';
+            star.style.height = 10 + size + 'px';
+            star.style.transform = 'rotate(' + transformValue + 'deg)';
+            star.style.setProperty("--custom-color", `hsl(${transformValue}deg, ${randcolor}%, 50%)`);
+
+            body.appendChild(star);
+             
+            setTimeout( function () {
+                star.remove();
+            }, 1000 )
+            
+        })
+    </script>
+</body>
+</html>

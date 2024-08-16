@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reveal circle on mouse move</title>
+    <link rel="stylesheet" href="ring.css">
+    <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+   <div class="bee"></div>
+    <div class="overlay1">
+        <div class="timer1">
+          <span class="min1">10</span>
+         <!-- <span class="micro">:</span> -->
+          </div>
+       <div class="score1">score: <span class="score">0</span>  </div>
+       <div class="life">
+          <span class="life1 lifea"></span>
+           <span class="life2 lifea"></span>
+            <span class="life3 lifea"></span>
+             <span class="life4 lifea"></span>
+              <span class="life5 lifea"></span>
+       </div>
+    </div>
+     <div class="over">
+        <div>Game Over </div>
+         <div class="finalScore"></div>
+       <div class="replay" onclick="window.location='index.html'">Replay</div>
+    </div>
+     <div class="container">
+     
+     <section>
+        <div class="circle"></div>
+
+        <svg>
+            <filter id="wavy">
+                <feTurbulence x='0' y='0' baseFrequency="0.009" numOctaves='5' seed='2'>
+                <animate attributeName="baseFrequency" dur="60s" values="0.02;0.005;0.02"
+                repeatCount="indefinite"> </animate>
+                </feTurbulence>
+                <feDisplacementMap in='SourceGraphic' scale='30'></feDisplacementMap>
+            </filter>
+        </svg>
+        <div class="overlay">
+      
+        </div>
+     </section>
+   
+    </div>
+    
+    <div class="start">
+      <div class="play" onclick="findBee();">Play</div>
+    </div>
+    <audio src="sound/beefinder.mp3" autoplay="true" loop="true" id="song"></audio>
+   <audio src="sound/clown.mp3"  id="song1"></audio>
+<script>
+var container = document.querySelector('.container');
+var overlay = document.querySelector('.overlay');
+var over = document.querySelector('.over');
+var song = document.querySelector('#song');
+var song1 = document.querySelector('#song1');
+var bee = document.querySelector('.bee');
+var micro = document.querySelector('.micro');
+var score = document.querySelector('.score');
+var finalScore = document.querySelector('.finalScore');
+var min1 = document.querySelector('.min1');
+var start1 = document.querySelector('.start');
+var life1 = document.querySelector('.life1');
+var life2 = document.querySelector('.life2');
+var life3 = document.querySelector('.life3');
+var life4 = document.querySelector('.life4');
+var life5 = document.querySelector('.life5');
+var section1 = document.querySelector('section');
+var pos = document.documentElement; 
+var top1 = window.innerHeight - 150;
+var left1 = window.innerWidth * 7/10;
+var microSec = 10;
+var sec1 = 10;
+var totalScore = 0;
+var timing;
+var timingSec;
+var find = document.createElement("div");
+var scoreTop = score.getBoundingClientRect().top-100;
+var scoreLeft = score.getBoundingClientRect().left;
+var deadLifes = 5;
+var blend = ['multiply', 'screen', 'overlay', 'darken', 'lighten', 'color-dodge','color-burn','hard-light',
+             'soft-light','exclusion','hue', 'saturation','color','initial','inherit','unset','luminosity'];
+
+             pos.addEventListener('mousemove', e => {
+    pos.style.setProperty('--x', e.clientX + 'px');
+    pos.style.setProperty('--y', e.clientY + "px")
+});
+
+function findBee () {
+  
+   start1.style.display = "none";
+    song.play();
+
+
+    function setfinder(argument) {
+       var randhue =  Math.round(Math.random()*360);
+      find.classList.add("find1");
+     section1.appendChild(find);
+        var randTop = Math.round(Math.random()*top1);
+    var randLeft = Math.round(Math.random()*left1);
+    var randBlend = Math.round(Math.random()*blend.length);
+    var back1 = Math.ceil(Math.random()*9);
+   find.style.left = `${randLeft}px`;
+    find.style.top = `${randTop}px`;
+      bee.style.display = "none";
+   bee.style.left = `${randLeft}px`;
+    bee.style.top = `${randTop}px`;
+    bee.style.color = "hsl("+ randhue + ",100%, 30%, 1)";
+    find.style. mixBlendMode = blend[randBlend];
+    find.textContent = "";
+   find.style.opacity = 0.3;
+   section1.style.cursor = "grabbing"
+    overlay.style.backgroundColor = "hsl("+ randhue + ",100%, 30%, 0.8)";
+    section1.style.backgroundImage = `url(images/${back1}.jpg)`;
+ 
+    }
+
+// var timer1 = function(){
+//     timing = setInterval(function(){
+//     microSec--;
+//     micro.textContent = `0${microSec}`;
+//     if (microSec <= 0) {
+//         microSec = 10
+//     }
+// },100);
+// }
+var secTimer =()=>{
+var timingSec = setInterval(()=>{
+    sec1--;
+    min1.textContent = `0${sec1}`;
+    if (sec1 <= 0) {
+     sec1 = 12
+     killBee();
+    }
+    if (deadLifes <= 0) {
+      clearInterval(timingSec);
+    }
+},1000);
+}
+ // timer1();
+     secTimer();
+
+
+     find.addEventListener("click", ()=> {
+var currentScore = 5 * sec1;
+totalScore = totalScore + currentScore;
+find.style. mixBlendMode = "normal";
+ find.style.opacity = 1;
+ clearInterval(timingSec);
+//  clearInterval(timing);
+ // microSec = 10;
+  clearInterval(timingSec);
+ song1.src = "sound/catch.mp3";
+ song1.play();
+   bee.textContent = currentScore;
+   // micro.textContent = `${microSec}`;
+   sec1 = 10;
+   min1.textContent = `found`;
+   bee.style.display = "block";
+   section1.style.cursor = "pointer";
+ 
+     setTimeout(()=>{
+          bee.style.left = `${scoreLeft}px`;
+    bee.style.top = `${scoreTop}px`;
+   
+    },500)          
+setTimeout(()=>{
+   score.textContent = totalScore;
+   section1.removeChild(find);
+    song1.src = "sound/move.mp3";
+ song1.play();
+   setfinder();
+   sec1 = 10;
+   min1.textContent = `${sec1}:`;
+ 
+    },2000)
+})
+function killBee(){
+  deadLifes--;
+    bee.style.display= "block";
+    bee.textContent = 0;
+     song1.src = "sound/clown.mp3";
+ song1.play();
+
+    setTimeout(()=>{
+      bee.style.top = "100%"; 
+},1000);
+      setTimeout(()=>{
+     song1.src = "sound/move.mp3";
+ song1.play();
+ 
+if (deadLifes ===4) {
+  life1.style.display = "none";
+   setfinder();
+}else if
+ (deadLifes ===3) {
+  life1.style.display = "none";
+  life2.style.display = "none";
+   setfinder();
+}else if
+ (deadLifes ===2) {
+  life1.style.display = "none";
+  life2.style.display = "none";
+  life3.style.display = "none";
+   setfinder();
+}else if
+ (deadLifes ===1) {
+  life1.style.display = "none";
+  life2.style.display = "none";
+  life3.style.display = "none";
+  life4.style.display = "none";
+   setfinder();
+}else {
+  life1.style.display = "none";
+  life2.style.display = "none";
+  life3.style.display = "none";
+  life4.style.display = "none";
+  life5.style.display = "none";
+     clearInterval(timingSec);
+   gameOver();
+  
+ 
+}
+ },2000);
+}
+var gameOver = ()=>{
+ 
+   find.style.opacity = 1;
+     find.style. mixBlendMode = "normal";
+    overlay.style.backgroundColor = "transparent";
+   section1.style.clipPath = "none";
+   setTimeout(()=>{
+      over.style.display="block";
+    finalScore.textContent = `score: ${totalScore}`
+  },1500)
+  }
+// setfinder();
+}
+
+</script>
+</body>
+</html>
