@@ -27,6 +27,10 @@
   border: 0.5px dotted silver;
   box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.253);
   height: 200px;
+  background: url(../images/water2.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: overlay;
 }
 .articles ul li:hover {
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.253);

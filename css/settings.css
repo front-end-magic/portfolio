@@ -202,7 +202,7 @@ input[type="range"]::-ms-track {
   background-color: #ffffff;
 }
 .settings-page {
-  position: absolute;
+  position: fixed;
   top: 0vh;
   left: 0vw;
   width: 100vw;

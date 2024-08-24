@@ -2,44 +2,29 @@
   position: absolute;
   height: 90vh;
   width: 100vw;
-  background-image: radial-gradient(
-      circle,
-      var(--color2) 0%,
-      var(--color3) 50%,
-      var(--color9) 80%
-    ),
-    linear-gradient(
-      45deg,
-      var(--color2) 0%,
-      var(--color6) 20%,
-      var(--color2) 50%,
-      var(--color2) 90%
-    );
-  background-blend-mode: overlay;
-  background-size: 100% 100%, 10px 30px;
-  /* background-size: 100% 100%;  */
-
-  background-repeat: repeat;
   left: 0;
   top: 10vh;
   z-index: 1;
   display: block;
-  opacity: 0.8;
+  /* opacity: 0.8; */
+  background: linear-gradient(90deg, var(--color1), var(--color2));
+  background-size: 100% 100%;
+  background-blend-mode: overlay;
+  overflow: hidden;
 }
 .header-container::after {
   position: absolute;
-  height: 100%;
-  width: 100%;
   content: "";
-  top: 0;
-  left: 0;
-  background: rgb(140, 158, 240);
-  background: radial-gradient(
-    circle,
-    rgba(255, 255, 255, 0.281) 0%,
-    rgba(170, 170, 170, 0.349) 72%,
-    rgba(0, 0, 0, 0.192) 100%
-  );
+  top: -1rem;
+  left: -1rem;
+  width: 105%;
+  height: 105%;
+  background: url(../images/water.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: overlay;
+  filter: url("#fire");
+  opacity: 0.7;
 }
 .rotating-cube {
   display: grid;
@@ -482,7 +467,7 @@
     rgb(3, 120, 163) 72%,
     rgb(60, 204, 209) 100%
   );
-  /* filter: invert(1); */
+  filter: url("#fire");
   z-index: 1000;
 }
 
@@ -498,4 +483,9 @@
     height: 500px;
     opacity: 0;
   }
+}
+svg {
+  height: 0;
+  margin: 0;
+  padding: 0;
 }

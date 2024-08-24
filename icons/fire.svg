@@ -1,0 +1,11 @@
+ <?xml version="1.0" encoding="utf-8"?>
+<svg>
+            <filter id="fire">
+                <feTurbulence id="turbulence" baseFrequency="0.1 0.1" numOctaves="4" seed="10">
+                    <animate attributeName="baseFrequency" dur="30s" values="0.1 0.1;0.2 0.2" repeatCount="indefinite">
+                    </animate>
+                </feTurbulence>
+                <feDisplacementMap in='SourceGraphic' scale='25'></feDisplacementMap>
+
+            </filter>
+            </svg>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>water ripple effect</title>
+    <Style>
+        body {
+            margin: 0;
+        }
+
+        .water-effect {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 10rem;
+            font-family: Helvetica, sans-serif;
+            position: absolute;
+            text-align: center;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 1px 1px rgba(0, 0, 0, 0.438);
+        }
+
+        .water {
+            background: url(../images/water.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            position: absolute;
+            top: -1rem;
+            left: -1rem;
+            width: 105%;
+            height: 105%;
+            filter: url("#fire");
+        }
+    </Style>
+</head>
+
+<body>
+    <section class="water-effect">
+        <h1>water effect</h1>
+        <div class="water"></div>
+        <svg>
+            <filter id="turbulence" x="0" y="0" width="100%" height="100%">
+                <feTurbulence id="water-filter" numOctaves="4"></feTurbulence>
+                <feDisplacementMap scale="20" in="SourceGrapgic"></feDisplacementMap>
+                <animate xlink:href="#water-filter" attributeName="baseFrequency" dur="30s" keyTimes="0; 1"
+                    values="0.03; 0.06;" repeatCount="indefinite"></animate>
+            </filter>
+        </svg>
+        <svg>
+            <filter id="fire">
+                <feTurbulence id="turbulence" baseFrequency="0.1 0.1" numOctaves="4" seed="10">
+                    <animate attributeName="baseFrequency" dur="30s" values="0.1 0.1;0.2 0.2" repeatCount="indefinite">
+                    </animate>
+                </feTurbulence>
+                <feDisplacementMap in='SourceGraphic' scale='25'></feDisplacementMap>
+
+            </filter>
+        </svg>
+    </section>
+</body>
+
+</html>

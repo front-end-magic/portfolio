@@ -31,12 +31,31 @@
       <ul class="nav-links">
         <li><a href="#" class="home">Home</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#footer">Contact</a></li>
+        <li id="my-work"><a href="#">My Work</a>
+
+          <ul class="sub-nav">
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#articles">Blogs</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+          </ul>
+        </li>
+        <li><a href="#footer">Contact</a>
+        </li>
         <li><a href="#" class="select-setting">Setting</a></li>
       </ul>
     </nav>
     <header class="main-header rippler">
+      <svg>
+        <filter id="fire">
+          <feTurbulence id="turbulence" baseFrequency="0.1 0.1" numOctaves="4" seed="20">
+            <animate attributeName="baseFrequency" dur="10s" values="0.1 0.1;0.2 0.2" repeatCount="indefinite">
+            </animate>
+          </feTurbulence>
+          <feDisplacementMap in='SourceGraphic' scale='25'></feDisplacementMap>
+
+        </filter>
+      </svg>
+      <div class="header-overlay"></div>
       <div class="header-container"> </div>
 
       <div class="rotating-cube">
@@ -151,7 +170,7 @@
 
 
 
-    <section class="card-section rippler">
+    <section class="card-section rippler" id="projects">
       <div class="card-container">
         <h3>projects </h3>
 
@@ -285,11 +304,11 @@
                 <div class="name">Color Quiz Game</div>
                 <a href="color-quiz/humptstage.html">
                   <button class="card-link">
-                    <view< /a>
-                      <span>view</span>
-                      <div class="liquid"></div>
+                </a>
+                <span>view</span>
+                <div class="liquid"></div>
 
-                  </button></a>
+                </button></a>
               </div>
 
             </div>
@@ -322,11 +341,11 @@
                 <div class="name">Honey Hunting Desktop Game</div>
                 <a href="finder/index.html">
                   <button class="card-link">
-                    view </button></a>
-                <span>view</span>
-                <div class="liquid"></div>
 
-                </button></a>
+                    <span>view</span>
+                    <div class="liquid"></div>
+
+                  </button></a>
               </div>
 
             </div>
@@ -340,7 +359,7 @@
     </section>
 
 
-    <section class="articles">
+    <section class="articles" id="articles">
 
       <div class="recent-events events">
         <h3> Blog Posts and Tutorials </h3>
@@ -555,5 +574,6 @@
   <script src="js/theme.js"></script>
 
 </body>
+
 
 </html>
