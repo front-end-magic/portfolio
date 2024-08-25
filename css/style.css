@@ -240,7 +240,7 @@ p {
   }
 }
 .main-card .card:nth-child(even) {
-  animation-delay: 0.3s;
+  animation-delay: 3s;
 }
 .main-card .card:hover {
   border-radius: 61% 39% 52% 48%/ 44% 59% 41% 56%;
